@@ -48,9 +48,6 @@
     </div>
 </div>
 
-<hr>
-
-
 <h2>Les liens</h2>
 
 <h3 id="lien-hors-contexte"><a href="#lien-hors-contexte">$</a> Lien hors contexte</h3>
@@ -119,6 +116,36 @@
     <h2><a href="liens.html" class="composite-link">Des liens explicites</a></h2>
     <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
     <a href="liens.html" aria-hidden="true" tabindex="-1">En savoir plus</a>
+</div>
+
+<h2>Formulaires</h2>
+
+<h3 id="champ-obligatoire"><a href="#champ-obligatoire">$</a> Champ obligatoire</h3>
+<h4>Bonne pratique</h4>
+<h5>Code</h5>
+
+<pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
+<h5 id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">$</a> Démo</h5>
+
+<div class="demo">
+    <label for="edit-nom">
+        Nom <em aria-hidden="true">(obligatoire)</em>
+    </label>
+    <input type="text" id="edit-nom" autocomplete="given-name" required>
+</div>
+
+<h4>Mauvaise pratique</h4>
+<h5>Code</h5>
+
+<pre><code>&lt;label for=&quot;edit-nom2&quot;&gt;Nom &lt;em&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;edit-nom2&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
+<h5 id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">$</a> Démo</h5>
+<div class="demo">
+    <label for="edit-nom2">
+        Nom <em>(obligatoire)</em>
+    </label>
+    <input type="text" id="edit-nom2" autocomplete="given-name" required>
 </div>
 
 </body>

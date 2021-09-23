@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TITLE</title>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+<h1>Démonstrations en accessibilité</h1>
+
+<h2>Les liens</h2>
+
+
+<h3 id="lien-hors-contexte"><a href="#lien-hors-contexte">$</a> Lien hors contexte</h3>
+<h4>Code</h4>
+<pre>
+    <code>
+&lt;h2&gt;Des liens explicites&lt;/h2&gt;
+&lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
+&lt;a href=&quot;liens.html&quot;&gt;En savoir plus&lt;/a&gt;
+    </code>
+</pre>
+<h4 id="demo-lien-hors-contexte"><a href="#demo-lien-hors-contexte">$</a> Démo</h4>
+<div class="demo">
+    <h2>Des liens explicites</h2>
+    <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
+    <a href="liens.html">En savoir plus</a>
+</div>
+
+<hr>
+
+<h3 id="lien-hors-contexte-aria-describedby"><a href="#lien-hors-contexte-aria-describedby">$</a> Lien hors contexte avec l'attribut aria-describedby</h3>
+<h4>Code</h4>
+<pre>
+    <code>
+&lt;h2 id=&quot;liens-explicites&quot;&gt;Des liens explicites&lt;/h2&gt;
+&lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
+&lt;a href=&quot;liens.html&quot; aria-describedby=&quot;liens-explicites&quot;&gt;En savoir plus&lt;/a&gt;
+    </code>
+</pre>
+<h4 id="demo-lien-hors-contexte-aria-describedby"><a href="#demo-lien-hors-contexte-aria-describedby">$</a> Démo</h4>
+<div class="demo">
+    <h2 id="liens-explicites">Des liens explicites</h2>
+    <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
+    <a href="liens.html" aria-describedby="liens-explicites">En savoir plus</a>
+</div>
+
+<hr>
+
+<h3 id="lien-hors-contexte-aria-label"><a href="#lien-hors-contexte-aria-label">$</a> Lien hors contexte avec l'attribut aria-label</h3>
+<h4>Code</h4>
+<pre>
+    <code>
+&lt;h2&gt;Des liens explicites&lt;/h2&gt;
+&lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
+&lt;a href=&quot;liens.html&quot; aria-label=&quot;En savoir plus sur les liens explicites&quot;&gt;En savoir plus&lt;/a&gt;
+    </code>
+</pre>
+<h4 id="demo-lien-hors-contexte-aria-label"><a href="#demo-lien-hors-contexte-aria-label">$</a> Démo</h4>
+<div class="demo">
+    <h2>Des liens explicites</h2>
+    <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
+    <a href="liens.html" aria-label="En savoir plus sur les liens explicites">En savoir plus</a>
+</div>
+
+<hr>
+
+<h3 id="lien-hors-contexte-title"><a href="#lien-hors-contexte-title">$</a> Lien hors contexte avec l'attribut title</h3>
+<h4>Code</h4>
+<pre>
+    <code>
+&lt;h2&gt;Des liens explicites&lt;/h2&gt;
+&lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
+&lt;a href=&quot;liens.html&quot; title=&quot;En savoir plus sur les liens explicites&quot;&gt;En savoir plus&lt;/a&gt;
+    </code>
+</pre>
+<h4 id="demo-lien-hors-contexte-title"><a href="#demo-lien-hors-contexte-title">$</a> Démo</h4>
+<div class="demo">
+    <h2>Des liens explicites</h2>
+    <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
+    <a href="liens.html" title="En savoir plus sur les liens explicites">En savoir plus</a>
+</div>
+
+<hr>
+
+<h3 id="lien-contextualise"><a href="#lien-contextualise">$</a> Lien contextualisé élargie en CSS</h3>
+<h4>Code</h4>
+<pre>
+    <code>
+&lt;h2&gt;&lt;a href=&quot;liens.html&quot;&gt;Des liens explicites&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
+&lt;a href=&quot;liens.html&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;En savoir plus&lt;/a&gt;
+    </code>
+</pre>
+<h4 id="demo-lien-contextualise"><a href="#demo-lien-contextualise">$</a> Démo</h4>
+<div class="demo composite-link-wrapper">
+    <h2><a href="liens.html" class="composite-link">Des liens explicites</a></h2>
+    <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
+    <a href="liens.html" aria-hidden="true" tabindex="-1">En savoir plus</a>
+</div>
+
+
+<script>
+    // window.addEventListener('load', function () {
+    //
+    // }, false);
+</script>
+</body>
+</html>

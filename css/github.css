@@ -21,15 +21,55 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+/* public-sans-regular - latin */
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('../fonts/public-sans-v5-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/public-sans-v5-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* public-sans-700 - latin */
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('../fonts/public-sans-v5-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/public-sans-v5-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* public-sans-900 - latin */
+@font-face {
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+    url('../fonts/public-sans-v5-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/public-sans-v5-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* public-sans-italic - latin */
+@font-face {
+    font-family: 'Public Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+    url('../fonts/public-sans-v5-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/public-sans-v5-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 body {
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Public Sans', sans-serif;
     font-size: 1.4em;
     line-height: 1.6;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: white;
     padding: 30px;
-    color: #333;
+    color: #000;
 }
 
 body > *:first-child {
@@ -49,9 +89,14 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
-a:focus {
+a, button, select, input {
+    outline: 1px solid transparent;
+    transition: outline 0.3s linear;
+}
+
+a:focus, button:focus, select:focus, input:focus  {
     box-shadow: 0 0 6px 0 #1e90ff;
-    outline: 1px solid rgba(30, 144, 255, 0.5);
+    outline-color: rgba(30, 144, 255, 0.5);
     outline-offset: 0;
 }
 
@@ -118,25 +163,27 @@ h1 {
 }
 
 h2 {
-    font-size: 24px;
-    border-bottom: 1px solid #8451a1;
-    color: black;
-    margin: 34px 0 14px;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.05);
+    color: #8451a1;
+    font-size: 3.2rem;
+    margin: 5rem 0 3rem;
 }
 
 h3 {
-    font-size: 18px;
-    margin: 30px 0 10px;
+    color: black;
+    font-size: 2.8rem;
+    margin: 4.5rem 0 2.5rem;
 }
 
 h4 {
-    font-size: 16px;
-    margin: 20px 0 10px;
+    color: #8451a1;
+    font-size: 2.4rem;
+    margin: 4rem 0 2.2rem;
 }
 
 h5 {
-    font-size: 14px;
-    margin: 15px 0 10px;
+    font-size: 2rem;
+    margin: 3.8rem 0 2rem;
 }
 
 h6 {

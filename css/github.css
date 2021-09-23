@@ -240,11 +240,11 @@ ul, ol {
     padding-left: 30px;
 }
 
-ul :first-child, ol :first-child {
+ul:not(.menu) :first-child, ol :first-child {
     margin-top: 0;
 }
 
-ul :last-child, ol :last-child {
+ul:not(.menu) :last-child, ol :last-child {
     margin-bottom: 0;
 }
 

@@ -40,3 +40,15 @@ html {
     left: 0;
     z-index: 1;
 }
+
+.menu > li {
+    display: inline-block;
+    vertical-align: middle;
+}
+.menu > li.active a {
+    color: black;
+}
+.menu a {
+    display: block;
+    padding: 20px;
+}

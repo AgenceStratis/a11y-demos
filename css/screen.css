@@ -45,6 +45,10 @@ html {
 
 .demo .link-forced {
     color: #460561;
+    text-decoration: none;
+}
+.demo .link-forced:hover, .demo .link-forced:focus {
+    text-decoration: underline;
 }
 
 .composite-link-wrapper {

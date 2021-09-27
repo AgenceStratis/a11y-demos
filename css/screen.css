@@ -22,6 +22,7 @@ html {
     border-radius: 5px;
     padding: 2rem;
     overflow: hidden;
+    margin: 5px 0;
 }
 
 .demo h2, .demo h2 a {
@@ -36,6 +37,14 @@ html {
 
 .demo.-composite h2 {
     margin-top: 0;
+}
+
+.demo.-visibilite-lien a {
+    text-decoration: none;
+}
+
+.demo .link-forced {
+    color: #460561;
 }
 
 .composite-link-wrapper {

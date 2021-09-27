@@ -186,7 +186,7 @@ h5 {
 }
 
 h6 {
-    color: #777777;
+    color: #727272;
     font-size: 14px;
     margin: 15px 0 10px;
 }
@@ -287,7 +287,7 @@ dl dd > :last-child {
 blockquote {
     border-left: 4px solid #dddddd;
     padding: 0 15px;
-    color: #777777;
+    color: #727272;
 }
 
 blockquote > :first-child {

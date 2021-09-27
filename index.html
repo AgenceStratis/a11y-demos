@@ -278,6 +278,39 @@
     <a href="liens.html" aria-hidden="true" tabindex="-1">En savoir plus</a>
 </div>
 
+<hr>
+
+<h3 id="visibilite-liens"><a href="#visibilite-liens">$</a> Visibilité des liens</h3>
+<h4>Mauvaise pratique</h4>
+<h5>Code</h5>
+<pre><code>&lt;blockquote&gt;
+    &lt;p&gt;L&rsquo;accessibilit&eacute; du Web signifie que les &lt;a href=&quot;#&quot;&gt;personnes en situation de handicap&lt;/a&gt; peuvent utiliser le Web. Plus pr&eacute;cis&eacute;ment, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+<h5 id="demo-visibilite-liens"><a href="#demo-visibilite-liens">$</a> Démo</h5>
+<div class="demo -visibilite-lien">
+    <blockquote>
+        <p>L’accessibilité du Web signifie que les <a href="#">personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu’elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu’elles peuvent contribuer sur le Web.</p>
+    </blockquote>
+</div>
+<p>Ratio de contraste insuffisant entre le lien en violet et le texte gris de 1.2:1.</p>
+
+<h4>Bonne pratique</h4>
+<h5>Code</h5>
+<pre><code>&lt;blockquote&gt;
+    &lt;p&gt;L&rsquo;accessibilit&eacute; du Web signifie que les &lt;a href=&quot;#&quot;&gt;personnes en situation de handicap&lt;/a&gt; peuvent utiliser le Web. Plus pr&eacute;cis&eacute;ment, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+<h5 id="demo-visibilite-liens2"><a href="#demo-visibilite-liens2">$</a> Démo</h5>
+<div class="demo">
+    <blockquote>
+        <p>L’accessibilité du Web signifie que les <a href="#">personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu’elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu’elles peuvent contribuer sur le Web.</p>
+    </blockquote>
+</div>
+<div class="demo">
+    <blockquote>
+        <p>L’accessibilité du Web signifie que les <a href="#" class="link-forced">personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu’elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu’elles peuvent contribuer sur le Web.</p>
+    </blockquote>
+</div>
+
 <!-- Formualires -->
 <h2>Formulaires</h2>
 

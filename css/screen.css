@@ -21,6 +21,21 @@ html {
     border: 2px solid grey;
     border-radius: 5px;
     padding: 2rem;
+    overflow: hidden;
+}
+
+.demo h2, .demo h2 a {
+    font-size: 28px;
+    color: black;
+    border: none;
+}
+
+.demo.-composite a {
+    display: block;
+}
+
+.demo.-composite h2 {
+    margin-top: 0;
 }
 
 .composite-link-wrapper {
@@ -61,4 +76,10 @@ html {
 .img-small {
     width: 200px;
     display: block;
+}
+
+.img-left {
+    display: block;
+    float: left;
+    margin: 0 15px 15px 0;
 }

@@ -9,6 +9,9 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="css/github.css">
     <link rel="stylesheet" href="css/screen.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- highlight -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
@@ -16,6 +19,7 @@
 <body>
 <h1>Démonstrations en accessibilité</h1>
 
+<!-- Images -->
 <h2>Images</h2>
 
 <h3 id="legende-image"><a href="#legende-image">$</a> Légende d'image avec le couple &lt;figure&gt;, &lt;figcaption&gt;</h3>
@@ -37,19 +41,20 @@
 <h3 id="legende-image-aria-labelledby"><a href="#legende-image-aria-labelledby">$</a> Légende d'image avec le role figure et l'attribut aria-labelledby</h3>
 <p>Cette implémentation n'est pas conforme à l'accessibilité car le support dans les agents utilisateurs n'est pas suffisant.</p>
 <h4>Code</h4>
-<pre><code>&lt;div role=&quot;figure&quot; aria-labelledby=&quot;Copyright 2016 auteur&quot;&gt;
+<pre><code>&lt;div role=&quot;figure&quot; aria-labelledby=&quot;caption&quot;&gt;
   &lt;img src=&quot;image.png&quot; alt=&quot;alternative de l&rsquo;image&quot;&gt;
   &lt;p id=&quot;caption&quot;&gt;Copyright 2016 auteur &lt;/p&gt;
 &lt;/div&gt;</code></pre>
 <h4 id="demo-legende-image-aria-labelledby"><a href="#demo-legende-image-aria-labelledby">$</a> Démo</h4>
 <div class="demo">
-    <div role="figure" aria-labelledby="Copyright 2016 auteur">
+    <div role="figure" aria-labelledby="caption">
         <img src="https://picsum.photos/200/300" alt="alternative de l’image">
         <p id="caption">Copyright 2016 auteur </p>
     </div>
 </div>
 
-<h2>Couleur</h2>
+<!-- Couleurs -->
+<h2>Couleurs</h2>
 
 <h3 id="menu-item-active-bad"><a href="#menu-item-active-bad">$</a> Information donnée uniquement par la couleur dans un menu</h3>
 <h4>Mauvaise pratique</h4>
@@ -108,6 +113,7 @@
 </ul>
 </div>
 
+<!-- Les liens -->
 <h2>Les liens</h2>
 
 <h3 id="nom-accessible-lien"><a href="#nom-accessible-lien">$</a> Nom accessible d'un lien</h3>
@@ -127,6 +133,38 @@
 <div class="demo">
     <a href="actualites.html" target="_blank" aria-label="Toutes les actualités, nouvelle fenêtre">Toutes les actualités</a>
 </div>
+
+<h3 id="arbre-accessibilite"><a href="#arbre-accessibilite">$</a> L'arbre d'accessibilité</h3>
+<h4>Code</h4>
+<pre><code>&lt;a href=&quot;#&quot; aria-label=&quot;M&eacute;t&eacute;o nuage et pluie&quot;&gt;
+    &lt;span class=&quot;text&quot;&gt;M&eacute;t&eacute;o :&lt;/span&gt;
+    &lt;span class=&quot;fas fa-cloud-rain&quot; aria-hidden=&quot;true&quot; title=&quot;nuage et pluie&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+<h4 id="demo-arbre-accessibilite"><a href="#demo-arbre-accessibilite">$</a> Démo</h4>
+<div class="demo">
+    <a href="#" aria-label="Météo : nuage et pluie">
+        <span class="text">Météo :</span>
+        <span class="fas fa-cloud-rain" aria-hidden="true" title="nuage et pluie"></span>
+    </a>
+</div>
+
+<hr>
+
+<h4>Code</h4>
+<pre><code>&lt;a href=&quot;#&quot;&gt;
+    &lt;span class=&quot;text&quot;&gt;M&eacute;t&eacute;o :&lt;/span&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;nuage et pluie&lt;/span&gt;
+    &lt;span class=&quot;fas fa-cloud-rain&quot; aria-hidden=&quot;true&quot; title=&quot;nuage et pluie&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+<h4 id="demo-arbre-accessibilite2"><a href="#demo-arbre-accessibilite2">$</a> Démo</h4>
+<div class="demo">
+    <a href="#">
+        <span class="text">Météo :</span>
+        <span class="sr-only">nuage et pluie</span>
+        <span class="fas fa-cloud-rain" aria-hidden="true" title="nuage et pluie"></span>
+    </a>
+</div>
+
 
 <h3 id="lien-hors-contexte"><a href="#lien-hors-contexte">$</a> Lien hors contexte</h3>
 <h4>Code</h4>
@@ -196,6 +234,7 @@
     <a href="liens.html" aria-hidden="true" tabindex="-1">En savoir plus</a>
 </div>
 
+<!-- Formualires -->
 <h2>Formulaires</h2>
 
 <h3 id="champ-obligatoire"><a href="#champ-obligatoire">$</a> Champ obligatoire</h3>

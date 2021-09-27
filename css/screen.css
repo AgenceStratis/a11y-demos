@@ -44,11 +44,16 @@ html {
 .menu > li {
     display: inline-block;
     vertical-align: middle;
+    margin: 0 10px;
 }
 .menu > li.active a {
     color: black;
 }
+.menu:not(.-bad) > li.active a {
+    border: 1px solid black;
+    border-radius: 5px;
+}
 .menu a {
     display: block;
-    padding: 20px;
+    padding: 10px;
 }

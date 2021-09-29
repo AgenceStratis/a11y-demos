@@ -11,10 +11,13 @@
     <link rel="stylesheet" href="css/screen.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="css/all.min.css">
+    <!-- Modal -->
+    <link rel="stylesheet" href="css/modal.css">
     <!-- highlight -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 </head>
 <body>
 <h1>Démonstrations en accessibilité</h1>
@@ -337,6 +340,25 @@
         <option value="https://www.amazon.com">Amazon</option>
     </select>
     <button type="button" id="submit">Choisir mon service</button>
+</div>
+
+<h3 id="gc-modal"><a href="#gc-modal">$</a> Gabarit de conception d'une fenêtre modale</h3>
+<h4 id="demo-gc-modal"><a href="#demo-gc-modal">$</a> Démo</h4>
+<div class="demo">
+    <button type="button" aria-haspopup="dialog" data-micromodal-trigger="modal-1">Afficher la fenêtre modale ARIA</button>
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay">
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <div class="modal__content" id="modal-1-content">
+                    <button class="modal__close" data-micromodal-close>Fermer la fenêtre modale</button>
+                    <h2 class="modal__title" id="modal-1-title">Une fenêtre modale</h2>
+                    <p>Je suis une fenêtre modale.<br>
+                        <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">Lire le gabarit de conception ARIA (en)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Formulaires -->

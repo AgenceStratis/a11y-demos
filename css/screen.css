@@ -17,6 +17,10 @@ html {
     border: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .demo {
     border: 2px solid grey;
     border-radius: 5px;
@@ -95,4 +99,14 @@ html {
     display: block;
     float: left;
     margin: 0 15px 15px 0;
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
 }

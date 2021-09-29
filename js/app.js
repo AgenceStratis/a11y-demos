@@ -26,4 +26,5 @@ const noOnChangeOnSelect = () => {
 document.addEventListener("DOMContentLoaded", function() {
     onChangeOnSelect();
     noOnChangeOnSelect();
+    MicroModal.init();
 });

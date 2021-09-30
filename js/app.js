@@ -48,7 +48,6 @@ const validateEmail = (mail) => {
     const feoEmail = document.getElementById('feo-email');
 
     if (mail.value.match(mailformat)) {
-        console.log("inscription OK");
         if (errorMessageNode) {
             errorMessageNode.remove();
         }
@@ -76,10 +75,48 @@ const validateFeoForm = () => {
     }, false);
 };
 
+const validateEmail2 = (mail) => {
+    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const errorMessage = `<p id="feo-email-error2" class="error-message">Le courriel renseigné n'est pas correcte. Exemple de courriel attendu jean.dupond@gmail.com</p>`;
+    const errorMessageNode = document.getElementById('feo-email-error2');
+    const feoForm = document.getElementById('feo-form2');
+    const validationMessage = `<p id="feo-form-validation2" tabindex="-1">Vous êtes bien inscrit à notre lettre d'information, un courriel de confirmation vient de vous être envoyé.</p>`;
+    const feoWrapper = document.getElementById('feo-wrapper2');
+    const feoEmail = document.getElementById('feo-email2');
+
+    if (mail.value.match(mailformat)) {
+        if (errorMessageNode) {
+            errorMessageNode.remove();
+        }
+        feoForm.style.display = "none";
+        insertHtml(feoWrapper, validationMessage, "afterbegin");
+        const validationMessageNode = document.getElementById('feo-form-validation2');
+        //validationMessageNode.focus();
+    } else {
+        if (!errorMessageNode) {
+            //mail.setAttribute("aria-describedby", "feo-email-error2");
+            insertHtml(mail, errorMessage, "afterend");
+            //feoEmail.setAttribute("aria-invalid", "true");
+        }
+        //mail.focus();
+    }
+};
+
+const validateFeoForm2 = () => {
+    const button = document.getElementById('feo-button2');
+    const inputEmail = document.getElementById('feo-email2');
+
+    button.addEventListener('click', function (event) {
+        event.preventDefault();
+        validateEmail2(inputEmail);
+    }, false);
+};
+
 document.addEventListener("DOMContentLoaded", function() {
     onChangeOnSelect();
     noOnChangeOnSelect();
     ccvaeu();
     validateFeoForm();
+    validateFeoForm2();
     MicroModal.init();
 });

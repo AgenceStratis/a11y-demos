@@ -21,6 +21,24 @@ html {
     display: none;
 }
 
+button, a.button, span[tabindex] {
+    border: 1px solid #8451a1;
+    background: white;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+button:hover,
+button:focus,
+a.button:hover,
+a.button:focus,
+span[tabindex]:hover,
+span[tabindex]:focus {
+    background: #8451a1;
+    color: white;
+}
+
 .demo {
     border: 2px solid grey;
     border-radius: 5px;
@@ -73,7 +91,7 @@ html {
     z-index: 1;
 }
 
-.menu > li {
+.menu > li, .menu > span {
     display: inline-block;
     vertical-align: middle;
     margin: 0 10px;
@@ -81,12 +99,16 @@ html {
 .menu > li.active a {
     color: black;
 }
-.menu:not(.-bad) > li.active a {
+.menu:not(.-bad) > li.active a, .menu > span {
     border: 1px solid black;
     border-radius: 5px;
 }
 .menu a {
     display: block;
+    padding: 10px;
+}
+
+.menu > span {
     padding: 10px;
 }
 
@@ -109,4 +131,21 @@ html {
 
 .modal.is-open {
     display: block;
+}
+
+/* Ce contenu vous a t-il été utile */
+#ccvaeu-text {
+    display: none;
+}
+.ccvaeu-wrap {
+    border: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.ccvaeu-wrap legend {
+    font-weight: bold;
+}
+.ccvaeu-field-wrap {
+    display: inline-block;
+    vertical-align: middle;
 }

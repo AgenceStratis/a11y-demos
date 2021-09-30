@@ -23,8 +23,20 @@ const noOnChangeOnSelect = () => {
     }
 };
 
+const ccvaeu = () => {
+    const button = document.getElementById('ccvaeu-button');
+    const text = document.getElementById('ccvaeu-text');
+    const form = document.getElementById('ccvaeu-form');
+    button.addEventListener('click', function () {
+        text.style.display = "block";
+        form.style.display = "none";
+        text.focus();
+    }, false);
+};
+
 document.addEventListener("DOMContentLoaded", function() {
     onChangeOnSelect();
     noOnChangeOnSelect();
+    ccvaeu();
     MicroModal.init();
 });

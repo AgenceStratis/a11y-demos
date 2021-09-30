@@ -25,13 +25,12 @@
 <!-- Images -->
 <h2>Images</h2>
 
-<h3 id="legende-image"><a href="#legende-image">$</a> Légende d'image avec le couple &lt;figure&gt;, &lt;figcaption&gt;</h3>
-<h4>Code</h4>
+<h3 id="legende-image"><a href="#legende-image">§</a> Légende d'image avec le couple &lt;figure&gt;, &lt;figcaption&gt;</h3>
 <pre><code>&lt;figure role=&quot;figure&quot; aria-label=&quot;Copyright 2016 auteur&quot;&gt;
     &lt;img alt=&quot;alternative de l&rsquo;image&quot; src=&quot;https://picsum.photos/200/300&quot;/&gt;
     &lt;figcaption&gt;Copyright 2016 auteur&lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
-<h4 id="demo-legende-image"><a href="#demo-legende-image">$</a> Démo</h4>
+<p id="demo-legende-image"><a href="#demo-legende-image">§</a></p>
 <div class="demo">
     <figure role="figure" aria-label="Copyright 2016 auteur">
         <img alt="alternative de l’image" src="https://picsum.photos/200/300"/>
@@ -41,14 +40,13 @@
 
 <hr>
 
-<h3 id="legende-image-aria-labelledby"><a href="#legende-image-aria-labelledby">$</a> Légende d'image avec le role figure et l'attribut aria-labelledby</h3>
+<h3 id="legende-image-aria-labelledby"><a href="#legende-image-aria-labelledby">§</a> Légende d'image avec le role figure et l'attribut aria-labelledby</h3>
 <p>Cette implémentation n'est pas conforme à l'accessibilité car le support dans les agents utilisateurs n'est pas suffisant.</p>
-<h4>Code</h4>
 <pre><code>&lt;div role=&quot;figure&quot; aria-labelledby=&quot;caption&quot;&gt;
   &lt;img src=&quot;image.png&quot; alt=&quot;alternative de l&rsquo;image&quot;&gt;
   &lt;p id=&quot;caption&quot;&gt;Copyright 2016 auteur &lt;/p&gt;
 &lt;/div&gt;</code></pre>
-<h4 id="demo-legende-image-aria-labelledby"><a href="#demo-legende-image-aria-labelledby">$</a> Démo</h4>
+<p id="demo-legende-image-aria-labelledby"><a href="#demo-legende-image-aria-labelledby">§</a></p>
 <div class="demo">
     <div role="figure" aria-labelledby="caption">
         <img src="https://picsum.photos/200/300" alt="alternative de l’image">
@@ -59,16 +57,15 @@
 <!-- Couleurs -->
 <h2>Couleurs</h2>
 
-<h3 id="menu-item-active-bad"><a href="#menu-item-active-bad">$</a> Information donnée uniquement par la couleur dans un menu</h3>
+<h3 id="menu-item-active-bad"><a href="#menu-item-active-bad">§</a> Information donnée uniquement par la couleur dans un menu</h3>
 <h4>Mauvaise pratique</h4>
-<h5>Code</h5>
 <pre><code>&lt;ul class=&quot;menu&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Actualit&eacute;s&lt;/a&gt;&lt;/li&gt;
     &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Le minist&egrave;re&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vos questions&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contactez nous&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-<h5 id="demo-menu-item-active-bad"><a href="#demo-menu-item-active-bad">$</a> Démo</h5>
+<p id="demo-menu-item-active-bad"><a href="#demo-menu-item-active-bad">§</a></p>
 <div class="demo">
     <ul class="menu -bad">
         <li><a href="#">Actualités</a></li>
@@ -79,15 +76,13 @@
 </div>
 
 <h4>Bonnes pratiques</h4>
-
-<h5>Code 1</h5>
 <pre><code>&lt;ul class=&quot;menu&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Actualit&eacute;s&lt;/a&gt;&lt;/li&gt;
     &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;Le minist&egrave;re, rubrique active&quot;&gt;Le minist&egrave;re&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vos questions&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contactez nous&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-<h5 id="demo-menu-item-active1"><a href="#demo-menu-item-active1">$</a> Démo 1</h5>
+<p id="demo-menu-item-active1"><a href="#demo-menu-item-active1">§</a></p>
 <div class="demo">
     <ul class="menu">
         <li><a href="#">Actualités</a></li>
@@ -99,51 +94,47 @@
 
 <hr>
 
-<h5>Code 2</h5>
 <pre><code>&lt;ul class=&quot;menu&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Actualit&eacute;s&lt;/a&gt;&lt;/li&gt;
     &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot; aria-current=&quot;page&quot;&gt;Le minist&egrave;re&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vos questions&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contactez nous&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
-<h5 id="demo-menu-item-active2"><a href="#demo-menu-item-active2">$</a> Démo 2</h5>
+<p id="demo-menu-item-active2"><a href="#demo-menu-item-active2">§</a></p>
 <div class="demo">
-<ul class="menu">
-    <li><a href="#">Actualités</a></li>
-    <li class="active"><a href="#" aria-current="page">Le ministère</a></li>
-    <li><a href="#">Vos questions</a></li>
-    <li><a href="#">Contactez nous</a></li>
-</ul>
+    <ul class="menu">
+        <li><a href="#">Actualités</a></li>
+        <li class="active"><a href="#" aria-current="page">Le ministère</a></li>
+        <li><a href="#">Vos questions</a></li>
+        <li><a href="#">Contactez nous</a></li>
+    </ul>
 </div>
 
 <!-- Les liens -->
 <h2>Les liens</h2>
 
-<h3 id="nom-accessible-lien"><a href="#nom-accessible-lien">$</a> Nom accessible d'un lien</h3>
-<h4>Mauvais exemple</h4>
-<h5>Code</h5>
+<h3 id="nom-accessible-lien"><a href="#nom-accessible-lien">§</a> Nom accessible d'un lien</h3>
+<h4>Mauvaise pratique</h4>
 <pre><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
-<h5 id="demo-nom-accessible-lien"><a href="#demo-nom-accessible-lien">$</a> Démo</h5>
+<p id="demo-nom-accessible-lien"><a href="#demo-nom-accessible-lien">§</a></p>
 <div class="demo">
     <a href="actualites.html" target="_blank" aria-label="Nouvelle fenêtre">Toutes les actualités</a>
 </div>
 
-<h4>Bon exemple</h4>
+<h4>Bonne pratique</h4>
 
-<h5>Code</h5>
 <pre><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Toutes les actualit&eacute;s, nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
-<h5 id="demo-nom-accessible-lien2"><a href="#demo-nom-accessible-lien2">$</a> Démo</h5>
+<p id="demo-nom-accessible-lien2"><a href="#demo-nom-accessible-lien2">§</a></p>
 <div class="demo">
     <a href="actualites.html" target="_blank" aria-label="Toutes les actualités, nouvelle fenêtre">Toutes les actualités</a>
 </div>
 
-<h3 id="arbre-accessibilite"><a href="#arbre-accessibilite">$</a> L'arbre d'accessibilité</h3>
-<h4>Code</h4>
+<h3 id="arbre-accessibilite"><a href="#arbre-accessibilite">§</a> L'arbre d'accessibilité</h3>
 <pre><code>&lt;a href=&quot;#&quot; aria-label=&quot;M&eacute;t&eacute;o nuage et pluie&quot;&gt;
     &lt;span class=&quot;text&quot;&gt;M&eacute;t&eacute;o :&lt;/span&gt;
     &lt;span class=&quot;fas fa-cloud-rain&quot; aria-hidden=&quot;true&quot; title=&quot;nuage et pluie&quot;&gt;&lt;/span&gt;
 &lt;/a&gt;</code></pre>
-<h4 id="demo-arbre-accessibilite"><a href="#demo-arbre-accessibilite">$</a> Démo</h4>
+<p id="demo-arbre-accessibilite"><a href="#demo-arbre-accessibilite">§</a></p>
 <div class="demo">
     <a href="#" aria-label="Météo : nuage et pluie">
         <span class="text">Météo :</span>
@@ -153,13 +144,12 @@
 
 <hr>
 
-<h4>Code</h4>
 <pre><code>&lt;a href=&quot;#&quot;&gt;
     &lt;span class=&quot;text&quot;&gt;M&eacute;t&eacute;o :&lt;/span&gt;
     &lt;span class=&quot;sr-only&quot;&gt;nuage et pluie&lt;/span&gt;
     &lt;span class=&quot;fas fa-cloud-rain&quot; aria-hidden=&quot;true&quot; title=&quot;nuage et pluie&quot;&gt;&lt;/span&gt;
 &lt;/a&gt;</code></pre>
-<h4 id="demo-arbre-accessibilite2"><a href="#demo-arbre-accessibilite2">$</a> Démo</h4>
+<p id="demo-arbre-accessibilite2"><a href="#demo-arbre-accessibilite2">§</a></p>
 <div class="demo">
     <a href="#">
         <span class="text">Météo :</span>
@@ -169,43 +159,40 @@
 </div>
 
 
-<h3 id="lien-image"><a href="#lien-image">$</a> Un lien image</h3>
+<h3 id="lien-image"><a href="#lien-image">§</a> Un lien image</h3>
 <p>Contexte : Nous sommes sur le logo du site de paris.fr qui envoie vers la page d'accueil.</p>
-<h4>Code</h4>
 <pre><code>&lt;a href=&quot;https://www.paris.fr/&quot;&gt;
     &lt;img src=&quot;images/parisfr.svg&quot; alt=&quot;Paris, retour &agrave; l&apos;accueil&quot; class=&quot;img-small&quot;&gt;
 &lt;/a&gt;</code></pre>
-<h4 id="demo-lien-image"><a href="#demo-lien-image">$</a> Démo</h4>
+<p id="demo-lien-image"><a href="#demo-lien-image">§</a></p>
 <div class="demo">
-<a href="https://www.paris.fr/">
-    <img src="images/parisfr.svg" alt="Paris, retour à l'accueil" title="Paris, retour à l'accueil" class="img-small">
-</a>
+    <a href="https://www.paris.fr/">
+        <img src="images/parisfr.svg" alt="Paris, retour à l'accueil" title="Paris, retour à l'accueil" class="img-small">
+    </a>
 </div>
 
 
-<h3 id="lien-composite"><a href="#lien-composite">$</a> Un lien composite</h3>
-<h4>Code</h4>
+<h3 id="lien-composite"><a href="#lien-composite">§</a> Un lien composite</h3>
 <pre><code>&lt;a href=&quot;https://www.paris.fr/&quot;&gt;
     &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot; class=&quot;img-left&quot;&gt;
     &lt;h2&gt;Ouverture d&rsquo;un espace lecture au patronage la&iuml;que de Recouvrance&lt;/h2&gt;
     &lt;p&gt;Mercredi 22 septembre, la Bulle de mots, nouvel espace de lecture, a &eacute;t&eacute; inaugur&eacute; au patronage la&iuml;que de Recouvrance en pr&eacute;sence de l&apos;&eacute;quipe, des enfants du centre de loisirs, des membres de la m&eacute;diath&egrave;que des Capucins et des &eacute;lus.&lt;/p&gt;
 &lt;/a&gt;</code></pre>
-<h4 id="demo-lien-composite"><a href="#demo-lien-composite">$</a> Démo</h4>
+<p id="demo-lien-composite"><a href="#demo-lien-composite">§</a></p>
 <div class="demo -composite">
-<a href="https://www.paris.fr/">
-    <img src="https://picsum.photos/200/200" alt="" class="img-left">
-    <h2>Ouverture d’un espace lecture au patronage laïque de Recouvrance</h2>
-    <p>Mercredi 22 septembre, la Bulle de mots, nouvel espace de lecture, a été inauguré au patronage laïque de Recouvrance en présence de l'équipe, des enfants du centre de loisirs, des membres de la médiathèque des Capucins et des élus.</p>
-</a>
+    <a href="https://www.paris.fr/">
+        <img src="https://picsum.photos/200/200" alt="" class="img-left">
+        <h2>Ouverture d’un espace lecture au patronage laïque de Recouvrance</h2>
+        <p>Mercredi 22 septembre, la Bulle de mots, nouvel espace de lecture, a été inauguré au patronage laïque de Recouvrance en présence de l'équipe, des enfants du centre de loisirs, des membres de la médiathèque des Capucins et des élus.</p>
+    </a>
 </div>
 
 <hr>
 
-<h4>Code</h4>
 <pre><code>&lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot; class=&quot;img-left&quot;&gt;
 &lt;h2&gt;&lt;a href=&quot;https://www.paris.fr/&quot; class=&quot;composite-link&quot;&gt;Ouverture d&rsquo;un espace lecture au patronage la&iuml;que de Recouvrance&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Mercredi 22 septembre, la Bulle de mots, nouvel espace de lecture, a &eacute;t&eacute; inaugur&eacute; au patronage la&iuml;que de Recouvrance en pr&eacute;sence de l&apos;&eacute;quipe, des enfants du centre de loisirs, des membres de la m&eacute;diath&egrave;que des Capucins et des &eacute;lus.&lt;/p&gt;</code></pre>
-<h4 id="demo-lien-composite2"><a href="#demo-lien-composite2">$</a> Démo</h4>
+<p id="demo-lien-composite2"><a href="#demo-lien-composite2">§</a></p>
 <div class="demo -composite composite-link-wrapper">
     <img src="https://picsum.photos/200/200" alt="" class="img-left">
     <h2><a href="https://www.paris.fr/" class="composite-link">Ouverture d’un espace lecture au patronage laïque de Recouvrance</a></h2>
@@ -213,12 +200,11 @@
 </div>
 
 
-<h3 id="lien-hors-contexte"><a href="#lien-hors-contexte">$</a> Lien hors contexte</h3>
-<h4>Code</h4>
+<h3 id="lien-hors-contexte"><a href="#lien-hors-contexte">§</a> Lien hors contexte</h3>
 <pre><code>&lt;h2&gt;Des liens explicites&lt;/h2&gt;
 &lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;liens.html&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
-<h4 id="demo-lien-hors-contexte"><a href="#demo-lien-hors-contexte">$</a> Démo</h4>
+<p id="demo-lien-hors-contexte"><a href="#demo-lien-hors-contexte">§</a></p>
 <div class="demo">
     <h2>Des liens explicites</h2>
     <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
@@ -227,12 +213,11 @@
 
 <hr>
 
-<h3 id="lien-hors-contexte-aria-describedby"><a href="#lien-hors-contexte-aria-describedby">$</a> Lien hors contexte avec l'attribut aria-describedby</h3>
-<h4>Code</h4>
+<h3 id="lien-hors-contexte-aria-describedby"><a href="#lien-hors-contexte-aria-describedby">§</a> Lien hors contexte avec l'attribut aria-describedby</h3>
 <pre><code>&lt;h2 id=&quot;liens-explicites&quot;&gt;Des liens explicites&lt;/h2&gt;
 &lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;liens.html&quot; aria-describedby=&quot;liens-explicites&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
-<h4 id="demo-lien-hors-contexte-aria-describedby"><a href="#demo-lien-hors-contexte-aria-describedby">$</a> Démo</h4>
+<p id="demo-lien-hors-contexte-aria-describedby"><a href="#demo-lien-hors-contexte-aria-describedby">§</a></p>
 <div class="demo">
     <h2 id="liens-explicites">Des liens explicites</h2>
     <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
@@ -241,12 +226,11 @@
 
 <hr>
 
-<h3 id="lien-hors-contexte-aria-label"><a href="#lien-hors-contexte-aria-label">$</a> Lien hors contexte avec l'attribut aria-label</h3>
-<h4>Code</h4>
+<h3 id="lien-hors-contexte-aria-label"><a href="#lien-hors-contexte-aria-label">§</a> Lien hors contexte avec l'attribut aria-label</h3>
 <pre><code>&lt;h2&gt;Des liens explicites&lt;/h2&gt;
 &lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;liens.html&quot; aria-label=&quot;En savoir plus sur les liens explicites&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
-<h4 id="demo-lien-hors-contexte-aria-label"><a href="#demo-lien-hors-contexte-aria-label">$</a> Démo</h4>
+<p id="demo-lien-hors-contexte-aria-label"><a href="#demo-lien-hors-contexte-aria-label">§</a></p>
 <div class="demo">
     <h2>Des liens explicites</h2>
     <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
@@ -255,12 +239,11 @@
 
 <hr>
 
-<h3 id="lien-hors-contexte-title"><a href="#lien-hors-contexte-title">$</a> Lien hors contexte avec l'attribut title</h3>
-<h4>Code</h4>
+<h3 id="lien-hors-contexte-title"><a href="#lien-hors-contexte-title">§</a> Lien hors contexte avec l'attribut title</h3>
 <pre><code>&lt;h2&gt;Des liens explicites&lt;/h2&gt;
 &lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;liens.html&quot; title=&quot;En savoir plus sur les liens explicites&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
-<h4 id="demo-lien-hors-contexte-title"><a href="#demo-lien-hors-contexte-title">$</a> Démo</h4>
+<p id="demo-lien-hors-contexte-title"><a href="#demo-lien-hors-contexte-title">§</a></p>
 <div class="demo">
     <h2>Des liens explicites</h2>
     <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
@@ -269,12 +252,11 @@
 
 <hr>
 
-<h3 id="lien-contextualise"><a href="#lien-contextualise">$</a> Lien contextualisé élargie en CSS</h3>
-<h4>Code</h4>
+<h3 id="lien-contextualise"><a href="#lien-contextualise">§</a> Lien contextualisé élargie en CSS</h3>
 <pre><code>&lt;h2&gt;&lt;a href=&quot;liens.html&quot;&gt;Des liens explicites&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Pour qu&rsquo;un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l&rsquo;objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;liens.html&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
-<h4 id="demo-lien-contextualise"><a href="#demo-lien-contextualise">$</a> Démo</h4>
+<p id="demo-lien-contextualise"><a href="#demo-lien-contextualise">§</a></p>
 <div class="demo composite-link-wrapper">
     <h2><a href="liens.html" class="composite-link">Des liens explicites</a></h2>
     <p>Pour qu’un lien soit explicite, il est nécessaire de fournir un intitulé de lien qui identifie l’objectif du lien, la fonction et la destination.</p>
@@ -283,13 +265,12 @@
 
 <hr>
 
-<h3 id="visibilite-liens"><a href="#visibilite-liens">$</a> Visibilité des liens</h3>
+<h3 id="visibilite-liens"><a href="#visibilite-liens">§</a> Visibilité des liens</h3>
 <h4>Mauvaise pratique</h4>
-<h5>Code</h5>
 <pre><code>&lt;blockquote&gt;
     &lt;p&gt;L&rsquo;accessibilit&eacute; du Web signifie que les &lt;a href=&quot;#&quot;&gt;personnes en situation de handicap&lt;/a&gt; peuvent utiliser le Web. Plus pr&eacute;cis&eacute;ment, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.&lt;/p&gt;
 &lt;/blockquote&gt;</code></pre>
-<h5 id="demo-visibilite-liens"><a href="#demo-visibilite-liens">$</a> Démo</h5>
+<p id="demo-visibilite-liens"><a href="#demo-visibilite-liens">§</a></p>
 <div class="demo -visibilite-lien">
     <blockquote>
         <p>L’accessibilité du Web signifie que les <a href="#">personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu’elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu’elles peuvent contribuer sur le Web.</p>
@@ -297,12 +278,11 @@
 </div>
 <p>Ratio de contraste insuffisant entre le lien en violet et le texte gris de 1.2:1.</p>
 
-<h4>Bonne pratique</h4>
-<h5>Code</h5>
+<h4>Bonnes pratiques</h4>
 <pre><code>&lt;blockquote&gt;
     &lt;p&gt;L&rsquo;accessibilit&eacute; du Web signifie que les &lt;a href=&quot;#&quot;&gt;personnes en situation de handicap&lt;/a&gt; peuvent utiliser le Web. Plus pr&eacute;cis&eacute;ment, qu&rsquo;elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu&rsquo;elles peuvent contribuer sur le Web.&lt;/p&gt;
 &lt;/blockquote&gt;</code></pre>
-<h5 id="demo-visibilite-liens2"><a href="#demo-visibilite-liens2">$</a> Démo</h5>
+<p id="demo-visibilite-liens2"><a href="#demo-visibilite-liens2">§</a></p>
 <div class="demo">
     <blockquote>
         <p>L’accessibilité du Web signifie que les <a href="#">personnes en situation de handicap</a> peuvent utiliser le Web. Plus précisément, qu’elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu’elles peuvent contribuer sur le Web.</p>
@@ -316,9 +296,9 @@
 
 <!-- Scripts -->
 <h2>Scripts</h2>
-<h3 id="selection-sans-bouton"><a href="#selection-sans-bouton">$</a> Sélection d'éléments</h3>
+<h3 id="selection-sans-bouton"><a href="#selection-sans-bouton">§</a> Sélection d'éléments</h3>
 <h4>Mauvais pratique</h4>
-<h5 id="demo-selection-sans-bouton"><a href="#demo-selection-sans-bouton">$</a> Démo</h5>
+<p id="demo-selection-sans-bouton"><a href="#demo-selection-sans-bouton">§</a></p>
 <div class="demo">
     <label for="select">Votre service préféré</label>
     <select name="select" id="select">
@@ -330,7 +310,7 @@
 </div>
 
 <h4>Bonne pratique</h4>
-<h5 id="demo-selection-avec-bouton"><a href="#demo-selection-avec-bouton">$</a> Démo</h5>
+<p id="demo-selection-avec-bouton"><a href="#demo-selection-avec-bouton">§</a></p>
 <div class="demo">
     <label for="select2">Votre service préféré</label>
     <select name="select2" id="select2">
@@ -342,8 +322,8 @@
     <button type="button" id="submit">Choisir mon service</button>
 </div>
 
-<h3 id="gc-modal"><a href="#gc-modal">$</a> Gabarit de conception d'une fenêtre modale</h3>
-<h4 id="demo-gc-modal"><a href="#demo-gc-modal">$</a> Démo</h4>
+<h3 id="gc-modal"><a href="#gc-modal">§</a> Gabarit de conception d'une fenêtre modale</h3>
+<p id="demo-gc-modal"><a href="#demo-gc-modal">§</a></p>
 <div class="demo">
     <button type="button" aria-haspopup="dialog" data-micromodal-trigger="modal-1">Afficher la fenêtre modale ARIA</button>
     <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
@@ -361,16 +341,74 @@
     </div>
 </div>
 
+<h3 id="tabindex"><a href="#tabindex">§</a> Tabindex</h3>
+<h4 id="demo-tabindex-positive"><a href="#demo-tabindex-positive">§</a> Valeur positive</h4>
+<pre><code>&lt;div class=&quot;menu&quot;&gt;
+    &lt;span tabindex=&quot;3&quot;&gt;3&lt;/span&gt;
+    &lt;span tabindex=&quot;1&quot;&gt;1&lt;/span&gt;
+    &lt;span tabindex=&quot;4&quot;&gt;4&lt;/span&gt;
+    &lt;span tabindex=&quot;2&quot;&gt;2&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+<div class="demo">
+    <div class="menu">
+        <span tabindex="3">3</span>
+        <span tabindex="1">1</span>
+        <span tabindex="4">4</span>
+        <span tabindex="2">2</span>
+    </div>
+</div>
+<hr>
+<h4 id="demo-tabindex-zero"><a href="#demo-tabindex-zero">§</a> Valeur à 0</h4>
+<pre><code>&lt;div class=&quot;menu&quot;&gt;
+    &lt;span tabindex=&quot;3&quot;&gt;3&lt;/span&gt;
+    &lt;span tabindex=&quot;1&quot;&gt;1&lt;/span&gt;
+    &lt;span tabindex=&quot;4&quot;&gt;4&lt;/span&gt;
+    &lt;span tabindex=&quot;2&quot;&gt;2&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+<div class="demo">
+    <div class="menu">
+        <span tabindex="0">1</span>
+        <span tabindex="0">2</span>
+        <span tabindex="0">3</span>
+        <span tabindex="0">4</span>
+    </div>
+</div>
+<hr>
+<h4 id="demo-tabindex-negative"><a href="#demo-tabindex-negative">§</a> Valeur à -1</h4>
+<pre><code>&lt;div class=&quot;menu&quot;&gt;
+    &lt;span tabindex=&quot;3&quot;&gt;3&lt;/span&gt;
+    &lt;span tabindex=&quot;1&quot;&gt;1&lt;/span&gt;
+    &lt;span tabindex=&quot;4&quot;&gt;4&lt;/span&gt;
+    &lt;span tabindex=&quot;2&quot;&gt;2&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+<div class="demo">
+    <div class="ccvaeu">
+        <p id="ccvaeu-text" tabindex="-1">Merci pour votre participation !</p>
+        <div id="ccvaeu-form">
+            <fieldset class="ccvaeu-wrap">
+                <legend>Ce contenu vous a t-il été utile ?</legend>
+                <div class="ccvaeu-field-wrap">
+                    <input type="radio" name="ccvaeu-choice" id="ccvaeu-yes" value="1">
+                    <label for="ccvaeu-yes">Oui</label>
+                </div>
+                <div class="ccvaeu-field-wrap">
+                    <input type="radio" name="ccvaeu-choice" id="ccvaeu-no" value="0">
+                    <label for="ccvaeu-no">Non</label>
+                </div>
+            </fieldset>
+            <button type="button" id="ccvaeu-button">Donner mon avis</button>
+        </div>
+    </div>
+</div>
+
 <!-- Formulaires -->
 <h2>Formulaires</h2>
 
-<h3 id="champ-obligatoire"><a href="#champ-obligatoire">$</a> Champ obligatoire</h3>
+<h3 id="champ-obligatoire"><a href="#champ-obligatoire">§</a> Champ obligatoire</h3>
 <h4>Mauvaise pratique</h4>
-<h5>Code</h5>
-
 <pre><code>&lt;label for=&quot;edit-nom2&quot;&gt;Nom &lt;em&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
 &lt;input type=&quot;text&quot; id=&quot;edit-nom2&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
-<h5 id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">$</a> Démo</h5>
+<p id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">§</a></p>
 <div class="demo">
     <label for="edit-nom2">
         Nom <em>(obligatoire)</em>
@@ -379,19 +417,15 @@
 </div>
 
 <h4>Bonne pratique</h4>
-<h5>Code</h5>
-
 <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
 &lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
-<h5 id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">$</a> Démo</h5>
-
+<p id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">§</a></p>
 <div class="demo">
     <label for="edit-nom">
         Nom <em aria-hidden="true">(obligatoire)</em>
     </label>
     <input type="text" id="edit-nom" autocomplete="given-name" required>
 </div>
-
 
 <script src="js/app.js"></script>
 </body>

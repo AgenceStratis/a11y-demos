@@ -39,6 +39,10 @@ span[tabindex]:focus {
     color: white;
 }
 
+label {
+    cursor: pointer;
+}
+
 .demo {
     border: 2px solid grey;
     border-radius: 5px;
@@ -148,4 +152,21 @@ span[tabindex]:focus {
 .ccvaeu-field-wrap {
     display: inline-block;
     vertical-align: middle;
+}
+
+/* Form */
+
+.field-wrap {
+    margin: 10px 0;
+}
+
+.field-wrap label {
+    display: block;
+}
+.required-mention {
+    color: #BE0000;
+}
+.error-message {
+    color: #BE0000;
+    margin: 0;
 }

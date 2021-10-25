@@ -82,7 +82,7 @@ const validateEmail2 = (mail) => {
     const feoForm = document.getElementById('feo-form2');
     const validationMessage = `<p id="feo-form-validation2" tabindex="-1">Vous êtes bien inscrit à notre lettre d'information, un courriel de confirmation vient de vous être envoyé.</p>`;
     const feoWrapper = document.getElementById('feo-wrapper2');
-    const feoEmail = document.getElementById('feo-email2');
+    //const feoEmail = document.getElementById('feo-email2');
 
     if (mail.value.match(mailformat)) {
         if (errorMessageNode) {
@@ -112,6 +112,38 @@ const validateFeoForm2 = () => {
     }, false);
 };
 
+let timer;
+
+const reloadAriaLive = () => {
+    const button = document.getElementById('zl-reload');
+    const canal = document.getElementById('canal');
+
+    button.addEventListener('click', function () {
+        clearTimeout(timer);
+        canal.innerHTML='';
+        ariaLIve(0);
+    }, false);
+}
+
+const ariaLIve = (i) => {
+    const messagesArray = ["<p>Laura : Bonjour à tous.</p>","<p>Nicolas : Bonjour !</p>","<p>Laura : Question bête, comment fonctionne l'attribut aria-live ?</p>","<p>Nicolas : Voyons Laura, il n'y a pas de questions bêtes ici.</p>"];
+    const canal = document.getElementById('canal');
+
+    function myLoop() {
+        timer = setTimeout(() => {
+            insertHtml(canal, messagesArray[i], "beforeend");
+            i++;
+            if (i < messagesArray.length) {
+                myLoop();
+            }
+        }, Math.floor(Math.random() * 6000));
+    }
+
+    myLoop();
+};
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     onChangeOnSelect();
     noOnChangeOnSelect();
@@ -119,4 +151,5 @@ document.addEventListener("DOMContentLoaded", function() {
     validateFeoForm();
     validateFeoForm2();
     MicroModal.init();
+    reloadAriaLive();
 });

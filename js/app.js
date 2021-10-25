@@ -142,6 +142,27 @@ const ariaLIve = (i) => {
     myLoop();
 };
 
+const liveRegionAtomic = (p, bp, bn) => {
+    const paragraphe = document.getElementById(p);
+    const buttonPrev = document.getElementById(bp);
+    const buttonNext = document.getElementById(bn);
+
+    buttonNext.addEventListener('click', function () {
+        if (!this.hasAttribute("disabled")) {
+            paragraphe.textContent = "21 à 40";
+            buttonNext.setAttribute("disabled", "");
+            buttonPrev.removeAttribute("disabled");
+        }
+    }, false);
+
+    buttonPrev.addEventListener('click', function () {
+        if (!this.hasAttribute("disabled")) {
+            paragraphe.textContent = "1 à 20";
+            buttonNext.removeAttribute("disabled");
+            buttonPrev.setAttribute("disabled", "");
+        }
+    }, false);
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -152,4 +173,6 @@ document.addEventListener("DOMContentLoaded", function() {
     validateFeoForm2();
     MicroModal.init();
     reloadAriaLive();
+    liveRegionAtomic("live-region-atomic", "live-region-atomic-prev", "live-region-atomic-next");
+    liveRegionAtomic("live-region-atomic2", "live-region-atomic-prev2", "live-region-atomic-next2");
 });

@@ -39,6 +39,17 @@ span[tabindex]:focus {
     color: white;
 }
 
+button:disabled {
+    border: 1px solid grey;
+}
+
+button:disabled:hover,
+button:disabled:focus {
+    background: none;
+    color: grey;
+    cursor: inherit;
+}
+
 label {
     cursor: pointer;
 }

@@ -114,20 +114,20 @@ const validateFeoForm2 = () => {
 
 let timer;
 
-const reloadAriaLive = () => {
-    const button = document.getElementById('zl-reload');
-    const canal = document.getElementById('canal');
+const reloadAriaLive = (btn, area) => {
+    const button = document.getElementById(btn);
+    const canal = document.getElementById(area);
 
     button.addEventListener('click', function () {
         clearTimeout(timer);
         canal.innerHTML='';
-        ariaLIve(0);
+        ariaLIve(0, area);
     }, false);
 };
 
-const ariaLIve = (i) => {
-    const messagesArray = ["<p>Laura : Bonjour à tous.</p>","<p>Nicolas : Bonjour !</p>","<p>Laura : Question bête, comment fonctionne l'attribut aria-live ?</p>","<p>Nicolas : Voyons Laura, il n'y a pas de questions bêtes ici.</p>"];
-    const canal = document.getElementById('canal');
+const ariaLIve = (i, area) => {
+    const messagesArray = ["<p>Laura : Bonjour à tous.</p>","<p>Nicolas : Bonjour !</p>","<p>Laura : Question bête, comment fonctionne une zone live ?</p>","<p>Nicolas : Voyons Laura, il n'y a pas de questions bêtes ici.</p>"];
+    const canal = document.getElementById(area);
 
     function myLoop() {
         timer = setTimeout(() => {
@@ -181,9 +181,10 @@ document.addEventListener("DOMContentLoaded", function() {
     validateFeoForm();
     validateFeoForm2();
     MicroModal.init();
-    reloadAriaLive();
+    reloadAriaLive('zl-reload', 'canal');
     liveRegionAtomic("live-region-atomic-false", "live-region-atomic-false-prev", "live-region-atomic-false-next");
     liveRegionAtomic("live-region-atomic-true", "live-region-atomic-true-prev", "live-region-atomic-true-next");
     liveRegionAtomic("live-region-status", "live-region-status-prev", "live-region-status-next");
     liveRegionAlert();
+    reloadAriaLive('zl-reload-log', 'canal-log');
 });

@@ -173,6 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
     validateFeoForm2();
     MicroModal.init();
     reloadAriaLive();
-    liveRegionAtomic("live-region-atomic", "live-region-atomic-prev", "live-region-atomic-next");
-    liveRegionAtomic("live-region-atomic2", "live-region-atomic-prev2", "live-region-atomic-next2");
+    liveRegionAtomic("live-region-atomic-false", "live-region-atomic-false-prev", "live-region-atomic-false-next");
+    liveRegionAtomic("live-region-atomic-true", "live-region-atomic-true-prev", "live-region-atomic-true-next");
+    liveRegionAtomic("live-region-status", "live-region-status-prev", "live-region-status-next");
 });

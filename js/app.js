@@ -123,7 +123,7 @@ const reloadAriaLive = () => {
         canal.innerHTML='';
         ariaLIve(0);
     }, false);
-}
+};
 
 const ariaLIve = (i) => {
     const messagesArray = ["<p>Laura : Bonjour à tous.</p>","<p>Nicolas : Bonjour !</p>","<p>Laura : Question bête, comment fonctionne l'attribut aria-live ?</p>","<p>Nicolas : Voyons Laura, il n'y a pas de questions bêtes ici.</p>"];
@@ -162,7 +162,16 @@ const liveRegionAtomic = (p, bp, bn) => {
             buttonPrev.setAttribute("disabled", "");
         }
     }, false);
-}
+};
+
+const liveRegionAlert = () => {
+    const button = document.getElementById("live-region-alert-button");
+    const area = document.getElementById("live-region-alert");
+    button.addEventListener('click', function () {
+        area.style.display = "block";
+    }, false);
+
+};
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -176,4 +185,5 @@ document.addEventListener("DOMContentLoaded", function() {
     liveRegionAtomic("live-region-atomic-false", "live-region-atomic-false-prev", "live-region-atomic-false-next");
     liveRegionAtomic("live-region-atomic-true", "live-region-atomic-true-prev", "live-region-atomic-true-next");
     liveRegionAtomic("live-region-status", "live-region-status-prev", "live-region-status-next");
+    liveRegionAlert();
 });

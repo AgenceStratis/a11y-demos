@@ -42,12 +42,10 @@ const ccvaeu = () => {
 const coc = () => {
     const button = document.getElementById('coc-button');
     const text = document.getElementById('coc-text');
-    const form = document.getElementById('coc-form');
 
     button.addEventListener('click', function () {
         text.textContent = "Merci pour votre participation !";
-        //form.style.display = "none";
-        //text.focus();
+        text.style.display = "block";
     }, false);
 };
 

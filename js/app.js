@@ -173,6 +173,44 @@ const liveRegionAlert = () => {
 
 };
 
+const progressbar = () =>  {
+    const run = document.getElementById("progressbar-button");
+    const bar = document.getElementById("progressbar");
+    const percent = document.getElementById("percent");
+    const progress = document.getElementById("progress");
+
+    let value = 0;
+    let interval;
+
+    const stateProgressBar = () => {
+        bar.setAttribute("aria-valuenow", value);
+        //bar.setAttribute("aria-valuetext", value +'%');
+        progress.style.width = value + "%";
+        percent.textContent = value;
+    }
+
+    const resetProgressBar = () => {
+        value = 0;
+        stateProgressBar();
+    };
+
+    const startProgressBar = () => {
+        if (value >= 100) {
+            clearInterval(interval);
+        } else {
+            value+= 10;
+            stateProgressBar();
+        }
+    };
+
+    run.addEventListener('click', function () {
+        clearInterval(interval);
+        resetProgressBar();
+        interval = setInterval(startProgressBar, 2000);
+    }, false);
+
+};
+
 
 document.addEventListener("DOMContentLoaded", function() {
     onChangeOnSelect();
@@ -187,4 +225,5 @@ document.addEventListener("DOMContentLoaded", function() {
     liveRegionAtomic("live-region-status", "live-region-status-prev", "live-region-status-next");
     liveRegionAlert();
     reloadAriaLive('zl-reload-log', 'canal-log');
+    progressbar();
 });

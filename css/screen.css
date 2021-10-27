@@ -190,3 +190,38 @@ label {
     overflow-x: auto;
     padding: 10px;
 }
+
+/* progressbar */
+.progressbar-button, #progressbar {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.progressbar {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #460561;
+    border-radius: 2px;
+    background: #D9B4E8;
+    width: 200px;
+    min-height: 28px;
+    text-align: center;
+    color: #460561;
+    position: relative;
+}
+
+.progress {
+    background: #460561;
+    min-height: 28px;
+    width: 0;
+    transition: width ease 0.5s;
+}
+
+.percent-wrapper {
+    background: white;
+    padding: 0 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

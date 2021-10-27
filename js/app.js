@@ -198,7 +198,7 @@ const progressbar = () =>  {
         if (value >= 100) {
             clearInterval(interval);
         } else {
-            value+= 10;
+            value += 10;
             stateProgressBar();
         }
     };

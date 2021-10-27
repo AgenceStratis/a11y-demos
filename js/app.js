@@ -31,10 +31,23 @@ const ccvaeu = () => {
     const button = document.getElementById('ccvaeu-button');
     const text = document.getElementById('ccvaeu-text');
     const form = document.getElementById('ccvaeu-form');
+
     button.addEventListener('click', function () {
         text.style.display = "block";
         form.style.display = "none";
         text.focus();
+    }, false);
+};
+
+const coc = () => {
+    const button = document.getElementById('coc-button');
+    const text = document.getElementById('coc-text');
+    const form = document.getElementById('coc-form');
+
+    button.addEventListener('click', function () {
+        text.textContent = "Merci pour votre participation !";
+        //form.style.display = "none";
+        //text.focus();
     }, false);
 };
 
@@ -216,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
     onChangeOnSelect();
     noOnChangeOnSelect();
     ccvaeu();
+    coc();
     validateFeoForm();
     validateFeoForm2();
     MicroModal.init();

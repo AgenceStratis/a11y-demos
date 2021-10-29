@@ -54,13 +54,30 @@ label {
     cursor: pointer;
 }
 
+input:invalid {
+    border: 2px dashed #BE0000;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
+.wrap {
+    /*display: none;*/
+}
+.wrap.--on {
+    display: block;
+}
+
 .demo {
     border: 2px solid grey;
     border-radius: 5px;
     padding: 2rem;
     overflow: hidden;
     margin: 5px 0;
+
 }
+
 
 .demo h2, .demo h2 a {
     font-size: 28px;

@@ -6,7 +6,7 @@ const onChangeOnSelect = () => {
     const select = document.getElementById('select');
 
     if (select) {
-        select.addEventListener('change', function () {
+        select.addEventListener('change', () => {
             if (this.value !== '0') {
                 window.location = this.value;
             }
@@ -19,7 +19,7 @@ const noOnChangeOnSelect = () => {
     const select2 = document.getElementById('select2');
 
     if (button && select2) {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', () => {
             if (select2.value !== '0') {
                 window.location.href = select2.value;
             }
@@ -32,7 +32,7 @@ const ccvaeu = () => {
     const text = document.getElementById('ccvaeu-text');
     const form = document.getElementById('ccvaeu-form');
 
-    button.addEventListener('click', function () {
+    button.addEventListener('click', () => {
         text.style.display = "block";
         form.style.display = "none";
         text.focus();
@@ -43,7 +43,7 @@ const coc = () => {
     const button = document.getElementById('coc-button');
     const text = document.getElementById('coc-text');
 
-    button.addEventListener('click', function () {
+    button.addEventListener('click', () => {
         text.textContent = "Merci pour votre participation !";
         text.style.display = "block";
     }, false);
@@ -80,7 +80,7 @@ const validateFeoForm = () => {
     const button = document.getElementById('feo-button');
     const inputEmail = document.getElementById('feo-email');
 
-    button.addEventListener('click', function (event) {
+    button.addEventListener('click', (event) => {
         event.preventDefault();
         validateEmail(inputEmail);
     }, false);
@@ -117,7 +117,7 @@ const validateFeoForm2 = () => {
     const button = document.getElementById('feo-button2');
     const inputEmail = document.getElementById('feo-email2');
 
-    button.addEventListener('click', function (event) {
+    button.addEventListener('click', (event) => {
         event.preventDefault();
         validateEmail2(inputEmail);
     }, false);
@@ -129,7 +129,7 @@ const reloadAriaLive = (btn, area) => {
     const button = document.getElementById(btn);
     const canal = document.getElementById(area);
 
-    button.addEventListener('click', function () {
+    button.addEventListener('click', () => {
         clearTimeout(timer);
         canal.innerHTML='';
         ariaLIve(0, area);
@@ -158,7 +158,7 @@ const liveRegionAtomic = (p, bp, bn) => {
     const buttonPrev = document.getElementById(bp);
     const buttonNext = document.getElementById(bn);
 
-    buttonNext.addEventListener('click', function () {
+    buttonNext.addEventListener('click', () => {
         if (!this.hasAttribute("disabled")) {
             paragraphe.textContent = "21 à 40";
             buttonNext.setAttribute("disabled", "");
@@ -166,7 +166,7 @@ const liveRegionAtomic = (p, bp, bn) => {
         }
     }, false);
 
-    buttonPrev.addEventListener('click', function () {
+    buttonPrev.addEventListener('click', () => {
         if (!this.hasAttribute("disabled")) {
             paragraphe.textContent = "1 à 20";
             buttonNext.removeAttribute("disabled");
@@ -214,7 +214,7 @@ const progressbar = () =>  {
         }
     };
 
-    run.addEventListener('click', function () {
+    run.addEventListener('click', () => {
         clearInterval(interval);
         resetProgressBar();
         interval = setInterval(startProgressBar, 2000);
@@ -222,8 +222,83 @@ const progressbar = () =>  {
 
 };
 
+class formValidator {
+    constructor(form, fields) {
+        this.form = form;
+        this.fields = fields;
+    }
 
-document.addEventListener("DOMContentLoaded", function() {
+    initialize() {
+        this.validateOnEntry();
+        this.validateOnSubmit();
+    }
+
+    setStatus(field, message, status) {
+        const alert = document.getElementById("zla-alert");
+        const errorExist = document.getElementById(`${field.id}-alert`);
+
+        if (status === "success") {
+            if (errorExist) {
+                errorExist.remove();
+            }
+        }
+
+        if (status === "error") {
+            if (!errorExist) {
+                const p = document.createElement("p");
+                p.setAttribute('id', `${field.id}-alert`);
+                p.textContent = `${message}`;
+                alert.appendChild(p);
+            }
+        }
+    }
+
+    validateFields(field) {
+        if (field.value.trim() === "") {
+            this.setStatus(field, `Le champ ${field.previousElementSibling.dataset.label}  est obligatoire`, "error");
+        } else {
+            this.setStatus(field, null, "success");
+        }
+
+        if (field.type === "email") {
+            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+            if (re.test(field.value)) {
+                this.setStatus(field, null, "success");
+            } else {
+                this.setStatus(field, `Le champ ${field.previousElementSibling.dataset.label}  n'est pas un format valide. Exemple de courriel jean.dupond@courriel.fr`, "error");
+            }
+        }
+    }
+
+    validateOnSubmit() {
+        let self = this;
+
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            self.fields.forEach(field => {
+               const input = document.getElementById(`${field}`);
+
+               self.validateFields(input);
+            });
+        }, false);
+    }
+
+    validateOnEntry()  {
+        let self = this;
+
+        this.fields.forEach(field => {
+            const input = document.getElementById(`${field}`);
+
+            input.addEventListener('input', event => {
+                self.validateFields(input);
+            });
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function ()  {
     onChangeOnSelect();
     noOnChangeOnSelect();
     ccvaeu();
@@ -238,4 +313,10 @@ document.addEventListener("DOMContentLoaded", function() {
     liveRegionAlert();
     reloadAriaLive('zl-reload-log', 'canal-log');
     progressbar();
+
+    const form = document.getElementById("zla-form");
+    const fields = ["zla-prenom", "zla-nom", "zla-email"];
+
+    const validator = new formValidator(form, fields);
+    validator.initialize()
 });

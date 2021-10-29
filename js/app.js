@@ -49,80 +49,6 @@ const coc = () => {
     }, false);
 };
 
-const validateEmail = (mail) => {
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const errorMessage = `<p id="feo-email-error" class="error-message">Le courriel renseigné n'est pas correcte. Exemple de courriel attendu jean.dupond@gmail.com</p>`;
-    const errorMessageNode = document.getElementById('feo-email-error');
-    const feoForm = document.getElementById('feo-form');
-    const validationMessage = `<p id="feo-form-validation" tabindex="-1">Vous êtes bien inscrit à notre lettre d'information, un courriel de confirmation vient de vous être envoyé.</p>`;
-    const feoWrapper = document.getElementById('feo-wrapper');
-    const feoEmail = document.getElementById('feo-email');
-
-    if (mail.value.match(mailformat)) {
-        if (errorMessageNode) {
-            errorMessageNode.remove();
-        }
-        feoForm.style.display = "none";
-        insertHtml(feoWrapper, validationMessage, "afterbegin");
-        const validationMessageNode = document.getElementById('feo-form-validation');
-        validationMessageNode.focus();
-    } else {
-        if (!errorMessageNode) {
-            mail.setAttribute("aria-describedby", "feo-email-error");
-            insertHtml(mail, errorMessage, "afterend");
-            feoEmail.setAttribute("aria-invalid", "true");
-        }
-        mail.focus();
-    }
-};
-
-const validateFeoForm = () => {
-    const button = document.getElementById('feo-button');
-    const inputEmail = document.getElementById('feo-email');
-
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        validateEmail(inputEmail);
-    }, false);
-};
-
-const validateEmail2 = (mail) => {
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const errorMessage = `<p id="feo-email-error2" class="error-message">Le courriel renseigné n'est pas correcte. Exemple de courriel attendu jean.dupond@gmail.com</p>`;
-    const errorMessageNode = document.getElementById('feo-email-error2');
-    const feoForm = document.getElementById('feo-form2');
-    const validationMessage = `<p id="feo-form-validation2" tabindex="-1">Vous êtes bien inscrit à notre lettre d'information, un courriel de confirmation vient de vous être envoyé.</p>`;
-    const feoWrapper = document.getElementById('feo-wrapper2');
-    //const feoEmail = document.getElementById('feo-email2');
-
-    if (mail.value.match(mailformat)) {
-        if (errorMessageNode) {
-            errorMessageNode.remove();
-        }
-        feoForm.style.display = "none";
-        insertHtml(feoWrapper, validationMessage, "afterbegin");
-        const validationMessageNode = document.getElementById('feo-form-validation2');
-        //validationMessageNode.focus();
-    } else {
-        if (!errorMessageNode) {
-            //mail.setAttribute("aria-describedby", "feo-email-error2");
-            insertHtml(mail, errorMessage, "afterend");
-            //feoEmail.setAttribute("aria-invalid", "true");
-        }
-        //mail.focus();
-    }
-};
-
-const validateFeoForm2 = () => {
-    const button = document.getElementById('feo-button2');
-    const inputEmail = document.getElementById('feo-email2');
-
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        validateEmail2(inputEmail);
-    }, false);
-};
-
 let timer;
 
 const reloadAriaLive = (btn, area) => {
@@ -298,13 +224,39 @@ class formValidator {
     }
 }
 
+const focusTrap = (element) => {
+    console.log(element)
+    const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+    const firstFocusableEl = focusableEls[0];
+    const lastFocusableEl = focusableEls[focusableEls.length - 1];
+    const KEYCODE_TAB = 9;
+
+    element.addEventListener('keydown', (e) => {
+        const isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+        if (!isTabPressed) {
+            return;
+        }
+
+        if ( e.shiftKey ) /* shift + tab */ {
+            if (document.activeElement === firstFocusableEl) {
+                lastFocusableEl.focus();
+                e.preventDefault();
+            }
+        } else /* tab */ {
+            if (document.activeElement === lastFocusableEl) {
+                firstFocusableEl.focus();
+                e.preventDefault();
+            }
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function ()  {
     onChangeOnSelect();
     noOnChangeOnSelect();
     ccvaeu();
     coc();
-    validateFeoForm();
-    validateFeoForm2();
     MicroModal.init();
     reloadAriaLive('zl-reload', 'canal');
     liveRegionAtomic("live-region-atomic-false", "live-region-atomic-false-prev", "live-region-atomic-false-next");
@@ -313,6 +265,7 @@ document.addEventListener("DOMContentLoaded", function ()  {
     liveRegionAlert();
     reloadAriaLive('zl-reload-log', 'canal-log');
     progressbar();
+    focusTrap(document.querySelector('.menu-focus-trap'));
 
     const form = document.getElementById("zla-form");
     const fields = ["zla-prenom", "zla-nom", "zla-email"];

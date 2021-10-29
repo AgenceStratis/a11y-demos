@@ -63,7 +63,7 @@ input:valid {
 }
 
 .wrap {
-    display: none;
+    /*display: none;*/
 }
 .wrap.--on {
     display: block;

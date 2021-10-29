@@ -84,16 +84,16 @@ const liveRegionAtomic = (p, bp, bn) => {
     const buttonPrev = document.getElementById(bp);
     const buttonNext = document.getElementById(bn);
 
-    buttonNext.addEventListener('click', () => {
-        if (!this.hasAttribute("disabled")) {
+    buttonNext.addEventListener('click', (event) => {
+        if (!event.target.hasAttribute("disabled")) {
             paragraphe.textContent = "21 à 40";
             buttonNext.setAttribute("disabled", "");
             buttonPrev.removeAttribute("disabled");
         }
     }, false);
 
-    buttonPrev.addEventListener('click', () => {
-        if (!this.hasAttribute("disabled")) {
+    buttonPrev.addEventListener('click', (event) => {
+        if (!event.target.hasAttribute("disabled")) {
             paragraphe.textContent = "1 à 20";
             buttonNext.removeAttribute("disabled");
             buttonPrev.setAttribute("disabled", "");

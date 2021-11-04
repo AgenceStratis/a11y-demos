@@ -327,3 +327,13 @@ img {
     display: inline-block;
 }
 
+/* Pattern */
+.pattern {
+    background: url("../images/pattern-1.png") repeat;
+    color: #fff;
+    padding: 15px;
+}
+.pattern.--good {
+    background-color: #78458e;
+}
+

@@ -68,7 +68,7 @@ img {
 }
 
 .wrap {
-    display: none;
+    /*display: none;*/
 }
 .wrap.--on {
     display: block;

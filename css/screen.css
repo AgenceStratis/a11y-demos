@@ -69,6 +69,7 @@ img {
 
 .wrap {
     /*display: none;*/
+    margin: 6rem 0 3rem;
 }
 .wrap.--on {
     display: block;
@@ -82,7 +83,6 @@ img {
     margin: 5px 0;
 
 }
-
 
 .demo h2, .demo h2 a {
     font-size: 28px;
@@ -158,6 +158,17 @@ img {
     display: block;
     float: left;
     margin: 0 15px 15px 0;
+}
+
+.menu.--outline-none a {
+    border: none;
+    transition: inherit;
+}
+.menu.--outline-none a:focus,
+.menu.--outline-none a:hover {
+    outline: none;
+    box-shadow: inherit;
+    text-decoration: underline;
 }
 
 /* Modal */

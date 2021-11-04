@@ -62,8 +62,13 @@ input:valid {
     border: 2px solid black;
 }
 
+img {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
 .wrap {
-    /*display: none;*/
+    display: none;
 }
 .wrap.--on {
     display: block;
@@ -250,3 +255,75 @@ input:valid {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+/* Contenus compréhensibles sans CSS */
+.events-list {
+    list-style: none;
+    max-width: 700px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.events-list li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.events-list .wrapper.--img-close {
+    margin: -14px 0 0;
+}
+
+.events-list .category {
+    margin: 15px 0 0;
+}
+
+.category {
+    background: #8451a1;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: normal;
+    padding: 2px 5px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.4;
+}
+
+.date {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.events-list .date {
+    margin: 5px 0;
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1em;
+    margin: 10px 0 0;
+}
+
+.events-list a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.events-list.--title-order span {
+    display: block;
+}
+.events-list.--title-order .category {
+    display: inline-block;
+}
+

@@ -348,3 +348,12 @@ img {
     background-color: #78458e;
 }
 
+/* Link visibility */
+.badvisibility {
+    text-decoration: none;
+    color: #7435B5;
+}
+
+.goodvisibility {
+
+}

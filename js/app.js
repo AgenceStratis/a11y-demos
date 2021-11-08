@@ -282,7 +282,7 @@ class weatherOWM {
         this.cityName = cityName;
 
         if (this.appId && this.cityName) {
-            this.baseApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=${this.appId}&lang=fr&units=metric`;
+            this.baseApiUrl = `//api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=${this.appId}&lang=fr&units=metric`;
         }
 
         fetch(this.baseApiUrl)

@@ -747,6 +747,48 @@
     </div>
 </div>
 
+<div class="wrap">
+    <h3 id="visually-hidden"><a href="#visually-hidden">§</a> Contenu caché</h3>
+    <h4>Mauvaise pratique</h4>
+    <p id="demo-hidden"><a href="#demo-hidden">§</a></p>
+    <div class="demo">
+        <p class="pager-wrong">
+            <a href="#" class="prev"><span>Précédent</span></a>
+            <a href="#" class="next"><span>Suivant</span></a>
+        </p>
+    </div>
+    <h4>Bonne pratique</h4>
+    <p id="demo-visually-hidden"><a href="#demo-visually-hidden">§</a></p>
+    <div class="demo">
+        <nav role="navigation" aria-label="Pagination">
+            <ul class="pager-correct">
+                <li class="prev"><a href="#" title="Précédent"><span class="sr-only">précédent</span></a></li>
+                <li class="next"><a href="#" title="Suivant"><span class="sr-only">suivant</span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <h4>Bonne pratique</h4>
+    <p id="demo-visually-hidden2"><a href="#demo-visually-hidden2">§</a></p>
+    <div class="demo">
+        <nav role="navigation" aria-label="Pagination">
+            <ul class="pager-correct -icon">
+                <li class="prev">
+                    <a href="#" title="Précédent">
+                        <span class="fas fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">précédent</span>
+                    </a>
+                </li>
+                <li class="next">
+                    <a href="#" title="Suivant">
+                        <span class="fas fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">suivant</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
 <!-- Formulaires -->
 <h2>Formulaires</h2>
 

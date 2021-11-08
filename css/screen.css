@@ -354,6 +354,57 @@ img {
     color: #7435B5;
 }
 
-.goodvisibility {
+/* Pagers */
+.pager-wrong a {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pager-wrong a.prev {
+    background: url(../images/prev.png) no-repeat 0 0;
+}
+.pager-wrong a.next {
+    background: url(../images/next.png) no-repeat 0 0;
+}
+.pager-wrong span {
+    font-size: 0;
+    visibility: hidden;
+}
 
+.pager-correct {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.pager-correct li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+.pager-correct a {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+.pager-correct .prev a {
+    background: url(../images/prev.png) no-repeat 0 0;
+}
+.pager-correct .next a {
+    background: url(../images/next.png) no-repeat 0 0;
+}
+
+.pager-correct.-icon .prev a,
+.pager-correct.-icon .next a {
+    background: #8451a1;
+    color: #fff;
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.pager-correct.-icon a .fas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

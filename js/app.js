@@ -154,12 +154,12 @@ class formValidator {
         this.fields = fields;
     }
 
-    initialize() {
+    initialize = () => {
         this.validateOnEntry();
         this.validateOnSubmit();
     }
 
-    setStatus(field, message, status) {
+    setStatus = (field, message, status) => {
         const alert = document.getElementById("zla-alert");
         const errorExist = document.getElementById(`${field.id}-alert`);
 
@@ -179,7 +179,7 @@ class formValidator {
         }
     }
 
-    validateFields(field) {
+    validateFields = (field) => {
         if (field.value.trim() === "") {
             this.setStatus(field, `Le champ ${field.previousElementSibling.dataset.label}  est obligatoire`, "error");
         } else {
@@ -197,7 +197,7 @@ class formValidator {
         }
     }
 
-    validateOnSubmit() {
+    validateOnSubmit = () => {
         let self = this;
 
         this.form.addEventListener('submit', (e) => {
@@ -211,7 +211,7 @@ class formValidator {
         }, false);
     }
 
-    validateOnEntry()  {
+    validateOnEntry = () => {
         let self = this;
 
         this.fields.forEach(field => {
@@ -251,6 +251,71 @@ const focusTrap = (element) => {
     });
 }
 
+class disclosure {
+    constructor(trigger, content) {
+        this.trigger = trigger;
+        this.content = content;
+    }
+
+    initialize = () => {
+        let self = this;
+
+        this.trigger.addEventListener('click', (e) => {
+            if(e.target.getAttribute('aria-expanded') === 'false') {
+                self.trigger.setAttribute('aria-expanded', 'true');
+                self.trigger.parentNode.classList.add('--open');
+            } else {
+                self.trigger.setAttribute('aria-expanded', 'false');
+                self.trigger.parentNode.classList.remove('--open');
+            }
+        }, false);
+    }
+}
+
+class weatherOWM {
+    constructor(wrapper, {
+        appId = false,
+        cityName = 'paris',
+    }) {
+        this.wrapper = wrapper;
+        this.appId = appId;
+        this.cityName = cityName;
+
+        if (this.appId && this.cityName) {
+            this.baseApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&appid=${this.appId}&lang=fr&units=metric`;
+        }
+
+        fetch(this.baseApiUrl)
+            .then((resp) => resp.json()) // Transform the data into json
+            .then((data) => {
+                this.weatherToday(data);
+            })
+            .catch(function(error) {
+                console.log('The JSON file could not be found. ');
+                console.log(error);
+            });
+    }
+
+    dirToStr = (d) => {
+        const directions = ['Nord', 'Nord Est', 'Est', 'Sud Est', 'Sud', 'Sud Ouest', 'Ouest', 'Nord Ouest'];
+        const directionsIcon = ['direction-up', 'direction-up-right', 'direction-right', 'direction-down-right', 'direction-down', 'direction-down-left', 'direction-left', 'direction-up-left'];
+        d = d < 0 ?
+            d = 360 - Math.abs(d) % 360
+            : d % 360;
+        return [`${directions[d / 45 | 0]}`,`${directionsIcon[d / 45 | 0]}`];
+    }
+
+    weatherToday = (data) => {
+        this.wrapper.innerHTML = `
+            Météo sur ${data.name} :
+            ${data.weather[0].description}, ${Math.floor(data.main.temp)}°c,
+            direction du vent :
+            <i class="wi wi-${this.dirToStr(data.wind.deg)[1]}" aria-hidden="true"></i>
+            <span class="sr-only">${this.dirToStr(data.wind.deg)[0]}</span>
+        `;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function ()  {
     onChangeOnSelect();
     noOnChangeOnSelect();
@@ -268,7 +333,17 @@ document.addEventListener("DOMContentLoaded", function ()  {
 
     const form = document.getElementById("zla-form");
     const fields = ["zla-prenom", "zla-nom", "zla-email"];
-
     const validator = new formValidator(form, fields);
-    validator.initialize()
+    validator.initialize();
+
+    const menuLangsTrigger = document.getElementById("menu-langs__trigger");
+    const menuLangsContent = document.getElementById("menu-langs__content")
+    const menuLangDiscolsure = new disclosure(menuLangsTrigger, menuLangsContent);
+    menuLangDiscolsure.initialize();
+
+    const wrapperWeather = document.getElementById('weather');
+    const weather = new weatherOWM(wrapperWeather, {
+        appId: "6c6a157ce2b7fc2f9a3707399c3b970a",
+        cityName: "Paris",
+    });
 });

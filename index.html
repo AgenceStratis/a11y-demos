@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/modal.css">
     <!-- highlight -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
@@ -786,6 +787,41 @@
                 </li>
             </ul>
         </nav>
+    </div>
+</div>
+
+<div class="wrap">
+    <h3 id="information-by-shape"><a href="#information-by-shape">§</a> Information par la forme, taille ou position</h3>
+
+    <h4 id="demo-information-by-shape"><a href="#demo-information-by-shape">§</a> Par la forme</h4>
+    <div class="demo">
+        <div id="menu-langs" class="disclosure">
+            <button type="button" id="menu-langs__trigger" aria-expanded="false" aria-controls="menu-langs__content">
+                <span class="fas fa-chevron-down" aria-hidden="true"></span>
+                Modifier la langue de la page
+            </button>
+            <ul id="menu-langs__content" class="disclosure__content">
+                <li><a href="#fr">Français</a></li>
+                <li><a href="#en" lang="en">English</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h4 id="demo-information-by-size"><a href="#demo-information-by-size">§</a> Par la taille</h4>
+    <div class="demo">
+        <ul class="tagcloud">
+            <li><a href="" title="Babel pertinence 1 sur 10" class="relevance1">Babel</a></li>
+            <li><a href="" title="CSS pertinence 3 sur 10" class="relevance3">CSS</a></li>
+            <li><a href="" title="HTML pertinence 6 sur 10" class="relevance6">HTML</a></li>
+            <li><a href="" title="Javascript pertinence 5 sur 10" class="relevance5">Javascript</a></li>
+            <li><a href="" title="Node.js pertinence 8 sur 10" class="relevance8">Node.js</a></li>
+            <li><a href="" title="Webpack pertinence 2 sur 10" class="relevance2">Webpack</a></li>
+        </ul>
+    </div>
+
+    <h4 id="demo-information-by-position"><a href="#demo-information-by-position">§</a> Par la position</h4>
+    <div class="demo weather" >
+        <p><span id="weather"></span></p>
     </div>
 </div>
 

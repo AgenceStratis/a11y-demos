@@ -120,7 +120,26 @@
     </div>
 </div>
 
-<!-- Les liens -->
+<div class="wrap">
+    <h3 id="contraste-couleur"><a href="#contraste-couleur">§</a> Contraste des couleurs</h3>
+    <p id="demo-contraste-couleur"><a href="#demo-contraste-couleur">§</a></p>
+    <h4>Pas biennnn !</h4>
+    <div class="demo bad-contrast">
+        <div class="field-wrap">
+            <label for="color1">Nom</label>
+            <input type="text" name="color1" id="color1">
+            <button type="submit">Contacter</button>
+        </div>
+    </div>
+    <h4>Biennnnn !</h4>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="color2">Nom</label>
+            <input type="text" name="color2" id="color2">
+            <button type="submit">Contacter</button>
+        </div>
+    </div>
+</div>
 <h2>Les liens</h2>
 
 <div class="wrap">
@@ -825,38 +844,74 @@
     </div>
 </div>
 
+<div class="wrap">
+    <h3 id="interface-control"><a href="#interface-control">§</a> Contrôle et visibilité des composants d’interface</h3>
+    <p id="demo-interface-control"><a href="#demo-interface-control">§</a></p>
+    <div class="demo">
+        <p>La <span class="tooltip-container"><button type="button" aria-describedby="tooltip">DINUM</button><span hidden id="tooltip" role="tooltip">Direction Interministérielle du NUMérique</span></span> est en charge de la transformation numérique de l’État au bénéfice du citoyen comme de l’agent, sous tous ses aspects.</p>
+    </div>
+</div>
+
 <!-- Formulaires -->
 <h2>Formulaires</h2>
 
-<!--<div class="wrap">-->
-<!--    <h3 id="champ-obligatoire"><a href="#champ-obligatoire">§</a> Champ obligatoire</h3>-->
-<!--    <h4>Mauvaise pratique</h4>-->
-<!--    <pre><code>&lt;label for=&quot;edit-nom2&quot;&gt;Nom &lt;em&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;-->
-<!--    &lt;input type=&quot;text&quot; id=&quot;edit-nom2&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>-->
-<!--    <p id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">§</a></p>-->
-<!--    <div class="demo">-->
-<!--        <div class="field-wrap">-->
-<!--            <label for="edit-nom2">-->
-<!--                Nom <em class="required-mention">(obligatoire)</em>-->
-<!--            </label>-->
-<!--            <input type="text" id="edit-nom2" autocomplete="given-name" required>-->
-<!--        </div>-->
-<!--    </div>-->
+<div class="wrap">
+    <h3 id="champ-obligatoire"><a href="#champ-obligatoire">§</a> Champ obligatoire</h3>
+    <h4>Mauvaise pratique</h4>
+    <pre><code>&lt;label for=&quot;edit-nom2&quot;&gt;Nom &lt;em&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;edit-nom2&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
+    <p id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">§</a></p>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="edit-nom2">
+                Nom <em class="required-mention">(obligatoire)</em>
+            </label>
+            <input type="text" id="edit-nom2" autocomplete="given-name" required>
+        </div>
+    </div>
 
 
-<!--    <h4>Bonne pratique</h4>-->
-<!--    <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;-->
-<!--    &lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>-->
-<!--    <p id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">§</a></p>-->
-<!--    <div class="demo">-->
-<!--        <div class="field-wrap">-->
-<!--            <label for="edit-nom">-->
-<!--                Nom <em aria-hidden="true" class="required-mention">(obligatoire)</em>-->
-<!--            </label>-->
-<!--            <input type="text" id="edit-nom" autocomplete="given-name" required>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+    <h4>Bonne pratique</h4>
+    <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
+    <p id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">§</a></p>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="edit-nom">
+                Nom <em aria-hidden="true" class="required-mention">(obligatoire)</em>
+            </label>
+            <input type="text" id="edit-nom" autocomplete="given-name" required>
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <h3 id="form-label"><a href="#form-label">§</a> étiquette de champ</h3>
+    <h4>Placeholder</h4>
+    <h4>Mauvaise pratique</h4>
+    <p id="demo-form-placeholder"><a href="#demo-form-placeholder">§</a></p>
+    <div class="demo">
+        <div class="field-wrap">
+            <input type="text" placeholder="Nom">
+        </div>
+    </div>
+
+
+    <h4>Bonne pratique</h4>
+    <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
+    <p id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">§</a></p>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="edit-nom">
+                Nom <em aria-hidden="true" class="required-mention">(obligatoire)</em>
+            </label>
+            <input type="text" id="edit-nom" autocomplete="given-name" required>
+        </div>
+    </div>
+</div>
+
+
 
 <script src="js/app.js"></script>
 </body>

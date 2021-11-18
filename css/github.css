@@ -72,6 +72,13 @@ body {
     color: #000;
 }
 
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}
+
+
 body > *:first-child {
     margin-top: 0 !important;
 }

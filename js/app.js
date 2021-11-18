@@ -316,6 +316,55 @@ class weatherOWM {
     }
 }
 
+class Tooltip {
+    constructor(element) {
+        this.element = element;
+        this.button = element.querySelector('button');
+        this.tooltip = element.querySelector('[role=tooltip]');
+        this.globalEscapeBound  = this.globalEscape.bind(this);
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        this.element.addEventListener('mouseenter', this.open.bind(this));
+        this.button.addEventListener('focus', this.open.bind(this));
+        this.element.addEventListener('mouseleave', this.close.bind(this));
+        this.button.addEventListener('blur', this.close.bind(this));
+    }
+
+    open() {
+        this.showTooltip();
+        this.attachGlobalListener();
+    }
+
+    close() {
+        this.hideTooltip();
+        this.removeGlobalListener();
+    }
+
+    attachGlobalListener() {
+        document.addEventListener('keydown', this.globalEscapeBound);
+    }
+
+    removeGlobalListener() {
+        document.removeEventListener('keydown', this.globalEscapeBound);
+    }
+
+    globalEscape(event) {
+        if (event.key === 'Escape' || event.key === 'Esc') {
+            this.close();
+        }
+    }
+
+    showTooltip() {
+        this.tooltip.removeAttribute('hidden');
+    }
+
+    hideTooltip() {
+        this.tooltip.setAttribute('hidden', 'hidden');
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function ()  {
     onChangeOnSelect();
     noOnChangeOnSelect();
@@ -346,4 +395,8 @@ document.addEventListener("DOMContentLoaded", function ()  {
         appId: "6c6a157ce2b7fc2f9a3707399c3b970a",
         cityName: "Paris",
     });
+
+    // const tooltips = document.querySelectorAll('.tooltip-container');
+    // tooltips.forEach(element => new Tooltip(element));
+    Array.from(document.querySelectorAll('.tooltip-container')).forEach(element => new Tooltip(element));
 });

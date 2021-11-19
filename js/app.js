@@ -390,6 +390,11 @@ document.addEventListener("DOMContentLoaded", function ()  {
     const menuLangDiscolsure = new disclosure(menuLangsTrigger, menuLangsContent);
     menuLangDiscolsure.initialize();
 
+    const menuOrderTrigger = document.getElementById("menu-order__trigger");
+    const menuOrderContent = document.getElementById("menu-order__content")
+    const menuOrderDiscolsure = new disclosure(menuOrderTrigger, menuOrderContent);
+    menuOrderDiscolsure.initialize();
+
     const wrapperWeather = document.getElementById('weather');
     const weather = new weatherOWM(wrapperWeather, {
         appId: "6c6a157ce2b7fc2f9a3707399c3b970a",

@@ -123,7 +123,7 @@
 <div class="wrap">
     <h3 id="contraste-couleur"><a href="#contraste-couleur">§</a> Contraste des couleurs</h3>
     <p id="demo-contraste-couleur"><a href="#demo-contraste-couleur">§</a></p>
-    <h4>Pas biennnn !</h4>
+    <h4>Mauvaise pratique</h4>
     <div class="demo bad-contrast">
         <div class="field-wrap">
             <label for="color1">Nom</label>
@@ -131,7 +131,7 @@
             <button type="submit">Contacter</button>
         </div>
     </div>
-    <h4>Biennnnn !</h4>
+    <h4>Bonne pratique</h4>
     <div class="demo">
         <div class="field-wrap">
             <label for="color2">Nom</label>
@@ -849,6 +849,83 @@
     <p id="demo-interface-control"><a href="#demo-interface-control">§</a></p>
     <div class="demo">
         <p>La <span class="tooltip-container"><button type="button" aria-describedby="tooltip">DINUM</button><span hidden id="tooltip" role="tooltip">Direction Interministérielle du NUMérique</span></span> est en charge de la transformation numérique de l’État au bénéfice du citoyen comme de l’agent, sous tous ses aspects :<br> modernisation du système d’information de l’État, qualité des services publics numériques, création de services innovants pour les citoyens, outils numériques de travail collaboratif pour les agents…</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <h3 id="visible-content-css"><a href="#visible-content-css">§</a> Contenus additionnels visibles au clavier et par un dispositif de pointage</h3>
+    <p id="demo-visible-content-css"><a href="#demo-visible-content-css">§</a></p>
+    <h4>Mauvaise pratique</h4>
+    <div class="demo">
+        <ul class="visible-content-css">
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=1" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>L'oiseau et le chat</h2>
+                            <p>21 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li><li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=2" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>La voix du succès</h2>
+                            <p>24 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li><li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=3" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>Mémoire de glace</h2>
+                            <p>25 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </div>
+    <h4>Bonne pratique</h4>
+    <div class="demo">
+        <ul class="visible-content-css --good">
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=1" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>L'oiseau et le chat</h2>
+                            <p>21 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li><li>
+            <article>
+                <a href="#">
+                    <img src="https://picsum.photos/200/200?random=2" alt="">
+                    <div class="visible-content-css__hidden-content">
+                        <h2>La voix du succès</h2>
+                        <p>24 juillet 2020</p>
+                    </div>
+                </a>
+            </article>
+        </li><li>
+            <article>
+                <a href="#">
+                    <img src="https://picsum.photos/200/200?random=3" alt="">
+                    <div class="visible-content-css__hidden-content">
+                        <h2>Mémoire de glace</h2>
+                        <p>25 juillet 2020</p>
+                    </div>
+                </a>
+            </article>
+        </li>
+        </ul>
     </div>
 </div>
 

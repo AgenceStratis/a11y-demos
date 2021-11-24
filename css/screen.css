@@ -497,22 +497,53 @@ img {
 [role=tooltip][hidden=hidden], [role=tooltip][hidden] {
     display: none;
 }
-/*[role=tooltip]::before {*/
-/*    position: absolute;*/
-/*    bottom: 100%;*/
-/*    left: 50%;*/
-/*    transform: translateX(-50%);*/
-/*    border: var(--tooltip-thingy-height) solid transparent;*/
-/*    border-bottom-color: black;*/
-/*    content: "";*/
-/*}*/
-/*[role=tooltip]::after {*/
-/*    position: absolute;*/
-/*    right: 0;*/
-/*    bottom: 100%;*/
-/*    left: 0;*/
-/*    display: block;*/
-/*    height: calc(var(--tooltip-thingy-height) * 2);*/
-/*    content: "";*/
-/*}*/
+
+/* visible content in css */
+.visible-content-css {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.visible-content-css li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 1rem;
+    padding: 0;
+}
+.visible-content-css a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    min-height: 200px;
+    color: #fff;
+}
+.visible-content-css a * {
+    color: #fff;
+    font-size: 1.3rem;
+    word-break: break-word;
+}
+.visible-content-css h2,
+.visible-content-css p {
+    margin: 0;
+    padding: 0;
+}
+
+
+.visible-content-css__hidden-content {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -100%;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.8);
+    transition: margin-bottom ease 0.3s;
+}
+
+.visible-content-css a:hover .visible-content-css__hidden-content,
+.visible-content-css.--good a:focus .visible-content-css__hidden-content {
+    margin-bottom: 0;
+}
 

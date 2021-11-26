@@ -208,6 +208,23 @@ img {
 
 /* Form */
 
+fieldset {
+    margin: 2rem 0;
+}
+
+legend {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.field-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
 .field-wrap {
     margin: 10px 0;
 }
@@ -215,6 +232,11 @@ img {
 .field-wrap label {
     display: block;
 }
+
+.field-tiny input {
+    width: 6rem;
+}
+
 .required-mention {
     color: #BE0000;
 }

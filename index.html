@@ -937,7 +937,7 @@ a:focus .visible-content-css__hidden-content {
 <h2>Formulaires</h2>
 
 <div class="wrap">
-    <h3 id="form-label"><a href="#form-label">§</a> étiquette de champ</h3>
+    <h3 id="form-label"><a href="#form-label">§</a> Étiquette de champ</h3>
 
     <h4 id="demo-label-for-id"><a href="#demo-label-for-id">§</a> Balise <code>&lt;label&gt;</code> et relation avec les attributs <code>for</code> et <code>id</code></h4>
     <pre><code>&lt;label for=&quot;name&quot;&gt;Nom&lt;/label&gt;
@@ -1004,6 +1004,82 @@ a:focus .visible-content-css__hidden-content {
         <div class="field-wrap">
             <input type="text" id="edit-courriel" autocomplete="email" placeholder="Courriel" title="Courriel exemple de saisie prenomnom@domain.fr">
         </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <h3 id="form-fieldset"><a href="#form-fieldset">§</a> Regroupement de champs</h3>
+
+    <h4 id="demo-fieldset-date"><a href="#demo-fieldset-date">§</a> Étiquettes de Champs identiques</h4>
+    <pre><code>&lt;fieldset&gt;
+    &lt;legend&gt;Date d&apos;anniversaire du premier enfant&lt;/legend&gt;
+    &lt;div class=&quot;field-line&quot;&gt;
+        &lt;div class=&quot;field-wrap&quot;&gt;
+            &lt;label for=&quot;day-birthday-1&quot;&gt;Jour (exemple 1 pour le premier du mois)&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;day-birthday-1&quot; id=&quot;day-birthday-1&quot; autocomplete=&quot;bday-day&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;field-wrap&quot;&gt;
+            &lt;label for=&quot;month-birthday-1&quot;&gt;Mois (exemple 10 pour octobre)&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;month-birthday-1&quot; id=&quot;month-birthday-1&quot; autocomplete=&quot;bday-month&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;field-wrap&quot;&gt;
+            &lt;label for=&quot;year-birthday-1&quot;&gt;Ann&eacute;e (exemple 2011)&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;year-birthday-1&quot; id=&quot;year-birthday-1&quot; autocomplete=&quot;bday-year&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Date d&apos;anniversaire du deuxi&egrave;me enfant&lt;/legend&gt;
+    &lt;div class=&quot;field-line field-tiny&quot;&gt;
+        &lt;div class=&quot;field-wrap&quot;&gt;
+            &lt;label for=&quot;day-birthday-2&quot;&gt;Jour (exemple 1 pour le premier du mois)&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;day-birthday-2&quot; id=&quot;day-birthday-2&quot; autocomplete=&quot;bday-day&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;field-wrap&quot;&gt;
+            &lt;label for=&quot;month-birthday-2&quot;&gt;Mois (exemple 10 pour octobre)&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;month-birthday-2&quot; id=&quot;month-birthday-2&quot; autocomplete=&quot;bday-month&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;field-wrap&quot;&gt;
+            &lt;label for=&quot;year-birthday-2&quot;&gt;Ann&eacute;e (exemple 2011)&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;year-birthday-2&quot; id=&quot;year-birthday-2&quot; autocomplete=&quot;bday-year&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;</code></pre>
+    <div class="demo">
+        <fieldset>
+            <legend>Date d'anniversaire du premier enfant</legend>
+            <div class="field-line field-tiny">
+                <div class="field-wrap">
+                    <label for="day-birthday-1">Jour (exemple 1 pour le premier du mois)</label>
+                    <input type="text" name="day-birthday-1" id="day-birthday-1" autocomplete="bday-day">
+                </div>
+                <div class="field-wrap">
+                    <label for="month-birthday-1">Mois (exemple 10 pour octobre)</label>
+                    <input type="text" name="month-birthday-1" id="month-birthday-1" autocomplete="bday-month">
+                </div>
+                <div class="field-wrap">
+                    <label for="year-birthday-1">Année (exemple 2011)</label>
+                    <input type="text" name="year-birthday-1" id="year-birthday-1" autocomplete="bday-year">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Date d'anniversaire du deuxième enfant</legend>
+            <div class="field-line field-tiny">
+                <div class="field-wrap">
+                    <label for="day-birthday-2">Jour (exemple 1 pour le premier du mois)</label>
+                    <input type="text" name="day-birthday-2" id="day-birthday-2" autocomplete="bday-day">
+                </div>
+                <div class="field-wrap">
+                    <label for="month-birthday-2">Mois (exemple 10 pour octobre)</label>
+                    <input type="text" name="month-birthday-2" id="month-birthday-2" autocomplete="bday-month">
+                </div>
+                <div class="field-wrap">
+                    <label for="year-birthday-2">Année (exemple 2011)</label>
+                    <input type="text" name="year-birthday-2" id="year-birthday-2" autocomplete="bday-year">
+                </div>
+            </div>
+        </fieldset>
     </div>
 </div>
 

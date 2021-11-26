@@ -233,6 +233,11 @@ legend {
     display: block;
 }
 
+.field-wrap.--inline input, .field-wrap.--inline label {
+    display: inline-block;
+    vertical-align: top;
+}
+
 .field-tiny input {
     width: 6rem;
 }

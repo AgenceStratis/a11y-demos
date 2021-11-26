@@ -1157,6 +1157,44 @@ a:focus .visible-content-css__hidden-content {
             </div>
         </div>
     </div>
+
+    <h4 id="demo-select-group"><a href="#demo-select-group">§</a> Regroupement dans une liste de choix</h4>
+    <pre><code>&lt;label for=&quot;food&quot;&gt;Quel est votre plat pr&eacute;f&eacute;r&eacute; ?&lt;/label&gt;
+&lt;select id=&quot;food&quot; name=&quot;food&quot;&gt;
+    &lt;optgroup label=&quot;Fruits&quot;&gt;
+        &lt;option value=&quot;1&quot;&gt;Pommes&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Bananes&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Fraises&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;L&eacute;gumes&quot;&gt;
+        &lt;option value=&quot;4&quot;&gt;Carrotes&lt;/option&gt;
+        &lt;option value=&quot;5&quot;&gt;Courges&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Patisseries&quot;&gt;
+        &lt;option value=&quot;6&quot;&gt;Tarte aux pommes&lt;/option&gt;
+        &lt;option value=&quot;7&quot;&gt;Gateau au chocolat&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="food">Quel est votre plat préféré ?</label>
+            <select id="food" name="food">
+                <optgroup label="Fruits">
+                    <option value="1">Pommes</option>
+                    <option value="2">Bananes</option>
+                    <option value="3">Fraises</option>
+                </optgroup>
+                <optgroup label="Légumes">
+                    <option value="4">Carrotes</option>
+                    <option value="5">Courges</option>
+                </optgroup>
+                <optgroup label="Patisseries">
+                    <option value="6">Tarte aux pommes</option>
+                    <option value="7">Gateau au chocolat</option>
+                </optgroup>
+            </select>
+        </div>
+    </div>
 </div>
 
 <div class="wrap">

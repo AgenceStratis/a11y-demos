@@ -1,5 +1,5 @@
 .wrap {
-    display: none;
+    /*display: none;*/
     margin: 6rem 0 3rem;
 }
 .wrap.--on {

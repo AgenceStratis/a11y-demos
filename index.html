@@ -1007,7 +1007,7 @@ a:focus .visible-content-css__hidden-content {
     </div>
 </div>
 
-<div class="wrap --on">
+<div class="wrap">
     <h3 id="form-fieldset"><a href="#form-fieldset">§</a> Regroupement de champs</h3>
 
     <h4 id="demo-fieldset-date"><a href="#demo-fieldset-date">§</a> Étiquettes de Champs identiques</h4>
@@ -1157,8 +1157,10 @@ a:focus .visible-content-css__hidden-content {
             </div>
         </div>
     </div>
+</div>
 
-    <h4 id="demo-select-group"><a href="#demo-select-group">§</a> Regroupement dans une liste de choix</h4>
+<div class="wrap">
+    <h3 id="select-group"><a href="#select-group">§</a> Regroupement dans une liste de choix</h3>
     <pre><code>&lt;label for=&quot;food&quot;&gt;Quel est votre plat pr&eacute;f&eacute;r&eacute; ?&lt;/label&gt;
 &lt;select id=&quot;food&quot; name=&quot;food&quot;&gt;
     &lt;optgroup label=&quot;Fruits&quot;&gt;
@@ -1197,58 +1199,58 @@ a:focus .visible-content-css__hidden-content {
     </div>
 </div>
 
-<div class="wrap">
-    <h3 id="champ-obligatoire"><a href="#champ-obligatoire">§</a> Champ obligatoire</h3>
-    <h4>Mauvaise pratique</h4>
-    <pre><code>&lt;label for=&quot;edit-nom2&quot;&gt;Nom &lt;em&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;edit-nom2&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
-    <p id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">§</a></p>
-    <div class="demo">
-        <div class="field-wrap">
-            <label for="edit-nom2">
-                Nom <em class="required-mention">(obligatoire)</em>
-            </label>
-            <input type="text" id="edit-nom2" autocomplete="given-name" required>
-        </div>
-    </div>
+<!--<div class="wrap">-->
+<!--    <h3 id="champ-obligatoire"><a href="#champ-obligatoire">§</a> Champ obligatoire</h3>-->
+<!--    <h4>Mauvaise pratique</h4>-->
+<!--    <pre><code>&lt;label for=&quot;edit-nom2&quot;&gt;Nom &lt;em&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;-->
+<!--    &lt;input type=&quot;text&quot; id=&quot;edit-nom2&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>-->
+<!--    <p id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">§</a></p>-->
+<!--    <div class="demo">-->
+<!--        <div class="field-wrap">-->
+<!--            <label for="edit-nom2">-->
+<!--                Nom <em class="required-mention">(obligatoire)</em>-->
+<!--            </label>-->
+<!--            <input type="text" id="edit-nom2" autocomplete="given-name" required>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
-    <h4>Bonne pratique</h4>
-    <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
-    &lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
-    <p id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">§</a></p>
-    <div class="demo">
-        <div class="field-wrap">
-            <label for="edit-nom">
-                Nom <em aria-hidden="true" class="required-mention">(obligatoire)</em>
-            </label>
-            <input type="text" id="edit-nom" autocomplete="given-name" required>
-        </div>
-    </div>
-</div>
+<!--    <h4>Bonne pratique</h4>-->
+<!--    <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;-->
+<!--    &lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>-->
+<!--    <p id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">§</a></p>-->
+<!--    <div class="demo">-->
+<!--        <div class="field-wrap">-->
+<!--            <label for="edit-nom">-->
+<!--                Nom <em aria-hidden="true" class="required-mention">(obligatoire)</em>-->
+<!--            </label>-->
+<!--            <input type="text" id="edit-nom" autocomplete="given-name" required>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 
 <!-- Navigation -->
-<h2>Navigation</h2>
-<div class="wrap">
-    <h3 id="tab-order"><a href="#tab-order">§</a> Ordre de tabulation logique ou maitrisée</h3>
+<!--<h2>Navigation</h2>-->
+<!--<div class="wrap">-->
+<!--    <h3 id="tab-order"><a href="#tab-order">§</a> Ordre de tabulation logique ou maitrisée</h3>-->
 
-    <h4 id="demo-tab-order"><a href="#demo-tab-order">§</a> Mauvaise pratique</h4>
-    <div class="demo">
-        <div id="menu-order" class="disclosure">
-            <ul id="menu-order__content" class="disclosure__content">
-                <li><a href="#fr">Français</a></li>
-                <li><a href="#en" lang="en">English</a></li>
-            </ul>
-            <button type="button" id="menu-order__trigger" aria-expanded="false" aria-controls="menu-langs__content">
-                <span class="fas fa-chevron-down" aria-hidden="true"></span>
-                Modifier la langue de la page
-            </button>
+<!--    <h4 id="demo-tab-order"><a href="#demo-tab-order">§</a> Mauvaise pratique</h4>-->
+<!--    <div class="demo">-->
+<!--        <div id="menu-order" class="disclosure">-->
+<!--            <ul id="menu-order__content" class="disclosure__content">-->
+<!--                <li><a href="#fr">Français</a></li>-->
+<!--                <li><a href="#en" lang="en">English</a></li>-->
+<!--            </ul>-->
+<!--            <button type="button" id="menu-order__trigger" aria-expanded="false" aria-controls="menu-langs__content">-->
+<!--                <span class="fas fa-chevron-down" aria-hidden="true"></span>-->
+<!--                Modifier la langue de la page-->
+<!--            </button>-->
 
-        </div>
-    </div>
-</div>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <script src="js/app.js"></script>
 </body>

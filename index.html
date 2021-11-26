@@ -1007,7 +1007,7 @@ a:focus .visible-content-css__hidden-content {
     </div>
 </div>
 
-<div class="wrap">
+<div class="wrap --on">
     <h3 id="form-fieldset"><a href="#form-fieldset">§</a> Regroupement de champs</h3>
 
     <h4 id="demo-fieldset-date"><a href="#demo-fieldset-date">§</a> Étiquettes de Champs identiques</h4>
@@ -1103,25 +1103,59 @@ a:focus .visible-content-css__hidden-content {
     &lt;/div&gt;
 &lt;/fieldset&gt;</code></pre>
     <div class="demo">
-<fieldset>
-    <legend>Vos languages Web préférés ?</legend>
-    <div class="field-wrap --inline">
-        <input type="checkbox" name="favorite-languages" id="html" value="html">
-        <label for="html">HTML</label>
+        <fieldset>
+            <legend>Vos languages Web préférés ?</legend>
+            <div class="field-wrap --inline">
+                <input type="checkbox" name="favorite-languages" id="html" value="html">
+                <label for="html">HTML</label>
+            </div>
+            <div class="field-wrap --inline">
+                <input type="checkbox" name="favorite-languages" id="css" value="css">
+                <label for="css">CSS</label>
+            </div>
+            <div class="field-wrap --inline">
+                <input type="checkbox" name="favorite-languages" id="js" value="js">
+                <label for="js">JS</label>
+            </div>
+            <div class="field-wrap --inline">
+                <input type="checkbox" name="favorite-languages" id="php" value="php">
+                <label for="php">PHP</label>
+            </div>
+        </fieldset>
     </div>
-    <div class="field-wrap --inline">
-        <input type="checkbox" name="favorite-languages" id="css" value="css">
-        <label for="css">CSS</label>
-    </div>
-    <div class="field-wrap --inline">
-        <input type="checkbox" name="favorite-languages" id="js" value="js">
-        <label for="js">JS</label>
-    </div>
-    <div class="field-wrap --inline">
-        <input type="checkbox" name="favorite-languages" id="php" value="php">
-        <label for="php">PHP</label>
-    </div>
-</fieldset>
+
+    <h4 id="demo-fieldset-aria"><a href="#demo-fieldset-aria">§</a> Regroupement des champs avec l'API ARIA</h4>
+    <pre><code>&lt;div role=&quot;group&quot; aria-labelledby=&quot;a11y-is-legend&quot; class=&quot;fieldset&quot;&gt;
+    &lt;p id=&quot;a11y-is-legend&quot; class=&quot;legend&quot;&gt;L&apos;accessibilit&eacute;, c&apos;est :&lt;/p&gt;
+    &lt;div class=&quot;field-wrap --inline&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;a11y-is&quot; id=&quot;demarche&quot; value=&quot;demarche&quot;&gt;
+        &lt;label for=&quot;demarche&quot;&gt;Une d&eacute;marche globale et continue.&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;field-wrap --inline&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;a11y-is&quot; id=&quot;fonctionnalite&quot; value=&quot;fonctionnalite&quot;&gt;
+        &lt;label for=&quot;fonctionnalite&quot;&gt;Une fonctionnalit&eacute;.&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;field-wrap --inline&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; name=&quot;a11y-is&quot; id=&quot;dev&quot; value=&quot;dev&quot;&gt;
+        &lt;label for=&quot;dev&quot;&gt;Un mode de d&eacute;veloppement.&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    <div class="demo">
+        <div role="group" aria-labelledby="a11y-is-legend" class="fieldset">
+            <p id="a11y-is-legend" class="legend">L'accessibilité, c'est :</p>
+            <div class="field-wrap --inline">
+                <input type="checkbox" name="a11y-is" id="demarche" value="demarche">
+                <label for="demarche">Une démarche globale et continue.</label>
+            </div>
+            <div class="field-wrap --inline">
+                <input type="checkbox" name="a11y-is" id="fonctionnalite" value="fonctionnalite">
+                <label for="fonctionnalite">Une fonctionnalité.</label>
+            </div>
+            <div class="field-wrap --inline">
+                <input type="checkbox" name="a11y-is" id="dev" value="dev">
+                <label for="dev">Un mode de développement.</label>
+            </div>
+        </div>
     </div>
 </div>
 

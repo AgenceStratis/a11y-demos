@@ -1201,19 +1201,6 @@ a:focus .visible-content-css__hidden-content {
 
 <div class="wrap">
     <h3 id="champ-obligatoire"><a href="#champ-obligatoire">§</a> Champ obligatoire</h3>
-    <h4>Mauvaise pratique</h4>
-    <pre><code>&lt;label for=&quot;edit-nom2&quot;&gt;Nom &lt;em&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
-&lt;input type=&quot;text&quot; id=&quot;edit-nom2&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
-    <p id="demo-champ-obligatoire2"><a href="#demo-champ-obligatoire2">§</a></p>
-    <div class="demo">
-        <div class="field-wrap">
-            <label for="edit-nom2">
-                Nom <em class="required-mention">(obligatoire)</em>
-            </label>
-            <input type="text" id="edit-nom2" autocomplete="given-name" required>
-        </div>
-    </div>
-    <h4>Bonne pratique</h4>
     <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
 &lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
     <p id="demo-champ-obligatoire"><a href="#demo-champ-obligatoire">§</a></p>
@@ -1223,6 +1210,37 @@ a:focus .visible-content-css__hidden-content {
                 Nom <em aria-hidden="true" class="required-mention">(obligatoire)</em>
             </label>
             <input type="text" id="edit-nom" autocomplete="given-name" required>
+        </div>
+    </div>
+</div>
+
+<div class="wrap">
+    <h3 id="champ-aide"><a href="#champ-aide">§</a> Aide de saisie</h3>
+    <pre><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
+    <p id="demo-champ-aide"><a href="#demo-champ-aide">§</a></p>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="edit-email">Courriel (prenom.nom@domain.com)</label>
+            <input type="text" id="edit-email" autocomplete="email">
+        </div>
+        <div class="field-wrap">
+            <label for="edit-zip">Code postal (00000)</label>
+            <input type="text" id="edit-zip" autocomplete="postal-code">
+        </div>
+        <div class="field-wrap">
+            <label for="edit-tel">Téléphone (01 99 00 00 00)</label>
+            <input type="text" id="edit-tel" autocomplete="tel">
+        </div>
+        <div class="field-wrap">
+            <label for="edit-pwd">Mot de passe</label>
+            <input type="text" id="edit-pwd" autocomplete="new-password" aria-describedby="pwd-aide">
+            <p id="pwd-aide">Le mot de passe doit contenir au moins 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial.</p>
+        </div>
+        <div class="field-wrap">
+            <label for="edit-pwd2" id="edit-label-secu">Numéro de sécurité social</label>
+            <input type="text" id="edit-pwd2" aria-labelledby="edit-label-secu pwd-aide2">
+            <p id="pwd-aide2">13 chiffres</p>
         </div>
     </div>
 </div>

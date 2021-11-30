@@ -242,6 +242,10 @@ legend, .legend {
     margin: 10px 0;
 }
 
+.field-wrap p {
+    margin: 0;
+}
+
 .field-wrap label {
     display: block;
 }

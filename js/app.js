@@ -365,6 +365,121 @@ class Tooltip {
     }
 }
 
+findNearestHeading = (el) => {
+    if (el.previousElementSibling) {
+        if (el.previousElementSibling.tagName === 'H2') {
+            return el.previousElementSibling
+        } else {
+            return findNearestHeading(el.previousElementSibling);
+        }
+    } else if (el.parentElement) {
+        return findNearestHeading(el.parentElement);
+    } else {
+        return null;
+    }
+}
+
+/*
+class MenuMainAnchor {
+    constructor(menu, target) {
+        this.menu = menu;
+        this.target = target;
+        this.init();
+    }
+
+    init() {
+        const headings = document.querySelectorAll('h2:not(.demo h2), h3:not(.demo h3)');
+        const anchors = [];
+
+        headings.forEach(function(heading, index) {
+            // heading name
+            const headingName = heading.innerText;
+
+            // heading anchor
+            let anchorName = heading.getAttribute('id');
+            if (!anchorName) {
+                anchorName = `section${index}`;
+                heading.setAttribute('id', anchorName);
+            }
+
+            // Parent
+            let parent;
+            let child;
+            if (heading.nodeName === 'H2') {
+                parent = 'root';
+                child = true;
+            } else if (heading.nodeName === 'H3') {
+                parent = findNearestHeading(heading).getAttribute('id');
+                child = false;
+            }
+
+            anchors.push({
+                'name': headingName,
+                'anchor': anchorName,
+                'parent': parent,
+                'haschildren': child
+            });
+        }, this);
+
+        // console.log(anchors)
+
+        const indexed = anchors.reduce(function(result, item) {
+            result[item.anchor] = item;
+            return result;
+        }, {});
+
+        const arr = [];
+
+        const result = anchors.filter(function(item) {
+            const root = indexed[item.parent];
+
+            // delete item.parent;
+            // delete item.haschildren;
+
+            if(root) {
+                // add item as a child
+                root.children = (root.children || []).concat(item);
+
+            }
+
+            arr.push(parent);
+
+
+
+            // This part determines if the item is a root item or not
+            //return !parent;
+
+        });
+
+        console.log(arr)
+
+        //console.log(arr)
+        //const jsonTree = JSON.stringify(result, 0, 4);
+        //console.log(jsonTree)
+
+        function buildMenu(container, menu) {
+            if (!menu || !menu.length) return;
+            const ul = document.createElement("ul");
+
+            for (const {name, children} of menu) {
+                const li = document.createElement("li");
+                li.textContent = name;
+                li.className = "leaf";
+                if (children) {
+                    buildMenu(li, children, true);
+                }
+                ul.appendChild(li);
+            }
+            container.appendChild(ul);
+        }
+
+        buildMenu(document.getElementById("main-menu"), arr);
+
+    }
+}
+*/
+
+
 document.addEventListener("DOMContentLoaded", function ()  {
     onChangeOnSelect();
     noOnChangeOnSelect();
@@ -386,12 +501,12 @@ document.addEventListener("DOMContentLoaded", function ()  {
     validator.initialize();
 
     const menuLangsTrigger = document.getElementById("menu-langs__trigger");
-    const menuLangsContent = document.getElementById("menu-langs__content")
+    const menuLangsContent = document.getElementById("menu-langs__content");
     const menuLangDiscolsure = new disclosure(menuLangsTrigger, menuLangsContent);
     menuLangDiscolsure.initialize();
 
     const menuOrderTrigger = document.getElementById("menu-order__trigger");
-    const menuOrderContent = document.getElementById("menu-order__content")
+    const menuOrderContent = document.getElementById("menu-order__content");
     const menuOrderDiscolsure = new disclosure(menuOrderTrigger, menuOrderContent);
     menuOrderDiscolsure.initialize();
 
@@ -401,7 +516,9 @@ document.addEventListener("DOMContentLoaded", function ()  {
         cityName: "Paris",
     });
 
-    // const tooltips = document.querySelectorAll('.tooltip-container');
-    // tooltips.forEach(element => new Tooltip(element));
     Array.from(document.querySelectorAll('.tooltip-container')).forEach(element => new Tooltip(element));
+
+    // const menuMainWrapper = document.getElementById('main-menu');
+    // const menuMainContent = document.getElementById('menu-content');
+    // const menuMain = new MenuMainAnchor(menuMainWrapper, menuMainContent);
 });

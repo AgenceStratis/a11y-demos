@@ -252,18 +252,23 @@ const focusTrap = (element) => {
 }
 
 class disclosure {
-    constructor(trigger, content) {
+    constructor(trigger, content, focusFirstElement) {
         this.trigger = trigger;
         this.content = content;
+        this.focusFirstElement = focusFirstElement;
     }
 
     initialize = () => {
         let self = this;
+        const focusable = this.content.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
 
         this.trigger.addEventListener('click', (e) => {
             if(e.target.getAttribute('aria-expanded') === 'false') {
                 self.trigger.setAttribute('aria-expanded', 'true');
                 self.trigger.parentNode.classList.add('--open');
+                if (self.focusFirstElement) {
+                    focusable[0].focus();
+                }
             } else {
                 self.trigger.setAttribute('aria-expanded', 'false');
                 self.trigger.parentNode.classList.remove('--open');
@@ -502,13 +507,23 @@ document.addEventListener("DOMContentLoaded", function ()  {
 
     const menuLangsTrigger = document.getElementById("menu-langs__trigger");
     const menuLangsContent = document.getElementById("menu-langs__content");
-    const menuLangDiscolsure = new disclosure(menuLangsTrigger, menuLangsContent);
+    const menuLangDiscolsure = new disclosure(menuLangsTrigger, menuLangsContent, false);
     menuLangDiscolsure.initialize();
 
     const menuOrderTrigger = document.getElementById("menu-order__trigger");
     const menuOrderContent = document.getElementById("menu-order__content");
-    const menuOrderDiscolsure = new disclosure(menuOrderTrigger, menuOrderContent);
+    const menuOrderDiscolsure = new disclosure(menuOrderTrigger, menuOrderContent, false);
     menuOrderDiscolsure.initialize();
+
+    const menuOrderTrigger2 = document.getElementById("menu-order__trigger2");
+    const menuOrderContent2 = document.getElementById("menu-order__content2");
+    const menuOrderDiscolsure2 = new disclosure(menuOrderTrigger2, menuOrderContent2, false);
+    menuOrderDiscolsure2.initialize();
+
+    const menuOrderTrigger3 = document.getElementById("menu-order__trigger3");
+    const menuOrderContent3 = document.getElementById("menu-order__content3");
+    const menuOrderDiscolsure3 = new disclosure(menuOrderTrigger3, menuOrderContent3, true);
+    menuOrderDiscolsure3.initialize();
 
     const wrapperWeather = document.getElementById('weather');
     const weather = new weatherOWM(wrapperWeather, {

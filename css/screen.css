@@ -25,7 +25,7 @@ html {
     display: none;
 }
 
-button, a.button, span[tabindex] {
+button, a.button, [role="button"], span[role="button"][tabindex] {
     border: 1px solid #8451a1;
     background: white;
     padding: 5px;
@@ -37,8 +37,10 @@ button:hover,
 button:focus,
 a.button:hover,
 a.button:focus,
-span[tabindex]:hover,
-span[tabindex]:focus {
+[role="button"]:hover,
+[role="button"]:focus,
+span[role="button"][tabindex]:hover,
+span[role="button"][tabindex]:focus {
     background: #8451a1;
     color: white;
 }

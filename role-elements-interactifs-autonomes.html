@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exemples d'éléments interactifs autonomes - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/knacss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+<a href="index.html">Retour à l'accueil</a><br/>
+<a href="demo-sr.html">Retour au sommaire</a><br/>
+
+<div class="stand-alone interactive">
+    <header role="banner">
+        <h1>Exemples d'éléments interactifs autonomes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Boutons</h2>
+            <p><a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/" target="_blank">Modèle de conception
+                du bouton sur le site officiel du WAI</a></p>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>Version HTML</h3>
+                    <button onclick="insertHtml(document.getElementById('btn-html'), '', 'afterbegin', true);">Je suis un bouton en HTML natif</button>
+                    <p>Nombre de clics : <span id="btn-html">0</span></p>
+                </div>
+                <div>
+                    <h3>Version ARIA</h3>
+                    <span tabindex="0" role="button" onkeyup="insertHtmlOnNonNativeElement(event, 32, document.getElementById('btn-aria'), '', 'afterbegin', true);" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria'), '', 'afterbegin', true);">Moi aussi je suis un bouton, mais pas en HTML natif...</span>
+                    <p>Nombre de clics : <span id="btn-aria">0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Liens</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>Version HTML</h3>
+                    <p><a href="#" onclick="insertHtml(document.getElementById('btn-html2'), '', 'afterbegin', true);return false;">Je suis un lien en HTML natif</a></p>
+                    <p>Nombre de clics : <span id="btn-html2">0</span></p>
+                </div>
+                <div>
+                    <h3>Version ARIA</h3>
+                    <p><span role="link" tabindex="0" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria2'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria2'), '', 'afterbegin', true);">Moi aussi je suis un lien, mais pas en HTML natif...</span></p>
+                    <p>Nombre de clics : <span id="btn-aria2">0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Cases à cocher</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>Version HTML</h3>
+                    <input class="checkbox" type="checkbox" id="labelHtml_0"> <label for="labelHtml_0">Je suis une case à cocher en HTML native</label>
+                </div>
+                <div>
+                    <h3>Version ARIA</h3>
+                    <span class="checkbox" role="checkbox" id="labelHtml_1" tabindex="0" onclick="checkRadioCheckbox(this)" onkeyup="checkRadioCheckboxOnNonNativeElement(event, 32, this)"></span> <label for="labelHtml_1">Moi aussi je suis une case à cocher, mais pas en HTML natif...</label>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="js/demo.js"></script>
+</body>
+</html>

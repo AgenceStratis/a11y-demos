@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exemples d'éléments composites - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/knacss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+<a href="index.html">Retour à l'accueil</a><br/>
+<a href="demo-sr.html">Retour au sommaire</a><br/>
+
+<div class="stand-alone interactive">
+    <header role="banner">
+        <h1>Exemples d'éléments composites</h1>
+    </header>
+    <main>
+        <section class="wrap">
+            <h2>Menu</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>Je suis un vrai menu</h3>
+                    <ul role="menu">
+                        <li role="presentation"><a href="javascript:void(0)" role="menuitem">Page 1</a></li>
+                        <li role="presentation"><a href="javascript:void(0)" role="menuitem">Page 2</a></li>
+                        <li role="presentation"><a href="javascript:void(0)" role="menuitem">Page 3</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Je ne suis pas un menu, mais juste une liste de liens</h3>
+                    <ul>
+                        <li><a href="javascript:void(0)">Page 1</a></li>
+                        <li><a href="javascript:void(0)">Page 2</a></li>
+                        <li><a href="javascript:void(0)">Page 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Arborescence</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>Je suis une vraie arborescence</h3>
+                    <ul role="tree">
+                        <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 1</a>
+                            <ul role="group">
+                                <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 1.1</a></li>
+                                <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 1.2</a>
+                                    <ul role="group">
+                                        <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 1.2.1</a></li>
+                                        <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 1.2.2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 2</a></li>
+                        <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 3</a>
+                            <ul role="group">
+                                <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 3.1</a></li>
+                                <li role="presentation"><a href="javascript:void(0)" role="treeitem">Catégorie 3.2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Je ne suis pas une arborescence, mais juste une liste de liens</h3>
+                    <ul>
+                        <li><a href="javascript:void(0)">Catégorie 1</a>
+                            <ul>
+                                <li><a href="javascript:void(0)">Catégorie 1.1</a></li>
+                                <li><a href="javascript:void(0)">Catégorie 1.2</a>
+                                    <ul>
+                                        <li><a href="javascript:void(0)">Catégorie 1.2.1</a></li>
+                                        <li><a href="javascript:void(0)">Catégorie 1.2.2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0)">Catégorie 2</a></li>
+                        <li><a href="javascript:void(0)">Catégorie 3</a>
+                            <ul>
+                                <li><a href="javascript:void(0)">Catégorie 1.1</a></li>
+                                <l><a href="javascript:void(0)">Catégorie 1.2</a></l>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

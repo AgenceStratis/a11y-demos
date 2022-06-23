@@ -1,9 +1,31 @@
 .landmarks .header {
-    display: block;
+    display: flex;
+    flex-direction: row;
     width: 100%;
     background: #e9e9e9;
     margin: 50px auto;
     padding: 10px;
+}
+
+.landmarks .header p {
+    padding: 10px;
+}
+
+.landmarks .header a {
+    display: inline-block;
+}
+
+.landmarks .header a:hover img,
+.landmarks .header a:focus img {
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.7));
+}
+
+.landmarks .header p.logo {
+    width: 100%;
+}
+
+.landmarks .header p.search {
+    width: auto;
 }
 
 .landmarks .nav li {
@@ -42,7 +64,8 @@
     text-align: center;
 }
 
-@media (max-width:480px) {
+@media (max-width:768px) {
+    .landmarks .header,
     .landmarks .main-wrapper,
     .landmarks .main,
     .landmarks .aside {
@@ -50,7 +73,9 @@
         width: 100%;
         display: block;
         border: none;
-        padding: 0;
         margin: 0;
+    }
+    .landmarks .header p {
+        text-align: center;
     }
 }

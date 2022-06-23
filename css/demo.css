@@ -32,7 +32,7 @@ span[role="button"] {
     text-decoration: underline;
 }
 
-[role="link"]:focus, [role="button"]:focus, [role="checkbox"]:focus, [role="radio"]:focus  {
+[role="link"]:focus, [role="button"]:focus, [role="checkbox"]:focus, [role="radio"]:focus {
     box-shadow: 0 0 6px 0 #1e90ff;
     outline-color: rgba(30, 144, 255, 0.5);
     outline-offset: 0;
@@ -47,6 +47,7 @@ span[role="button"] {
 }
 
 /* Form elements */
+
 [role="checkbox"],
 [role="radio"] {
     display: inline-block;
@@ -69,6 +70,28 @@ span[role="button"] {
     background-color: #fff;
 }
 
+progress,
+.progress {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    width: 50%;
+    min-height: 28px;
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: white;
+}
+.progress {
+    height: 18px;
+}
+progress::-moz-progress-bar,
+progress::-webkit-progress-value {
+    background: #8451a1;
+}
+.progress [role="progressbar"] {
+    height: 100%;
+    background: #8451a1;
+}
+
 /* Landmarks */
 .landmarks .header {
     display: flex;
@@ -89,7 +112,7 @@ span[role="button"] {
 
 .landmarks .header a:hover img,
 .landmarks .header a:focus img {
-    filter: drop-shadow(0 0 2px rgba(0,0,0,0.7));
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7));
 }
 
 .landmarks .header p.logo {
@@ -136,7 +159,7 @@ span[role="button"] {
     text-align: center;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
     .landmarks .header,
     .landmarks .main-wrapper,
     .landmarks .main,
@@ -147,6 +170,7 @@ span[role="button"] {
         border: none;
         margin: 0;
     }
+
     .landmarks .header p {
         text-align: center;
     }

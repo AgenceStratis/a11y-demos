@@ -20,7 +20,7 @@
         <h1>Exemples d'éléments interactifs autonomes</h1>
     </header>
     <main>
-        <section>
+        <section class="wrap">
             <h2>Boutons</h2>
             <p><a href="https://www.w3.org/WAI/ARIA/apg/patterns/button/" target="_blank">Modèle de conception
                 du bouton sur le site officiel du WAI</a></p>
@@ -32,29 +32,29 @@
                 </div>
                 <div>
                     <h3>Version ARIA</h3>
-                    <span tabindex="0" role="button" onkeyup="insertHtmlOnNonNativeElement(event, 32, document.getElementById('btn-aria'), '', 'afterbegin', true);" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria'), '', 'afterbegin', true);">Moi aussi je suis un bouton, mais pas en HTML natif...</span>
+                    <span tabindex="0" role="button" onkeyup="insertHtmlOnNonNativeElement(event, 32, document.getElementById('btn-aria'), '', 'afterbegin', true);" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria'), '', 'afterbegin', true);">Moi aussi je suis un bouton, mais pas en HTML natif</span>
                     <p>Nombre de clics : <span id="btn-aria">0</span></p>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="wrap">
             <h2>Liens</h2>
             <div class="grid grid-cols-2 has-gutter">
                 <div>
                     <h3>Version HTML</h3>
-                    <p><a href="#" onclick="insertHtml(document.getElementById('btn-html2'), '', 'afterbegin', true);return false;">Je suis un lien en HTML natif</a></p>
+                    <p><a href="javascript:void(0)" onclick="insertHtml(document.getElementById('btn-html2'), '', 'afterbegin', true);return false;">Je suis un lien en HTML natif</a></p>
                     <p>Nombre de clics : <span id="btn-html2">0</span></p>
                 </div>
                 <div>
                     <h3>Version ARIA</h3>
-                    <p><span role="link" tabindex="0" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria2'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria2'), '', 'afterbegin', true);">Moi aussi je suis un lien, mais pas en HTML natif...</span></p>
+                    <p><span role="link" tabindex="0" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria2'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria2'), '', 'afterbegin', true);">Moi aussi je suis un lien, mais pas en HTML natif</span></p>
                     <p>Nombre de clics : <span id="btn-aria2">0</span></p>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="wrap">
             <h2>Cases à cocher</h2>
             <div class="grid grid-cols-2 has-gutter">
                 <div>
@@ -63,7 +63,25 @@
                 </div>
                 <div>
                     <h3>Version ARIA</h3>
-                    <span class="checkbox" role="checkbox" id="labelHtml_1" tabindex="0" onclick="checkRadioCheckbox(this)" onkeyup="checkRadioCheckboxOnNonNativeElement(event, 32, this)"></span> <label for="labelHtml_1">Moi aussi je suis une case à cocher, mais pas en HTML natif...</label>
+                    <span class="checkbox" role="checkbox" aria-checked="false" aria-labelledby="labelHtml_1" tabindex="0" onclick="checkRadioCheckbox(this)" onkeyup="checkRadioCheckboxOnNonNativeElement(event, 32, this)"></span> <label id="labelHtml_1">Moi aussi je suis une case à cocher, mais pas en HTML natif</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Barre de progression</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>Version HTML</h3>
+                    <p>Progression : 70%</p>
+                    <progress max="100" value="70"></progress>
+                </div>
+                <div>
+                    <h3>Version ARIA</h3>
+                    <p>Progression : 70%</p>
+                    <div class="progress">
+                        <div role="progressbar" aria-valuenow="70" aria-valuetext="70%" aria-valuemax="100" style="width:70%"></div>
+                    </div>
                 </div>
             </div>
         </section>

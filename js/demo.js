@@ -13,7 +13,13 @@ const insertHtmlOnNonNativeElement = (event, key, element, htmlString, position,
 };
 
 const checkRadioCheckbox = (element) => {
-    element.classList.contains('checked') ? element.classList.remove('checked') : element.classList.add('checked');
+    if (element.classList.contains('checked')) {
+        element.classList.remove('checked');
+        element.setAttribute('aria-checked', 'false');
+    } else {
+        element.classList.add('checked');
+        element.setAttribute('aria-checked', 'true');
+    }
 };
 
 const checkRadioCheckboxOnNonNativeElement = (event, key, element) => {

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exemples d'éléments de structuration du contenu - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/knacss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+<a href="index.html">Retour à l'accueil</a><br/>
+<a href="demo-sr.html">Retour au sommaire</a><br/>
+
+<div class="stand-alone interactive">
+    <header role="banner">
+        <h1>Exemples d'éléments de structuration du contenu</h1>
+    </header>
+    <main>
+        <section class="wrap">
+            <h2>Page de contenu</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>HTML</h3>
+                    <div class="demo">
+                        <h2>Tableau</h2>
+                        <table>
+                            <caption>Exemple de tableau</caption>
+                            <thead>
+                                <tr>
+                                    <th>Identifiant</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Dupont</td>
+                                    <td>Jean</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Smith</td>
+                                    <td>John</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Listes</h3>
+                        <ul>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ul>
+                        <ol>
+                            <li>Item 1</li>
+                            <li>Item 2</li>
+                            <li>Item 3</li>
+                        </ol>
+                        <h4>Image</h4>
+                        <img src="images/cloud-rain-solid.svg" alt="nuage et pluie" width="16">
+                    </div>
+                </div>
+                <div>
+                    <h3>ARIA</h3>
+                    <div class="demo">
+                        <p role="heading" aria-level="2">Tableau</p>
+                        <div role="table" aria-labelledby="table-caption">
+                            <p id="table-caption">Exemple de tableau</p>
+                            <div role="rowgroup">
+                                <div role="row">
+                                    <span role="columnheader">Identifiant</span>
+                                    <span role="columnheader">Nom</span>
+                                    <span role="columnheader">Prénom</span>
+                                </div>
+                            </div>
+                            <div role="rowgroup">
+                                <div role="row">
+                                    <span role="cell">1</span>
+                                    <span role="cell">Dupont</span>
+                                    <span role="cell">Jean</span>
+                                </div>
+                                <div role="row">
+                                    <span role="cell">2</span>
+                                    <span role="cell">Smith</span>
+                                    <span role="cell">John</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p role="heading" aria-level="3">Listes</p>
+                        <div role="list">
+                            <p role="listitem">• Item 1</p>
+                            <p role="listitem">• Item 2</p>
+                            <p role="listitem">• Item 3</p>
+                        </div>
+                        <div role="list">
+                            <p role="listitem">1. Item 1</p>
+                            <p role="listitem">2. Item 2</p>
+                            <p role="listitem">3. Item 3</p>
+                        </div>
+                        <p role="heading" aria-level="4">Image</p>
+                        <span class="fas fa-cloud-rain" role="img" aria-label="nuage et pluie"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

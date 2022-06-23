@@ -1,4 +1,39 @@
+/* Override */
+.demo h2 {
+    font-size: 2.8rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.05);
+    color: #8451a1;
+}
+
+caption {
+    caption-side: top;
+}
+
 /* General */
+[role="heading"][aria-level="1"],
+[role="heading"][aria-level="2"],
+[role="heading"][aria-level="3"],
+[role="heading"][aria-level="4"],
+[role="heading"][aria-level="5"],
+[role="heading"][aria-level="6"] {
+    margin: 20px 0 10px !important;
+    padding: 0 !important;
+    font-weight: bold !important;
+}
+[role="heading"][aria-level="2"] {
+    font-family: sans-serif;
+    font-size: 2.8rem;
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.05);
+    color: #8451a1;
+}
+[role="heading"][aria-level="3"] {
+    font-size: 2.4rem;
+}
+[role="heading"][aria-level="4"] {
+    font-size: 2rem;
+    color: #8451a1;
+}
+
 [role="link"] {
     color: #007bff;
     text-decoration: none;
@@ -47,7 +82,6 @@ span[role="button"] {
 }
 
 /* Form elements */
-
 [role="checkbox"],
 [role="radio"] {
     display: inline-block;
@@ -90,6 +124,58 @@ progress::-webkit-progress-value {
 .progress [role="progressbar"] {
     height: 100%;
     background: #8451a1;
+}
+
+/* Table */
+[role="table"] {
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    vertical-align: top;
+    margin-bottom: 2rem;
+}
+
+[role="table"] > [id] {
+    display: table-caption;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    color: #868e96;
+    text-align: left;
+}
+
+[role="table"] [role="row"] {
+    display: table-row;
+    border-top: 1px solid #cccccc;
+    background-color: white;
+}
+
+[role="table"] [role="cell"],
+[role="table"] [role="columnheader"] {
+    display: table-cell;
+    padding: 0.125em 0.25em;
+    width: 8em;
+}
+
+[role="table"] [role="columnheader"] {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+[role="table"] [role="cell"] {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+[role="table"] [role="rowgroup"]:last-child [role="row"]:nth-child(2n) {
+    background-color: #f8f8f8;
 }
 
 /* Landmarks */

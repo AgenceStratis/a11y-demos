@@ -1,6 +1,6 @@
 const insertHtml = (element, htmlString, position, incrementContent) => {
     if (incrementContent) {
-        htmlString = parseInt(element.textContent) + 1;
+        htmlString = htmlString || parseInt(element.textContent) + 1;
         element.textContent = "";
     }
     element.insertAdjacentHTML(position, htmlString);
@@ -25,3 +25,18 @@ const checkRadioCheckbox = (element) => {
 const checkRadioCheckboxOnNonNativeElement = (event, key, element) => {
     (event.keyCode === key) ? checkRadioCheckbox(element) : false;
 };
+
+let runInterval;
+
+const runLiveMessage = (htmlString, incrementContent, action) => {
+    document.getElementById('blockquote').focus();
+    stopAll();
+    runInterval = setInterval(function() {
+        htmlString = htmlString + 1;
+        insertHtml(document.getElementById(action), htmlString, 'afterbegin', incrementContent);
+    }, 2000);
+}
+
+const stopAll = () => {
+    clearInterval(runInterval);
+}

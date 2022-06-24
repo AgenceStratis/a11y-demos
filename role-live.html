@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exemples de zones Live - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/knacss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+<a href="index.html">Retour à l'accueil</a><br/>
+<a href="demo-sr.html">Retour au sommaire</a><br/>
+
+<div class="stand-alone interactive">
+    <header role="banner">
+        <h1>Exemples de zones <span lang="en">Live</span></h1>
+    </header>
+    <main>
+        <section class="wrap">
+            <div class="grid grid-cols-4 has-gutter">
+                <div>
+                    <h2>Alerte</h2>
+                    <div class="demo">
+                        <button onclick="runLiveMessage(1, true, 'alert')">Lancer une alerte</button>
+                    </div>
+                    <p id="alert" role="alert"></p>
+                </div>
+                <div>
+                    <h2>Information générique</h2>
+                    <div class="demo">
+                        <button onclick="runLiveMessage(10, true, 'log')">Lancer une information générique</button>
+                    </div>
+                    <p id="log" role="log"></p>
+                </div>
+                <div>
+                    <h2>Information de statut</h2>
+                    <div class="demo">
+                        <button onclick="runLiveMessage(100, true, 'status')">Lancer une information générique</button>
+                    </div>
+                    <p id="status" role="status"></p>
+                </div>
+                <div>
+                    <h2>Information de statut</h2>
+                    <div class="demo">
+                        <button onclick="stopAll()">Tout arrêter</button>
+                    </div>
+                </div>
+            </div>
+            <div class="demo">
+                <blockquote id="blockquote" tabindex="-1"><p>Lecture automatique : La vie, c'est comme une bicyclette,
+                    il faut avancer pour ne pas perdre l'équilibre.</p></blockquote>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="js/demo.js"></script>
+</body>
+</html>

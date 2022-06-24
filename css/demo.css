@@ -10,6 +10,7 @@ caption {
 }
 
 /* General */
+
 [role="heading"][aria-level="1"],
 [role="heading"][aria-level="2"],
 [role="heading"][aria-level="3"],
@@ -67,7 +68,7 @@ span[role="button"] {
     text-decoration: underline;
 }
 
-[role="link"]:focus, [role="button"]:focus, [role="checkbox"]:focus, [role="radio"]:focus {
+[tabindex]:focus, [role="link"]:focus, [role="button"]:focus, [role="checkbox"]:focus, [role="radio"]:focus {
     box-shadow: 0 0 6px 0 #1e90ff;
     outline-color: rgba(30, 144, 255, 0.5);
     outline-offset: 0;

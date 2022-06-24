@@ -1,15 +1,14 @@
-const insertHtml = (element, htmlString, position, incrementContent) => {
+/* Insert text and HTML */
+const insertText = (element, htmlString, position, incrementContent) => {
     if (incrementContent) {
         htmlString = htmlString || parseInt(element.textContent) + 1;
         element.textContent = "";
     }
     element.insertAdjacentHTML(position, htmlString);
-
-    return false;
 };
 
-const insertHtmlOnNonNativeElement = (event, key, element, htmlString, position, incrementContent) => {
-    (event.keyCode === key) ? insertHtml(element, htmlString, position, incrementContent) : false;
+const insertTextOnNonNativeElement = (event, key, element, htmlString, position, incrementContent) => {
+    (event.keyCode === key) ? insertText(element, htmlString, position, incrementContent) : false;
 };
 
 const checkRadioCheckbox = (element) => {
@@ -26,17 +25,19 @@ const checkRadioCheckboxOnNonNativeElement = (event, key, element) => {
     (event.keyCode === key) ? checkRadioCheckbox(element) : false;
 };
 
+/* Live interval */
 let runInterval;
 
-const runLiveMessage = (htmlString, incrementContent, action) => {
-    document.getElementById('blockquote').focus();
+const runLiveMessage = (htmlString, incrementContent, action, targetId) => {
+    if (!targetId) return false;
+
+    document.getElementById(targetId).focus();
     stopAll();
     runInterval = setInterval(function() {
         htmlString = htmlString + 1;
-        insertHtml(document.getElementById(action), htmlString, 'afterbegin', incrementContent);
+        insertText(document.getElementById(action), htmlString, 'afterbegin', incrementContent);
     }, 2000);
 }
-
 const stopAll = () => {
     clearInterval(runInterval);
 }

@@ -28,12 +28,12 @@
                 <div class="grid grid-cols-2 has-gutter">
                     <div>
                         <h3>Version HTML</h3>
-                        <button onclick="insertHtml(document.getElementById('btn-html'), '', 'afterbegin', true);">Je suis un bouton en HTML natif</button>
+                        <button onclick="insertText(document.getElementById('btn-html'), '', 'afterbegin', true);">Je suis un bouton en HTML natif</button>
                         <p>Nombre de clics : <span id="btn-html">0</span></p>
                     </div>
                     <div>
                         <h3>Version ARIA</h3>
-                        <span tabindex="0" role="button" onkeyup="insertHtmlOnNonNativeElement(event, 32, document.getElementById('btn-aria'), '', 'afterbegin', true);" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria'), '', 'afterbegin', true);">Moi aussi je suis un bouton, mais pas en HTML natif</span>
+                        <span tabindex="0" role="button" onkeyup="insertTextOnNonNativeElement(event, 32, document.getElementById('btn-aria'), '', 'afterbegin', true);" onkeydown="insertTextOnNonNativeElement(event, 13, document.getElementById('btn-aria'), '', 'afterbegin', true);" onclick="insertText(document.getElementById('btn-aria'), '', 'afterbegin', true);">Moi aussi je suis un bouton, mais pas en HTML natif</span>
                         <p>Nombre de clics : <span id="btn-aria">0</span></p>
                     </div>
                 </div>
@@ -46,12 +46,12 @@
                 <div class="grid grid-cols-2 has-gutter">
                     <div>
                         <h3>Version HTML</h3>
-                        <p><a href="javascript:void(0)" onclick="insertHtml(document.getElementById('btn-html2'), '', 'afterbegin', true);return false;">Je suis un lien en HTML natif</a></p>
+                        <p><a href="javascript:void(0)" onclick="insertText(document.getElementById('btn-html2'), '', 'afterbegin', true);return false;">Je suis un lien en HTML natif</a></p>
                         <p>Nombre de clics : <span id="btn-html2">0</span></p>
                     </div>
                     <div>
                         <h3>Version ARIA</h3>
-                        <p><span role="link" tabindex="0" onkeydown="insertHtmlOnNonNativeElement(event, 13, document.getElementById('btn-aria2'), '', 'afterbegin', true);" onclick="insertHtml(document.getElementById('btn-aria2'), '', 'afterbegin', true);">Moi aussi je suis un lien, mais pas en HTML natif</span></p>
+                        <p><span role="link" tabindex="0" onkeydown="insertTextOnNonNativeElement(event, 13, document.getElementById('btn-aria2'), '', 'afterbegin', true);" onclick="insertText(document.getElementById('btn-aria2'), '', 'afterbegin', true);">Moi aussi je suis un lien, mais pas en HTML natif</span></p>
                         <p>Nombre de clics : <span id="btn-aria2">0</span></p>
                     </div>
                 </div>

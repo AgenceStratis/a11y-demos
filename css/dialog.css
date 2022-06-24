@@ -1,0 +1,38 @@
+.simple-modal-dialog {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    background-color: rgba(0,0,0,0.6);
+    border:none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.simple-modal-window {
+    position: relative;
+    background-color: #fff;
+    min-width: 320px;
+    min-height:170px;
+    display: block;
+    padding: 20px;
+}
+
+.simple-modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.simple-modal-button-group {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.simple-modal-button-group button:first-child {
+    margin-right: 10px;
+}

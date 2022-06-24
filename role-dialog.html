@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Les fenêtres - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/knacss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/dialog.css">
+</head>
+<body>
+<a href="index.html">Retour à l'accueil</a><br/>
+<a href="demo-sr.html">Retour au sommaire</a><br/>
+
+<div class="stand-alone interactive">
+    <header role="banner">
+        <h1>Les fenêtres</h1>
+    </header>
+    <main>
+        <section class="wrap">
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h2>Fenêtre modale</h2>
+                    <div class="demo">
+                        <button onclick="openAlertModal(this)" aria-haspopup="dialog" title="Afficher l'alerte (fenêtre modale)">Afficher l'alerte pour afficher la fenêtre modale d'alerte</button>
+                    </div>
+                </div>
+                <div>
+                    <h2>Information générique</h2>
+                    <div class="demo">
+                        <button onclick="openModal(this)" aria-haspopup="dialog" title="Afficher l'information (fenêtre modale)">Afficher l'alerte pour afficher la fenêtre modale d'information</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="js/dialog.js"></script>
+<script>
+    async function openAlertModal(toggleBtn) {
+        this.myModal = new SimpleModal("Attention", "Souhaitez-vous réellement faire ceci ?", "Oui", "Non", toggleBtn, true);
+        const modalResponse = await myModal.events();
+    }
+
+    async function openModal(toggleBtn) {
+        this.myModal = new SimpleModal("Bonjour", "Voici une petite info sans importance.", "OK merci", "", toggleBtn, false);
+        const modalResponse = await myModal.events();
+    }
+</script>
+</body>
+</html>

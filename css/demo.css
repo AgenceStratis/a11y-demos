@@ -262,3 +262,28 @@ progress::-webkit-progress-value {
         text-align: center;
     }
 }
+
+/* Tabs */
+.tab {
+    border: 2px solid grey;
+    color: grey;
+}
+
+.tab:hover,
+.tab:focus {
+    background: white;
+    color: inherit;
+    border-color: red;
+}
+
+.tab.--is-selected {
+    color: white;
+    background: red;
+    border-color: black;
+}
+.tab.--is-selected:hover,
+.tab.--is-selected:focus {
+    box-shadow: 3px 3px 0px black, -3px 3px 0px black, 3px -3px 0px black, -3px -3px 0px black;
+    border: 1px solid transparent;
+    background: red;
+}

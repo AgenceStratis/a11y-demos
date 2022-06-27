@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Les attributs d'état et de propriété - Version ARIA - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/knacss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+<a href="index.html">Retour à l'accueil</a><br/>
+<a href="demo-sr.html">Retour au sommaire</a><br/>
+
+<div class="stand-alone interactive">
+    <header role="banner">
+        <h1>Les attributs d'état et de propriété</h1>
+    </header>
+    <main>
+        <section class="wrap">
+            <h2>Élément réduit/développé</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>HTML</h3>
+                    <div class="demo">
+                        <button id="expandBtn" data-focus="collapseBtn" onclick="expandContent(this, 'content1', false)">Partager sur les réseaux sociaux <span class="sr-only status">réduit</span><span aria-hidden="true">▼</span></button>
+                        <button id="collapseBtn" data-focus="expandBtn" hidden onclick="expandContent(this, 'content1', false)">Partager sur les réseaux sociaux <span class="sr-only status">développé</span><span aria-hidden="true">▲</span></button>
+                        <ul id="content1" hidden>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <h3>ARIA</h3>
+                    <div class="demo">
+                        <button aria-expanded="false" aria-controls="content2" onclick="expandContent(this, 'content2', true)">Partager sur les réseaux sociaux <span aria-hidden="true" class="iconstatus">▼</span></button>
+                        <ul id="content2" hidden>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Élément caché/affiché</h2>
+            <div>
+                <div>
+                    <div class="demo">
+                        <p><a href="#">Ce lien est rendu par les aides techniques</a></p>
+                        <p aria-hidden="true"><a href="#" tabindex="-1">Ce lien est ignoré par les aides techniques</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Nom accessible</h2>
+            <div>
+                <div>
+                    <div class="demo">
+                        <p><a href="#">Exemple de lien</a></p>
+                        <p><a href="#" aria-label="Exemple de lien avec un nom accessible différent">Exemple de lien</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Niveau hiérarchique</h2>
+            <div>
+                <div>
+                    <div class="demo">
+                        <h4>Je suis un titre de niveau 4</h4>
+                        <h4 aria-level="5">Je suis un titre de niveau 5</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Élément enfoncé</h2>
+            <div class="grid grid-cols-2 has-gutter">
+                <div>
+                    <h3>HTML</h3>
+                    <div class="demo tabs">
+                        <button class="tab --is-selected" id="btn1" onclick="selectBtn(this, false)">Onglet 1 <span class="sr-only status">enfoncé</span></button>
+                        <button class="tab" id="btn2" onclick="selectBtn(this, false)">Onglet 2 <span class="sr-only status">non-enfoncé</span></button>
+                    </div>
+                </div>
+                <div>
+                    <h3>ARIA</h3>
+                    <div class="demo tabs">
+                        <button class="tab --is-selected" id="btn3" aria-pressed="true" onclick="selectBtn(this, true)">Onglet 1</button>
+                        <button class="tab" id="btn4" aria-pressed="false" onclick="selectBtn(this, true)">Onglet 2</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="js/demo.js"></script>
+</body>
+</html>

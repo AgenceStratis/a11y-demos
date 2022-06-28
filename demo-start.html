@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bases d'une synthèse vocale - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+</head>
+<body>
+
+<header role="banner" tabindex="-1" id="header">
+    <a href="index.html">Retour à l'accueil</a>
+    <h1>Bases d'une synthèse vocale</h1>
+</header>
+<main role="main" tabindex="-1" id="main">
+    <h2>Navigation générale</h2>
+    <p>Mon paragraphe 1 <a href="#main">avec un lien vers la zone de contenu principal</a>.</p>
+    <img src="images/horse.jpg" alt="" width="200"/>
+    <p>Mon paragraphe 2 un peu plus long que les autres, histoire de faire un paragraphe plus long.</p>
+    <img src="images/cat.jpeg" alt="Je suis une image de chat" width="200"/>
+    <p>Mon paragraphe 3 <a href="#header">avec un lien vers le lien d'entête</a>.</p>
+    <img src="images/bird.png" alt="" width="200"/>
+    <p>Mon paragraphe 4 <button onclick="alert('C\'est moi la boîte de dialogue !')">avec un bouton qui affiche une boîte de dialogue</button>.</p>
+    <img src="images/dog.webp" alt="Moi je suis une image de chien" width="200"/>
+    <p>Mon paragraphe 5 un peu plus long que les autres, histoire de faire un paragraphe plus long, comme le paragraphe 2.</p>
+    <img src="images/fish.jpg" alt="Et moi je suis une image de poisson" width="200"/>
+    <h2>Navigation rapide</h2>
+    <h3>Les listes</h3>
+    <ul>
+        <li>Éléments de liste à puce 1</li>
+        <li>Éléments de liste à puce 2</li>
+        <li>Éléments de liste à puce 3</li>
+        <li>Éléments de liste à puce 4</li>
+        <li>Éléments de liste à puce 5</li>
+    </ul>
+    <ol>
+        <li>Éléments de liste ordonnée 1</li>
+        <li>Éléments de liste ordonnée 2</li>
+        <li>Éléments de liste ordonnée 3</li>
+        <li>Éléments de liste ordonnée 4</li>
+        <li>Éléments de liste ordonnée 5</li>
+    </ol>
+    <h4>Les tableaux</h4>
+    <table>
+        <tr>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Ricard</td>
+            <td>Paul</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Lama</td>
+            <td>Bernard</td>
+        </tr>
+    </table>
+    <h5>Les formulaires</h5>
+    <form onsubmit="return false">
+        <label for="civilite">Civilité</label><br>
+            <select id="civilite">
+                <option>Madame</option>
+                <option>Monsieur</option>
+                <option>Docteur</option>
+                <option>Professeur</option>
+                <option>Maître</option>
+                <option>Monseigneur</option>
+                <option>Autre</option>
+            </select>
+        <br>
+        <label for="nom">Nom</label><br>
+            <input id="nom">
+        <br>
+        <label for="prenom">Prénom</label><br>
+            <input id="prenom">
+        <br>
+        <label for="adresse">Adresse</label><br>
+            <textarea id="adresse"></textarea>
+        <br>
+        <fieldset>
+            <legend>Domaine d'activité</legend>
+            <input type="checkbox" id="check1" name="check"><label for="check1">Domaine 1</label><br>
+            <input type="checkbox" id="check2" name="check"><label for="check2">Domaine 2</label><br>
+            <input type="checkbox" id="check3" name="check"><label for="check3">Domaine 3</label><br>
+        </fieldset>
+        <fieldset>
+            <legend>Type de contrat</legend>
+            <input type="radio" id="radio1" name="radio"><label for="radio1">Type de contrat 1</label><br>
+            <input type="radio" id="radio2" name="radio"><label for="radio2">Type de contrat 2</label><br>
+            <input type="radio" id="radio3" name="radio"><label for="radio3">Type de contrat 3</label><br>
+        </fieldset>
+        <button>Valider</button>
+    </form>
+    <h6>Les cadres (<span lang="en">iframe</span>)</h6>
+    <p><strong>Voici l'iframe de test 1</strong></p>
+    <iframe src="iframe/iframe1.html" title="Cadre de test 1" style="width:100%; height:200px"></iframe>
+    <p><strong>Voici l'iframe de test 2</strong></p>
+    <iframe src="iframe/iframe2.html" title="Cadre de test 2" style="width:100%; height:200px"></iframe>
+</main>
+</body>
+</html>

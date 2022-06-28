@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Les attributs de relation - Version ARIA - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/knacss.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<body>
+<a href="index.html">Retour à l'accueil</a><br/>
+<a href="demo-sr.html">Retour au sommaire</a><br/>
+
+<div class="stand-alone interactive">
+    <header role="banner">
+        <h1>Les attributs de relation</h1>
+    </header>
+    <main>
+        <section class="wrap">
+            <h2>Nom accessible et description</h2>
+            <div class="demo">
+                <h3 id="title">Rechercher</h3>
+                <p>Plusieurs possibilités : <span id="searchby">par mots-clés, par date, par tag</span> <span id="site">sur tout le site</span></p>
+                <input type="text" aria-labelledby="title searchby" aria-describedby="description">
+                <p id="description"><i>Ce champ utilise les attributs <code>aria-labelledby</code> pour définir son nom accessible, et <code>aria-describedby</code> pour sa description.</i></p>
+                <button onclick="return false;" aria-labelledby="title site"><span class="fas fa-check" aria-hidden="true"></span></button>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Champ invalide avec message d'erreur</h2>
+            <div class="demo">
+                <h3>Aucune information n'est transmise par NVDA. Préférer l'utilisation d'une zone <span lang="en">Live</span> et de relation.</h3>
+                <label for="field">Mon champ</label><br>
+                <input onkeydown="clearErrorMessage(this)" id="field" pattern="[0-9]{4}" aria-required="true" type="text" aria-errormessage="invalid-msg" aria-invalid="false" data-errormessage="Ce champ est obligatoire et doit contenir 4 chiffres">
+                <button onclick="checkField('field')" aria-label="Valider"><span class="fas fa-check" aria-hidden="true"></span></button>
+                <div id="invalid-msg" hidden></div>
+            </div>
+            <div class="demo">
+                <h3>Information fournie par <code>aria-describedby</code> (relation)</h3>
+                <label for="field2">Mon autre champ</label><br>
+                <input onkeydown="clearErrorMessage(this)" id="field2" pattern="[0-9]{5}" aria-required="true" type="text" aria-describedby="invalid-msg2" aria-invalid="false" data-errormessage="Ce champ est obligatoire et doit contenir 5 chiffres">
+                <button onclick="checkField('field2')" aria-label="Valider"><span class="fas fa-check" aria-hidden="true"></span></button>
+                <div id="invalid-msg2" hidden></div>
+            </div>
+            <div class="demo">
+                <h3>Information fournie par <code>role="alert"</code> (zone <span lang="en">Live</span>)</h3>
+                <label for="field3">Mon autre champ</label><br>
+                <input onkeydown="clearErrorMessage(this)" id="field3" pattern="[0-9]{6}" aria-required="true" type="text" data-describedby="invalid-msg3" aria-invalid="false" data-errormessage="Ce champ est obligatoire et doit contenir 6 chiffres">
+                <button onclick="checkField('field3')" aria-label="Valider"><span class="fas fa-check" aria-hidden="true"></span></button>
+                <div id="invalid-msg3" hidden role="alert"></div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="js/demo.js"></script>
+</body>
+</html>

@@ -90,3 +90,22 @@ const selectBtn = (element, isAria) => {
     }
     element.classList.add('--is-selected');
 };
+
+/* Invalid field form */
+const checkField = (field) => {
+    let myField = document.getElementById(field),
+        errorMessageElement = document.getElementById(myField.getAttribute('aria-errormessage')) || document.getElementById(myField.getAttribute('aria-describedby')) || document.getElementById(myField.getAttribute('data-describedby')),
+        errorMessage = myField.getAttribute('data-errormessage');
+
+    errorMessageElement.textContent = errorMessage;
+    errorMessageElement.removeAttribute('hidden');
+    myField.setAttribute('aria-invalid', 'true');
+    myField.focus();
+};
+
+const clearErrorMessage = (field) => {
+    let errorMessageElement = document.getElementById(field.getAttribute('aria-errormessage')) || document.getElementById(field.getAttribute('aria-describedby')) || document.getElementById(field.getAttribute('data-describedby'));
+
+    errorMessageElement.textContent = "";
+    field.setAttribute('aria-invalid', 'true');
+};

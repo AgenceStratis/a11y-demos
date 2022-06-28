@@ -104,6 +104,40 @@
                 </div>
             </div>
         </section>
+
+        <section class="wrap">
+            <h2>Bouton</h2>
+            <div>
+                <div>
+                    <div class="demo">
+                        <button onclick="alert('ça fonctionne')">Je suis un bouton actif</button><br>
+                        <button disabled>Je suis un bouton inactif, rendu inactif en HTML (attribut <code>disabled</code>)</button><br>
+                        <button aria-disabled="true" onclick="alert('ça fonctionne mais ça ne devrait pas')">Je suis un bouton indiqué comme inactif par les aides techniques grâce à ARIA (attribut <code>aria-disabled</code>), mais toujours actif</button><br>
+                        <button aria-disabled="true" tabindex="-1">Je suis un bouton inactif, rendu inactif avec ARIA (attribut <code>aria-disabled="true"</code>) et HTML (attribut <code>tabindex="-1"</code>), mais toujours lisible</button>
+                        <button aria-disabled="true" tabindex="-1">Je suis un bouton inactif, rendu inactif avec ARIA (attribut <code>aria-disabled="true"</code>) et HTML (attribut <code>tabindex="-1"</code>), et illisible avec ARIA (attribut <code>aria-hidden="true"</code>)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Champ obligatoire</h2>
+            <div>
+                <div>
+                    <form class="demo" onsubmit="alert('Formulaire soumis!'); return false;">
+                        <div class="demo">
+                            <label for="input1">Champ rendu obligatoire avec HTML (attribut <code>required</code>)</label><br>
+                            <input id="input1" type="text" required>
+                        </div>
+                        <div class="demo">
+                            <label for="input2">Champ rendu obligatoire avec ARIA (attribut <code>aria-required="true"</code>), mais non-obligatoire pour soumettre le formulaire</label><br>
+                            <input id="input2" type="text" aria-required="true">
+                        </div>
+                        <button type="submit">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 </div>
 <script src="js/demo.js"></script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exemples de zones Live - Démonstrations en accessibilité - Stratis</title>
+    <title>Les attributs de zone Live - Version ARIA - Démonstrations en accessibilité - Stratis</title>
     <link rel="icon" type="image/gif" href="favicon.ico"/>
     <link rel="stylesheet" href="css/github.css">
     <link rel="stylesheet" href="css/knacss.css">
@@ -17,7 +17,7 @@
 
 <div class="stand-alone interactive">
     <header role="banner">
-        <h1>Exemples de zones <span lang="en">Live</span></h1>
+        <h1>Les attributs de zone <span lang="en">Live</span></h1>
     </header>
     <main>
         <section class="wrap">
@@ -27,21 +27,21 @@
                     <div class="demo">
                         <button onclick="runLiveMessage(1, true, 'alert', 'blockquote')">Lancer une alerte</button>
                     </div>
-                    <p role="alert">Alerte : <span id="alert"></span></p>
+                    <p aria-live="assertive" aria-atomic="true">Alerte : <span id="alert"></span></p>
                 </div>
                 <div>
                     <h2>Information générique</h2>
                     <div class="demo">
                         <button onclick="runLiveMessage(10, true, 'log', 'blockquote')">Lancer une information générique</button>
                     </div>
-                    <p role="log">Log : <span id="log"></span></p>
+                    <p aria-live="polite" aria-atomic="false">Log : <span id="log"></span></p>
                 </div>
                 <div>
                     <h2>Information de statut</h2>
                     <div class="demo">
                         <button onclick="runLiveMessage(100, true, 'status', 'blockquote')">Lancer une information générique</button>
                     </div>
-                    <p role="status">Statut : <span id="status"></span></p>
+                    <p aria-live="polite" aria-atomic="true">Statut : <span id="status"></span></p>
                 </div>
                 <div>
                     <h2>Information de statut</h2>

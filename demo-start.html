@@ -46,6 +46,7 @@
     </ol>
     <h4>Les tableaux</h4>
     <table>
+        <caption>Mon tableau de test</caption>
         <tr>
             <th>Identifiant</th>
             <th>Nom</th>
@@ -64,39 +65,42 @@
     </table>
     <h5>Les formulaires</h5>
     <form onsubmit="return false">
-        <label for="civilite">Civilité</label><br>
-            <select id="civilite">
-                <option>Madame</option>
-                <option>Monsieur</option>
-                <option>Docteur</option>
-                <option>Professeur</option>
-                <option>Maître</option>
-                <option>Monseigneur</option>
-                <option>Autre</option>
-            </select>
-        <br>
-        <label for="nom">Nom</label><br>
-            <input id="nom">
-        <br>
-        <label for="prenom">Prénom</label><br>
-            <input id="prenom">
-        <br>
-        <label for="adresse">Adresse</label><br>
-            <textarea id="adresse"></textarea>
-        <br>
         <fieldset>
-            <legend>Domaine d'activité</legend>
-            <input type="checkbox" id="check1" name="check"><label for="check1">Domaine 1</label><br>
-            <input type="checkbox" id="check2" name="check"><label for="check2">Domaine 2</label><br>
-            <input type="checkbox" id="check3" name="check"><label for="check3">Domaine 3</label><br>
+            <legend>Exemple de formulaire</legend>
+            <label for="civilite">Civilité</label><br>
+                <select id="civilite">
+                    <option>Madame</option>
+                    <option>Monsieur</option>
+                    <option>Docteur</option>
+                    <option>Professeur</option>
+                    <option>Maître</option>
+                    <option>Monseigneur</option>
+                    <option>Autre</option>
+                </select>
+            <br>
+            <label for="nom">Nom</label><br>
+                <input id="nom">
+            <br>
+            <label for="prenom">Prénom</label><br>
+                <input id="prenom">
+            <br>
+            <label for="adresse">Adresse</label><br>
+                <textarea id="adresse"></textarea>
+            <br>
+            <fieldset>
+                <legend>Domaine d'activité</legend>
+                <input type="checkbox" id="check1" name="check"><label for="check1">Domaine 1</label><br>
+                <input type="checkbox" id="check2" name="check"><label for="check2">Domaine 2</label><br>
+                <input type="checkbox" id="check3" name="check"><label for="check3">Domaine 3</label><br>
+            </fieldset>
+            <fieldset>
+                <legend>Type de contrat</legend>
+                <input type="radio" id="radio1" name="radio"><label for="radio1">Type de contrat 1</label><br>
+                <input type="radio" id="radio2" name="radio"><label for="radio2">Type de contrat 2</label><br>
+                <input type="radio" id="radio3" name="radio"><label for="radio3">Type de contrat 3</label><br>
+            </fieldset>
+            <button>Valider</button>
         </fieldset>
-        <fieldset>
-            <legend>Type de contrat</legend>
-            <input type="radio" id="radio1" name="radio"><label for="radio1">Type de contrat 1</label><br>
-            <input type="radio" id="radio2" name="radio"><label for="radio2">Type de contrat 2</label><br>
-            <input type="radio" id="radio3" name="radio"><label for="radio3">Type de contrat 3</label><br>
-        </fieldset>
-        <button>Valider</button>
     </form>
     <h6>Les cadres (<span lang="en">iframe</span>)</h6>
     <p><strong>Voici l'iframe de test 1</strong></p>

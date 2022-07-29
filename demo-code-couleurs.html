@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : l'information donnée uniquement par la couleur - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1>Exemples de codes : l'information donnée uniquement par la couleur</h1>
+</header>
+
+<div class="wrap">
+    <h3 id="menu-item-active-bad">Information donnée uniquement par la couleur dans un menu</h3>
+    <h4>Mauvaise pratique</h4>
+    <pre><code>&lt;ul class=&quot;menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Actualit&eacute;s&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Le minist&egrave;re&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vos questions&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contactez nous&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    <div class="demo">
+        <ul class="menu -bad">
+            <li><a href="#">Actualités</a></li>
+            <li class="active"><a href="#">Le ministère</a></li>
+            <li><a href="#">Vos questions</a></li>
+            <li><a href="#">Contactez nous</a></li>
+        </ul>
+    </div>
+
+    <h4>Bonnes pratiques avec HTML</h4>
+    <pre><code>&lt;ul class=&quot;menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Actualit&eacute;s&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;border: 1px solid black&quot; title=&quot;Le minist&egrave;re, rubrique active&quot;&gt;Le minist&egrave;re&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vos questions&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contactez nous&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    <div class="demo">
+        <ul class="menu">
+            <li><a href="#">Actualités</a></li>
+            <li class="active"><a href="#" style="border: 1px solid black" title="Le ministère, rubrique active">Le ministère</a></li>
+            <li><a href="#">Vos questions</a></li>
+            <li><a href="#">Contactez nous</a></li>
+        </ul>
+    </div>
+
+    <h4>Bonnes pratiques avec ARIA</h4>
+    <pre><code>&lt;ul class=&quot;menu&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Actualit&eacute;s&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot; style=&quot;border: 1px solid black&quot; aria-current=&quot;page&quot;&gt;Le minist&egrave;re&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vos questions&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contactez nous&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    <div class="demo">
+        <ul class="menu">
+            <li><a href="#">Actualités</a></li>
+            <li class="active"><a href="#" style="border: 1px solid black" aria-current="page">Le ministère</a></li>
+            <li><a href="#">Vos questions</a></li>
+            <li><a href="#">Contactez nous</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

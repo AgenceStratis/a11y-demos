@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : les médias temporels et non temporels - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1>Exemples de codes : les médias temporels et non temporels</h1>
+</header>
+
+<div class="wrap">
+    <h2 id="media-temp">Exemple de média temporel avec titre, sous-titrage et transcription textuelle</h2>
+    <div class="demo">
+        <h3>La rotation de la boule</h3>
+        <pre><code>&lt;video loop width=&quot;640&quot; height=&quot;426&quot;&gt;
+    &lt;source src=&quot;medias/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;track kind=&quot;captions&quot; label=&quot;Fran&ccedil;ais&quot; src=&quot;medias/sous-titre_fr.vtt&quot; srclang=&quot;fr-FR&quot;&gt;
+&lt;/video&gt;</code></pre>
+        <video width="640" height="426" loop controls>
+            <source src="medias/video.mp4" type="video/mp4">
+            <track kind="captions" label="Français" src="medias/sous-titre_fr.vtt" srclang="fr-FR" default>
+        </video>
+        <h5>Transcription textuelle</h5>
+        <p>La vidéo tourne en boucle.</p>
+        <p>Une boule est en rotation, formant un cercle parfait.</p>
+        <p>Chaque fois qu'elle atteint l'extrémité haute, basse, droite et gauche du cercle, une flèche rouge apparaît à cette extrémité. Cette flèche rouge est orientée la pointe vers le centre du cercle.</p>
+    </div>
+</div>
+
+<div class="wrap">
+    <h2 id="media-non-temp">Exemples de médias non temporels</h2>
+    <div class="demo">
+        <h3>GIF animé</h3>
+        <pre><code>&lt;img src=&quot;images/giphy.gif&quot; alt=&quot;animation en 16 couleurs d'un chat gris aux joues rose et au corps rectangulaire gris à pois roses, volant dans l'espace laissant une trainée arc-en-ciel&quot;&gt;</code></pre>
+        <img src="images/giphy.gif" alt="animation en 16 couleurs d'un chat gris aux joues rose et au corps rectangulaire gris à pois roses, volant dans l'espace laissant une trainée arc-en-ciel" width="270" height="180">
+    </div>
+
+    <div class="demo">
+        <h3>Animation Flash</h3>
+        <pre><code>&lt;object type=&quot;application/x-shockwave-flash&quot; data=&quot;medias/jetpackSWF.swf&quot; &gt;
+    &lt;param name=&quot;movie&quot; value=&quot;medias/jetpackSWF.swf&quot; /&gt;
+    &lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;
+    &lt;p&gt;un personnage en combinaison spatiale s&#39;envole gr&acirc;ce &agrave; 2 mini-fus&eacute;es accroch&eacute;es dans son dos&lt;/p&gt;
+&lt;/object&gt;</code></pre>
+        <object type="application/x-shockwave-flash" data="medias/jetpackSWF.swf">
+            <param name="movie" value="medias/jetpackSWF.swf" />
+            <param name="wmode" value="transparent" />
+            <p>un personnage en combinaison spatiale s'envole grâce à 2 mini-fusées accrochées dans son dos</p>
+        </object>
+    </div>
+
+    <div class="demo">
+        <h3>Contenu incorporé (animation Flash)</h3>
+        <pre><code>&lt;embed src=&quot;medias/jetpackSWF.swf&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
+    &lt;noembed&gt;
+        &lt;p&gt;un personnage en combinaison spatiale s&#39;envole gr&acirc;ce &agrave; 2 mini-fus&eacute;es accroch&eacute;es dans son dos&lt;/p&gt;
+    &lt;/noembed&gt;
+&lt;/embed&gt;</code></pre>
+        <embed src="medias/jetpackSWF.swf" type="application/x-shockwave-flash">
+            <noembed>
+                <p>un personnage en combinaison spatiale s'envole grâce à 2 mini-fusées accrochées dans son dos</p>
+            </noembed>
+        </embed>
+    </div>
+</div>
+
+</body>
+</html>

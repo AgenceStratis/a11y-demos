@@ -20,51 +20,9 @@
 </header>
 
 <div class="wrap">
-    <h2 id="table-mef">Exemple de tableau de mise en forme</h2>
-    <div class="demo">
-        <pre><code>&lt;table&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;strong&gt;Prénom&lt;/strong&gt;&lt;/td&gt;
-        &lt;td&gt;Anne&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;strong&gt;Nom&lt;/strong&gt;&lt;/td&gt;
-        &lt;td&gt;Dupont&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;strong&gt;Poste&lt;/strong&gt;&lt;/td&gt;
-        &lt;td&gt;Cheffe de projet&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;strong&gt;Ancienneté dans la société&lt;/strong&gt;&lt;/td&gt;
-        &lt;td&gt;5 ans&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
-        <table style="width:25%">
-            <tr>
-                <td><strong>Prénom</strong></td>
-                <td>Anne</td>
-            </tr>
-            <tr>
-                <td><strong>Nom</strong></td>
-                <td>Dupont</td>
-            </tr>
-            <tr>
-                <td><strong>Poste</strong></td>
-                <td>Cheffe de projet</td>
-            </tr>
-            <tr>
-                <td><strong>Ancienneté dans la société</strong></td>
-                <td>5 ans</td>
-            </tr>
-        </table>
-    </div>
-</div>
-
-<div class="wrap">
     <h2 id="table-donnees-simple">Exemple de tableau de données simple</h2>
     <div class="demo">
-        <pre><code>&lt;table&gt;
+        <pre aria-hidden="true"><code>&lt;table&gt;
     &lt;caption&gt;Temp&eacute;ratures moyenne &agrave; Paris, Marseille et Lyon en Juin et Juillet&lt;/caption&gt;
     &lt;tr&gt;
         &lt;td&gt;&amp;nbsp;&lt;/td&gt;
@@ -112,7 +70,7 @@
 <div class="wrap">
     <h2 id="table-donnees-complexe">Exemple de tableau de données complexe</h2>
     <div class="demo">
-        <pre><code>&lt;table&gt;
+        <pre aria-hidden="true"><code>&lt;table&gt;
     &lt;caption&gt;Temp&eacute;rature moyennes mensuelles sur deux ann&eacute;es&amp;nbsp;: le premier
         regroupement concerne l&#39;ann&eacute;e 2016, le second l&#39;ann&eacute;e 2017. La premi&egrave;re colonne
         repr&eacute;sente les mois, la seconde la ville de Brest et la troisi&egrave;me la ville de Lyon.
@@ -184,6 +142,48 @@
                 <th id="juillet2">Juillet</th>
                 <td headers="2017 brest juillet2">25°c</td>
                 <td headers="2017 lyon juillet2">35°c</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="wrap">
+    <h2 id="table-mef">Exemple de tableau de mise en forme</h2>
+    <div class="demo">
+        <pre aria-hidden="true"><code>&lt;table role=&quot;presentation&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Prénom&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;Anne&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Nom&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;Dupont&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Poste&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;Cheffe de projet&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Ancienneté dans la société&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;5 ans&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <table role="presentation" style="width:25%">
+            <tr>
+                <td><strong>Prénom</strong></td>
+                <td>Anne</td>
+            </tr>
+            <tr>
+                <td><strong>Nom</strong></td>
+                <td>Dupont</td>
+            </tr>
+            <tr>
+                <td><strong>Poste</strong></td>
+                <td>Cheffe de projet</td>
+            </tr>
+            <tr>
+                <td><strong>Ancienneté dans la société</strong></td>
+                <td>5 ans</td>
             </tr>
         </table>
     </div>

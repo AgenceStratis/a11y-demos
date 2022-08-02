@@ -20,35 +20,16 @@
 </header>
 
 <div class="wrap">
-    <h2 id="media-temp">Exemple de média temporel avec titre, sous-titrage et transcription textuelle</h2>
-    <div class="demo">
-        <h3>La rotation de la boule</h3>
-        <pre><code>&lt;video loop width=&quot;640&quot; height=&quot;426&quot;&gt;
-    &lt;source src=&quot;medias/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
-    &lt;track kind=&quot;captions&quot; label=&quot;Fran&ccedil;ais&quot; src=&quot;medias/sous-titre_fr.vtt&quot; srclang=&quot;fr-FR&quot;&gt;
-&lt;/video&gt;</code></pre>
-        <video width="640" height="426" loop controls>
-            <source src="medias/video.mp4" type="video/mp4">
-            <track kind="captions" label="Français" src="medias/sous-titre_fr.vtt" srclang="fr-FR" default>
-        </video>
-        <h5>Transcription textuelle</h5>
-        <p>La vidéo tourne en boucle.</p>
-        <p>Une boule est en rotation, formant un cercle parfait.</p>
-        <p>Chaque fois qu'elle atteint l'extrémité haute, basse, droite et gauche du cercle, une flèche rouge apparaît à cette extrémité. Cette flèche rouge est orientée la pointe vers le centre du cercle.</p>
-    </div>
-</div>
-
-<div class="wrap">
     <h2 id="media-non-temp">Exemples de médias non temporels</h2>
     <div class="demo">
         <h3>GIF animé</h3>
-        <pre><code>&lt;img src=&quot;images/giphy.gif&quot; alt=&quot;animation en 16 couleurs d'un chat gris aux joues rose et au corps rectangulaire gris à pois roses, volant dans l'espace laissant une trainée arc-en-ciel&quot;&gt;</code></pre>
+        <pre aria-hidden="true"><code>&lt;img src=&quot;images/giphy.gif&quot; alt=&quot;animation en boucle en 16 couleurs d'un chat gris aux joues roses et au corps rectangulaire, volant dans l'espace laissant une trainée arc-en-ciel&quot;&gt;</code></pre>
         <img src="images/giphy.gif" alt="animation en 16 couleurs d'un chat gris aux joues rose et au corps rectangulaire gris à pois roses, volant dans l'espace laissant une trainée arc-en-ciel" width="270" height="180">
     </div>
 
     <div class="demo">
         <h3>Animation Flash</h3>
-        <pre><code>&lt;object type=&quot;application/x-shockwave-flash&quot; data=&quot;medias/jetpackSWF.swf&quot; &gt;
+        <pre aria-hidden="true"><code>&lt;object type=&quot;application/x-shockwave-flash&quot; data=&quot;medias/jetpackSWF.swf&quot; &gt;
     &lt;param name=&quot;movie&quot; value=&quot;medias/jetpackSWF.swf&quot; /&gt;
     &lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;
     &lt;p&gt;un personnage en combinaison spatiale s&#39;envole gr&acirc;ce &agrave; 2 mini-fus&eacute;es accroch&eacute;es dans son dos&lt;/p&gt;
@@ -61,17 +42,38 @@
     </div>
 
     <div class="demo">
-        <h3>Contenu incorporé (animation Flash)</h3>
-        <pre><code>&lt;embed src=&quot;medias/jetpackSWF.swf&quot; type=&quot;application/x-shockwave-flash&quot;&gt;
+        <h3>Contenu incorporé : animation Flash avec une vidéo Youtube alternative (support très relatif, balise <code>noembed</code> obsolète et non-standard)</h3>
+        <pre aria-hidden="true"><code>&lt;embed src=&quot;medias/jetpackSWF.swf&quot;&gt;
     &lt;noembed&gt;
+        &lt;iframe src=&quot;https://www.youtube.com/embed/A69bMuxksKw&quot; title=&quot;Vid&eacute;o Youtube : Animation JetPack&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
         &lt;p&gt;un personnage en combinaison spatiale s&#39;envole gr&acirc;ce &agrave; 2 mini-fus&eacute;es accroch&eacute;es dans son dos&lt;/p&gt;
     &lt;/noembed&gt;
 &lt;/embed&gt;</code></pre>
-        <embed src="medias/jetpackSWF.swf" type="application/x-shockwave-flash">
+        <embed src="medias/jetpackSWF.swf" style="width:560px;height:315px">
             <noembed>
+                <iframe style="width:560px;height:315px" src="https://www.youtube.com/embed/A69bMuxksKw" title="Vidéo Youtube : Animation JetPack" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <p>un personnage en combinaison spatiale s'envole grâce à 2 mini-fusées accrochées dans son dos</p>
             </noembed>
         </embed>
+    </div>
+</div>
+
+<div class="wrap">
+    <h2 id="media-temp">Exemple de média temporel avec titre, sous-titrage et transcription textuelle</h2>
+    <div class="demo">
+        <h3>La rotation de la boule</h3>
+        <pre aria-hidden="true"><code>&lt;video loop width=&quot;640&quot; height=&quot;426&quot;&gt;
+    &lt;source src=&quot;medias/video.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;track kind=&quot;captions&quot; label=&quot;Fran&ccedil;ais&quot; src=&quot;medias/sous-titre_fr.vtt&quot; srclang=&quot;fr-FR&quot;&gt;
+&lt;/video&gt;</code></pre>
+        <video width="640" height="426" loop controls>
+            <source src="medias/video.mp4" type="video/mp4">
+            <track kind="captions" label="Français" src="medias/sous-titre_fr.vtt" srclang="fr-FR" default>
+        </video>
+        <h5>Transcription textuelle</h5>
+        <p>La vidéo tourne en boucle.</p>
+        <p>Une boule est en rotation, formant un cercle parfait.</p>
+        <p>Chaque fois qu'elle atteint l'extrémité haute, basse, droite et gauche du cercle, une flèche rouge apparaît à cette extrémité. Cette flèche rouge est orientée la pointe vers le centre du cercle.</p>
     </div>
 </div>
 

@@ -102,6 +102,7 @@ img {
 
 .demo.-composite a {
     display: block;
+    text-decoration: none;
 }
 
 .demo.-composite h2 {

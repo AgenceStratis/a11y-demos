@@ -32,21 +32,25 @@ const ccvaeu = () => {
     const text = document.getElementById('ccvaeu-text');
     const form = document.getElementById('ccvaeu-form');
 
-    button.addEventListener('click', () => {
-        text.style.display = "block";
-        form.style.display = "none";
-        text.focus();
-    }, false);
+    if (button) {
+        button.addEventListener('click', () => {
+            text.style.display = "block";
+            form.style.display = "none";
+            text.focus();
+        }, false);
+    }
 };
 
 const coc = () => {
     const button = document.getElementById('coc-button');
     const text = document.getElementById('coc-text');
 
-    button.addEventListener('click', () => {
-        text.textContent = "Merci pour votre participation !";
-        text.style.display = "block";
-    }, false);
+    if (button) {
+        button.addEventListener('click', () => {
+            text.textContent = "Merci pour votre participation !";
+            text.style.display = "block";
+        }, false);
+    }
 };
 
 let timer;
@@ -55,11 +59,13 @@ const reloadAriaLive = (btn, area) => {
     const button = document.getElementById(btn);
     const canal = document.getElementById(area);
 
-    button.addEventListener('click', () => {
-        clearTimeout(timer);
-        canal.innerHTML='';
-        ariaLIve(0, area);
-    }, false);
+    if (button) {
+        button.addEventListener('click', () => {
+            clearTimeout(timer);
+            canal.innerHTML = '';
+            ariaLIve(0, area);
+        }, false);
+    }
 };
 
 const ariaLIve = (i, area) => {
@@ -84,29 +90,36 @@ const liveRegionAtomic = (p, bp, bn) => {
     const buttonPrev = document.getElementById(bp);
     const buttonNext = document.getElementById(bn);
 
-    buttonNext.addEventListener('click', (event) => {
-        if (!event.target.hasAttribute("disabled")) {
-            paragraphe.textContent = "21 à 40";
-            buttonNext.setAttribute("disabled", "");
-            buttonPrev.removeAttribute("disabled");
-        }
-    }, false);
+    if (buttonNext) {
+        buttonNext.addEventListener('click', (event) => {
+            if (!event.target.hasAttribute("disabled")) {
+                paragraphe.textContent = "21 à 40";
+                buttonNext.setAttribute("disabled", "");
+                buttonPrev.removeAttribute("disabled");
+            }
+        }, false);
+    }
 
-    buttonPrev.addEventListener('click', (event) => {
-        if (!event.target.hasAttribute("disabled")) {
-            paragraphe.textContent = "1 à 20";
-            buttonNext.removeAttribute("disabled");
-            buttonPrev.setAttribute("disabled", "");
-        }
-    }, false);
+    if (buttonPrev) {
+        buttonPrev.addEventListener('click', (event) => {
+            if (!event.target.hasAttribute("disabled")) {
+                paragraphe.textContent = "1 à 20";
+                buttonNext.removeAttribute("disabled");
+                buttonPrev.setAttribute("disabled", "");
+            }
+        }, false);
+    }
 };
 
 const liveRegionAlert = () => {
     const button = document.getElementById("live-region-alert-button");
     const area = document.getElementById("live-region-alert");
-    button.addEventListener('click', function () {
-        area.style.display = "block";
-    }, false);
+
+    if (button) {
+        button.addEventListener('click', function () {
+            area.style.display = "block";
+        }, false);
+    }
 
 };
 
@@ -140,12 +153,13 @@ const progressbar = () =>  {
         }
     };
 
-    run.addEventListener('click', () => {
-        clearInterval(interval);
-        resetProgressBar();
-        interval = setInterval(startProgressBar, 2000);
-    }, false);
-
+    if (run) {
+        run.addEventListener('click', () => {
+            clearInterval(interval);
+            resetProgressBar();
+            interval = setInterval(startProgressBar, 2000);
+        }, false);
+    }
 };
 
 class formValidator {
@@ -200,15 +214,17 @@ class formValidator {
     validateOnSubmit = () => {
         let self = this;
 
-        this.form.addEventListener('submit', (e) => {
-            e.preventDefault();
+        if (this.form) {
+            this.form.addEventListener('submit', (e) => {
+                e.preventDefault();
 
-            self.fields.forEach(field => {
-               const input = document.getElementById(`${field}`);
+                self.fields.forEach(field => {
+                    const input = document.getElementById(`${field}`);
 
-               self.validateFields(input);
-            });
-        }, false);
+                    self.validateFields(input);
+                });
+            }, false);
+        }
     }
 
     validateOnEntry = () => {
@@ -217,38 +233,42 @@ class formValidator {
         this.fields.forEach(field => {
             const input = document.getElementById(`${field}`);
 
-            input.addEventListener('input', event => {
-                self.validateFields(input);
-            });
+            if (input) {
+                input.addEventListener('input', event => {
+                    self.validateFields(input);
+                });
+            }
         });
     }
 }
 
 const focusTrap = (element) => {
-    const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-    const firstFocusableEl = focusableEls[0];
-    const lastFocusableEl = focusableEls[focusableEls.length - 1];
-    const KEYCODE_TAB = 9;
+    if (element) {
+        const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+        const firstFocusableEl = focusableEls[0];
+        const lastFocusableEl = focusableEls[focusableEls.length - 1];
+        const KEYCODE_TAB = 9;
 
-    element.addEventListener('keydown', (e) => {
-        const isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+        element.addEventListener('keydown', (e) => {
+            const isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
 
-        if (!isTabPressed) {
-            return;
-        }
-
-        if ( e.shiftKey ) /* shift + tab */ {
-            if (document.activeElement === firstFocusableEl) {
-                lastFocusableEl.focus();
-                e.preventDefault();
+            if (!isTabPressed) {
+                return;
             }
-        } else /* tab */ {
-            if (document.activeElement === lastFocusableEl) {
-                firstFocusableEl.focus();
-                e.preventDefault();
+
+            if (e.shiftKey) /* shift + tab */ {
+                if (document.activeElement === firstFocusableEl) {
+                    lastFocusableEl.focus();
+                    e.preventDefault();
+                }
+            } else /* tab */ {
+                if (document.activeElement === lastFocusableEl) {
+                    firstFocusableEl.focus();
+                    e.preventDefault();
+                }
             }
-        }
-    });
+        });
+    }
 }
 
 class disclosure {
@@ -260,20 +280,23 @@ class disclosure {
 
     initialize = () => {
         let self = this;
-        const focusable = this.content.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
 
-        this.trigger.addEventListener('click', (e) => {
-            if(e.target.getAttribute('aria-expanded') === 'false') {
-                self.trigger.setAttribute('aria-expanded', 'true');
-                self.trigger.parentNode.classList.add('--open');
-                if (self.focusFirstElement) {
-                    focusable[0].focus();
+        if (this.content) {
+            const focusable = this.content.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+
+            this.trigger.addEventListener('click', (e) => {
+                if (e.target.getAttribute('aria-expanded') === 'false') {
+                    self.trigger.setAttribute('aria-expanded', 'true');
+                    self.trigger.parentNode.classList.add('--open');
+                    if (self.focusFirstElement) {
+                        focusable[0].focus();
+                    }
+                } else {
+                    self.trigger.setAttribute('aria-expanded', 'false');
+                    self.trigger.parentNode.classList.remove('--open');
                 }
-            } else {
-                self.trigger.setAttribute('aria-expanded', 'false');
-                self.trigger.parentNode.classList.remove('--open');
-            }
-        }, false);
+            }, false);
+        }
     }
 }
 

@@ -15,6 +15,7 @@
 }
 
 .modal__container {
+    position: relative;
     background-color: #fff;
     padding: 30px;
     /*max-width: 500px;*/
@@ -26,7 +27,9 @@
 }
 
 .modal__close {
-    float: right;
+    position: absolute;
+    top: 1px;
+    right: 1px;
 }
 
 .modal h2 {

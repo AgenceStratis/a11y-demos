@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : gabarit de conception de la fenêtre modale - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- Modal -->
+    <link rel="stylesheet" href="css/modal.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+</head>
+<body>
+
+<header role="banner">
+    <h1>Exemples de codes : gabarit de conception de la fenêtre modale</h1>
+</header>
+
+<div class="wrap">
+    <div class="demo">
+        <button type="button" aria-haspopup="dialog" data-micromodal-trigger="modal-1">Afficher la fenêtre modale
+            ARIA
+        </button>
+        <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+            <div class="modal__overlay">
+                <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                    <div class="modal__content" id="modal-1-content">
+                        <button class="modal__close" data-micromodal-close>Fermer la fenêtre modale</button>
+                        <h2 class="modal__title" id="modal-1-title">Une fenêtre modale</h2>
+                        <p>Je suis une fenêtre modale.<br>
+                            <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal">Lire le gabarit de
+                                conception ARIA (en)</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo">
+        <button type="button" aria-haspopup="dialog" data-micromodal-trigger="modal-2">
+            <img src="images/image-modal-mini.jpg" alt="photo d'une maison en 3 parties - Agrandir l'image, fenêtre modale">
+        </button>
+        <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
+            <div class="modal__overlay">
+                <div class="modal__container" role="dialog" aria-modal="true" aria-label="image agrandie">
+                    <button class="modal__close" data-micromodal-close>Fermer la fenêtre modale</button>
+                    <figure role="figure" aria-label="Copyright : magazine Maisons Actuelles">
+                        <img src="images/image-modal-maxi.jpg" alt="photo d'une maison en 3 parties, dont aucune des 3 parties n'est identique">
+                        <figcaption>Copyright : magazine Maisons Actuelles</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    MicroModal.init();
+</script>
+</body>
+</html>

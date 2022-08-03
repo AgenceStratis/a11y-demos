@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : gabarit de conception de la fenêtre modale - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1>Exemples de codes : gabarit de conception de la fenêtre modale</h1>
+</header>
+
+<div class="wrap">
+    <h2>Avec ARIA</h2>
+    <div class="demo">
+        <div id="menu-langs" class="disclosure">
+            <button type="button" id="menu-langs__trigger" aria-expanded="false"
+                    aria-controls="menu-langs__content">
+                <span class="fas fa-chevron-down" aria-hidden="true"></span>
+                Modifier la langue de la page
+            </button>
+            <ul id="menu-langs__content" class="disclosure__content">
+                <li><a href="#fr">Français</a></li>
+                <li><a href="#en" lang="en">English</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Sans ARIA</h2>
+    <div class="demo">
+        <div id="menu-langs2" class="disclosure">
+            <button type="button" id="menu-langs2__trigger" data-trigger-open="Ouvrir le menu" data-trigger-close="Fermer le menu">
+                <span class="fas fa-chevron-down" aria-hidden="true"></span>
+                Modifier la langue de la page
+                <span class="sr-only" data-trigger-text>Ouvrir le menu</span>
+            </button>
+            <ul id="menu-langs2__content" class="disclosure__content">
+                <li><a href="#fr">Français</a></li>
+                <li><a href="#en" lang="en">English</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="js/disclosure.js"></script>
+</body>
+</html>

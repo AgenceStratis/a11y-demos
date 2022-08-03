@@ -18,12 +18,12 @@
 <body>
 
 <header role="banner">
-    <h1>Exemples de codes : les liens</h1>
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : les liens</h1>
 </header>
 
 <div class="wrap">
     <div class="wrap">
-        <h2 id="lien-nom-accessible">Nom accessible d'un lien</h2>
+        <h2 id="lien-nom-accessible"><a href="#lien-nom-accessible">§</a> Nom accessible d'un lien</h2>
 
         <h3>Mauvaise pratique</h3>
         <pre><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
@@ -77,7 +77,7 @@
 </div>
 
 <div class="wrap">
-    <h2 id="lien-image">Lien image</h2>
+    <h2 id="lien-image"><a href="#lien-image">§</a> Lien image</h2>
     <p>Contexte : Nous sommes sur le site de la ville de paris.fr, un clic sur le logo renvoie vers la page
         d'accueil.</p>
     <pre aria-hidden="true"><code>&lt;a href=&quot;https://www.paris.fr/&quot;&gt;
@@ -106,7 +106,7 @@
 </div>
 
 <div class="wrap">
-    <h2 id="lien-composite">Lien composite</h2>
+    <h2 id="lien-composite"><a href="#lien-composite">§</a> Lien composite</h2>
     <pre><code>&lt;a href=&quot;https://www.paris.fr/&quot;&gt;
     &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;&gt;
     &lt;h3&gt;Ouverture d'un espace lecture au patronage la&iuml;que de Recouvrance&lt;/h3&gt;
@@ -156,7 +156,7 @@
 </div>
 
 <div class="wrap">
-    <h2 id="lien-explicite-contexte">Lien non pertinent rendu explicite grâce au contexte (conforme mais non
+    <h2 id="lien-explicite-contexte"><a href="#lien-explicite-contexte">§</a> Lien non pertinent rendu explicite grâce au contexte (conforme mais non
         accessible)</h2>
     <h3>Grâce au titre précédent</h3>
     <pre><code>&lt;h2&gt;Des liens explicites&lt;/h2&gt;
@@ -228,7 +228,7 @@
 </div>
 
 <div class="wrap">
-    <h2 id="lien-contextualise">Lien contextualisé</h2>
+    <h2 id="lien-contextualise"><a href="#lien-contextualise">§</a> Lien contextualisé</h2>
     <h3>Lien contextualisé avec l'attribut <code>aria-describedby</code></h3>
     <pre><code>&lt;h4 id=&quot;liens-explicites&quot;&gt;Des liens explicites&lt;/h4&gt;
 &lt;p&gt;Pour qu'un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l'objectif du lien, la fonction et la destination.&lt;/p&gt;
@@ -276,7 +276,7 @@
 </div>
 
 <div class="wrap">
-    <h2 id="visibilite-liens">Visibilité des liens</h2>
+    <h2 id="visibilite-liens"><a href="#visibilite-liens">§</a> Visibilité des liens</h2>
     <h3>Mauvaise pratique</h3>
     <pre><code>&lt;blockquote&gt;
     &lt;p&gt;L'accessibilit&eacute; du Web signifie que les &lt;a href=&quot;#&quot;&gt;personnes en situation de handicap&lt;/a&gt; peuvent utiliser le Web. Plus pr&eacute;cis&eacute;ment, qu'elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu'elles peuvent contribuer sur le Web.&lt;/p&gt;

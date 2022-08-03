@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : compatibilité au clavier et au dispositif de pointage - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : compatibilité au clavier et au dispositif de pointage</h1>
+</header>
+
+<div class="wrap">
+    <h2>Mauvais pratique</h2>
+    <div class="demo">
+        <label for="select">Votre service préféré</label>
+        <select id="select" onchange="window.location.assign(this.value)">
+            <option value="https://www.google.com">Google</option>
+            <option value="https://www.apple.com">Apple</option>
+            <option value="https://www.facebook.com">Facebook</option>
+            <option value="https://www.amazon.com">Amazon</option>
+        </select>
+    </div>
+
+    <h2>Bonne pratique</h2>
+    <div class="demo">
+        <form action="/" onsubmit="window.location.assign(this.select2.value);return false;">
+            <label for="select2">Votre service préféré</label>
+            <select id="select2">
+                <option value="https://www.google.com">Google</option>
+                <option value="https://www.apple.com">Apple</option>
+                <option value="https://www.facebook.com">Facebook</option>
+                <option value="https://www.amazon.com">Amazon</option>
+            </select>
+            <button type="submit">Aller au service sélectionné</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -20,7 +20,8 @@
 </header>
 
 <div class="wrap">
-    <h2>Mauvais pratique</h2>
+    <h2>Soumission d'un formulaire au changement d'option d'une liste déroulante (changement de contexte)</h2>
+    <h3>Mauvais pratique</h3>
     <div class="demo">
         <label for="select">Votre service préféré</label>
         <select id="select" onchange="window.location.assign(this.value)">
@@ -31,7 +32,7 @@
         </select>
     </div>
 
-    <h2>Bonne pratique</h2>
+    <h3>Bonne pratique</h3>
     <div class="demo">
         <form action="/" onsubmit="window.location.assign(this.select2.value);return false;">
             <label for="select2">Votre service préféré</label>
@@ -42,6 +43,42 @@
                 <option value="https://www.amazon.com">Amazon</option>
             </select>
             <button type="submit">Aller au service sélectionné</button>
+        </form>
+    </div>
+</div>
+
+<div class="wrap">
+    <h2>Rechargement d'une page à la réinitialisation d'un formulaire (changement de contexte)</h2>
+    <h3>Mauvais pratique</h3>
+    <pre><code>&lt;button type=&quot;reset&quot; onclick=&quot;window.location.replace(location.pathname);&quot;&gt;Effacer&lt;/button&gt;</code></pre>
+    <div class="demo">
+        <form action="#" onsubmit="return false;">
+            <label for="search2">Mots-clés</label>
+            <input role="searchbox" id="search2">
+            <button type="reset" onclick="window.location.replace(location.pathname);">Effacer</button>
+            <button type="submit">Rechercher sur tout le site</button>
+        </form>
+    </div>
+
+    <h3>Bonne pratique</h3>
+    <pre><code>&lt;button type=&quot;reset&quot; aria-label=&quot;Effacer, recharger la page&quot; onclick=&quot;window.location.replace(location.pathname);&quot;&gt;Effacer&lt;/button&gt;</code></pre>
+    <div class="demo">
+        <form action="#" onsubmit="return false;">
+            <label for="search">Mots-clés</label>
+            <input role="searchbox" id="search">
+            <button type="reset" aria-label="Effacer, recharger la page" onclick="window.location.replace(location.pathname);">Effacer</button>
+            <button type="submit">Rechercher sur tout le site</button>
+        </form>
+    </div>
+
+    <h3>Bonne pratique (comportement par défaut)</h3>
+    <pre><code>&lt;button type=&quot;reset&quot;&gt;Effacer&lt;/button&gt;</code></pre>
+    <div class="demo">
+        <form action="#" onsubmit="return false;">
+            <label for="search3">Mots-clés</label>
+            <input role="searchbox" id="search3">
+            <button type="reset">Effacer</button>
+            <button type="submit">Rechercher sur tout le site</button>
         </form>
     </div>
 </div>

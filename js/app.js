@@ -134,7 +134,7 @@ const progressbar = () =>  {
 
     const stateProgressBar = () => {
         bar.setAttribute("aria-valuenow", value);
-        //bar.setAttribute("aria-valuetext", value +'%');
+        bar.setAttribute("aria-valuetext", value +'%');
         progress.style.width = value + "%";
         percent.textContent = value;
     }

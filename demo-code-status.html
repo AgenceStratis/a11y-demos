@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : messages de status et zones Live - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : messages de status et zones Live</h1>
+</header>
+
+<div class="wrap">
+    <h2 id="role-status"><a href="#role-status">§</a> <code>role="status"</code> ou <code>aria-live="polite" aria-atomic="true"</code></h2>
+
+    <h3><code>role="status"</code></h3>
+    <p>À tester sous Chrome, Firefox ne supporte pas la valeur <code>true</code> de l'attribut implicite <code>aria-atomic</code>.
+    <pre><code>&lt;p role=&quot;status&quot;&gt;R&eacute;sultats &lt;span id=&quot;live-region-status&quot;&gt;1 &agrave; 20&lt;/span&gt; sur 40&lt;/p&gt;</code></pre>
+    <div class="demo">
+        <p role="status">Résultats <span id="live-region-status">1 à 20</span> sur 40</p>
+        <button type="button" id="live-region-status-prev" disabled>Page précédente</button>
+        <button type="button" id="live-region-status-next">Page suivante</button>
+    </div>
+
+    <h3><code>aria-live="polite" aria-atomic="true"</code></h3>
+    <pre><code>&lt;p aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;R&eacute;sultats &lt;span id=&quot;live-region-atomic-true&quot;&gt;1 &agrave; 20&lt;/span&gt; sur 40&lt;/p&gt;</code></pre>
+    <div class="demo">
+        <p aria-live="polite" aria-atomic="true">Résultats <span id="live-region-atomic-true">1 à 20</span> sur 40
+        </p>
+        <button type="button" id="live-region-atomic-true-prev" disabled>Page précédente</button>
+        <button type="button" id="live-region-atomic-true-next">Page suivante</button>
+    </div>
+
+    <h2 id="role-alert"><a href="#role-alert">§</a> <code>role="alert"</code> ou <code>aria-live="assertive" aria-atomic="true"</code></h2>
+
+    <h3><code>role="alert"</code></h3>
+    <pre><code>&lt;form action=&quot;#&quot;&gt;
+    &lt;div id=&quot;zla-alert&quot; role=&quot;alert&quot;&gt;&lt;/div&gt;
+    [...]
+&lt;/form&gt;</code></pre>
+    <div class="demo">
+        <form action="#" id="zla-form" novalidate>
+            <div id="zla-alert" class="alert" role="alert"></div>
+            <div class="field-wrap">
+                <label for="zla-prenom" data-label="Prénom">Prénom <em aria-hidden="true" class="required-mention">Obligatoire</em></label>
+                <input type="text" name="zla-prenom" id="zla-prenom" autocomplete="given-name" required>
+            </div>
+            <div class="field-wrap">
+                <label for="zla-nom" data-label="Nom">Nom <em aria-hidden="true" class="required-mention">Obligatoire</em></label>
+                <input type="text" name="zla-nom" id="zla-nom" autocomplete="family-name" required>
+            </div>
+            <div class="field-wrap">
+                <label for="zla-email" data-label="Courriel">Courriel (prenom.nom@site.com) <em aria-hidden="true"
+                                                                                                class="required-mention">Obligatoire</em></label>
+                <input type="email" name="zla-email" id="zla-email" autocomplete="email" required>
+            </div>
+            <div class="field-wrap">
+                <label for="zla-message">Votre message</label>
+                <textarea name="zla-message" id="zla-message" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit" id="zla-button">Envoyer le message</button>
+        </form>
+    </div>
+
+    <h3><code>aria-live="assertive" aria-atomic="true"</code></h3>
+    <pre><code>&lt;form action=&quot;#&quot;&gt;
+    &lt;div id=&quot;zla-alert&quot; aria-live=&quot;assertive&quot; aria-atomic=&quot;true&quot;&gt;&lt;/div&gt;
+    [...]
+&lt;/form&gt;</code></pre>
+    <div class="demo">
+        <form action="#" id="zla-form2" novalidate>
+            <div id="zla-alert2" class="alert" aria-live="assertive" aria-atomic="true"></div>
+            <div class="field-wrap">
+                <label for="zla-prenom2" data-label="Prénom">Prénom <em aria-hidden="true" class="required-mention">Obligatoire</em></label>
+                <input type="text" name="zla-prenom"2 id="zla-prenom2" autocomplete="given-name" required>
+            </div>
+            <div class="field-wrap">
+                <label for="zla-nom2" data-label="Nom">Nom <em aria-hidden="true" class="required-mention">Obligatoire</em></label>
+                <input type="text" name="zla-nom2" id="zla-nom2" autocomplete="family-name" required>
+            </div>
+            <div class="field-wrap">
+                <label for="zla-email2" data-label="Courriel">Courriel (prenom.nom@site.com) <em aria-hidden="true"
+                                                                                                class="required-mention">Obligatoire</em></label>
+                <input type="email" name="zla-email2" id="zla-email2" autocomplete="email" required>
+            </div>
+            <div class="field-wrap">
+                <label for="zla-message2">Votre message</label>
+                <textarea name="zla-message2" id="zla-message2" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit" id="zla-button2">Envoyer le message</button>
+        </form>
+    </div>
+
+    <h2 id="role-log"><a href="#role-log">§</a> <code>role="log"</code> ou <code>aria-live="polite" aria-atomic="false"</code></h2>
+
+    <h3><code>role="log"</code></h3>
+    <pre><code>&lt;div id=&quot;canal-log&quot; class=&quot;canal&quot; role=&quot;log&quot;&gt;&lt;/div&gt;</code></pre>
+    <div class="demo">
+        <div id="live-region-log">
+            <button type="button" id="zl-reload-log">Lancer l'exemple</button>
+            <div id="canal-log" class="canal" role="log"></div>
+            <div class="field-wrap">
+                <label for="zl-message-log">Votre message</label>
+                <input type="text" name="zl-message" id="zl-message-log">
+                <button type="button" id="zl-button-log">Envoyer mon message</button>
+            </div>
+        </div>
+    </div>
+
+    <h3><code>aria-live="polite"</code> (<code>aria-atomic="false"</code> explicite)</h3>
+    <pre><code>&lt;div id=&quot;canal&quot; class=&quot;canal&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;</code></pre>
+    <div class="demo">
+        <div id="live-region">
+            <button type="button" id="zl-reload">Lancer l'exemple</button>
+            <div id="canal" class="canal" aria-live="polite"></div>
+            <div class="field-wrap">
+                <label for="zl-message">Votre message</label>
+                <input type="text" name="zl-message" id="zl-message">
+                <button type="button" id="zl-button">Envoyer mon message</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 id="role-progressbar"><a href="#role-progressbar">§</a> <code>role="progressbar"</code></h2>
+    <p>Pas d'équivalent aria</p>
+    <pre><code>&lt;div id=&quot;progressbar&quot; role=&quot;progressbar&quot; aria-valuetext=&quot;0%&quot; aria-valuenow=&quot;0&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progressbar&quot;&gt;&lt;div id=&quot;progress&quot; class=&quot;progress&quot;&gt;&lt;span class=&quot;percent-wrapper&quot;&gt;&lt;span id=&quot;percent&quot;&gt;0&lt;/span&gt;%&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+    <div class="demo">
+        <button type="button" id="progressbar-button" class="progressbar-button">Télécharger</button>
+        <div id="progressbar" role="progressbar" aria-valuetext="0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progressbar">
+            <div id="progress" class="progress"><span class="percent-wrapper"><span id="percent">0</span>%</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/status.js"></script>
+</body>
+</html>

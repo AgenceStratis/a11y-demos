@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="css/knacss.css">
     <link rel="stylesheet" href="css/screen.css">
     <link rel="stylesheet" href="css/demo.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
 <a href="index.html">Retour à l'accueil</a><br/>
@@ -24,6 +28,9 @@
             <div class="grid grid-cols-4 has-gutter">
                 <div>
                     <h2>Alerte</h2>
+                    <pre><code>&lt;p role=&quot;alert&quot;&gt;
+    Alerte : &lt;span id=&quot;alert&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;</code></pre>
                     <div class="demo">
                         <button onclick="runLiveMessage(1, true, 'alert', 'blockquote')">Lancer une alerte</button>
                     </div>
@@ -31,6 +38,9 @@
                 </div>
                 <div>
                     <h2>Information générique</h2>
+                    <pre><code>&lt;p role=&quot;log&quot;&gt;
+    Log : &lt;span id=&quot;log&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;</code></pre>
                     <div class="demo">
                         <button onclick="runLiveMessage(10, true, 'log', 'blockquote')">Lancer une information générique</button>
                     </div>
@@ -38,21 +48,25 @@
                 </div>
                 <div>
                     <h2>Information de statut</h2>
+                    <p>À tester sous Chrome, Firefox ne supporte pas la valeur <code>true</code> de l'attribut implicite <code>aria-atomic</code>.
+                    <pre><code>&lt;p role=&quot;status&quot;&gt;
+    Statut : &lt;span id=&quot;status&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;</code></pre>
                     <div class="demo">
                         <button onclick="runLiveMessage(100, true, 'status', 'blockquote')">Lancer une information générique</button>
                     </div>
                     <p role="status">Statut : <span id="status"></span></p>
                 </div>
-                <div>
-                    <h2>Information de statut</h2>
-                    <div class="demo">
-                        <button onclick="stopAll()">Tout arrêter</button>
-                    </div>
-                </div>
             </div>
             <div class="demo">
                 <blockquote id="blockquote" tabindex="-1"><p>Lecture automatique : La vie, c'est comme une bicyclette,
                     il faut avancer pour ne pas perdre l'équilibre.</p></blockquote>
+            </div>
+            <div>
+                <h2>STOP</h2>
+                <div class="demo">
+                    <button onclick="stopAll()">Tout arrêter</button>
+                </div>
             </div>
         </section>
     </main>

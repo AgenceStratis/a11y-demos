@@ -409,6 +409,20 @@ legend, .legend {
     display: inline-block;
 }
 
+.events-list.--reverse-order .wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.events-list.--reverse-order .category {
+    order: 1;
+}
+.events-list.--reverse-order .date {
+    order: 2;
+}
+.events-list.--reverse-order .title {
+    order: 3;
+}
+
 /* Pattern */
 .pattern {
     background: url("../images/pattern-1.png") repeat;

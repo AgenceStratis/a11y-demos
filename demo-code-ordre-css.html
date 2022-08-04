@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : contenus
+        compréhensibles sans CSS - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : contenus
+        compréhensibles sans CSS</h1>
+</header>
+
+<div class="wrap">
+    <h4>Mauvaise pratique</h4>
+    <pre><code>&lt;article&gt;
+    &lt;img src=&quot;https://picsum.photos/200/200?random=1&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;p class=&quot;category&quot;&gt;Spectacle&lt;/p&gt;
+        &lt;p class=&quot;date&quot;&gt;21 juillet 2020&lt;/p&gt;
+        &lt;h2 class=&quot;title&quot;&gt;&lt;a href=&quot;#&quot;&gt;L&#39;oiseau et le chat&lt;/a&gt;&lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    <div class="demo">
+        <ul class="events-list">
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=1" alt="">
+                    <div class="wrapper --img-close">
+                        <p class="category">Spectacle</p>
+                        <p class="date">21 juillet 2020</p>
+                        <h2 class="title"><a href="#">L'oiseau et le chat</a></h2>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=2" alt="">
+                    <div class="wrapper --img-close">
+                        <p class="category --img-close">Cinema</p>
+                        <p class="date">24 juillet 2020</p>
+                        <h2 class="title"><a href="#">La voix du succès</a></h2>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=3" alt="">
+                    <div class="wrapper --img-close">
+                        <p class="category --img-close">Exposition</p>
+                        <p class="date">25 juillet 2020</p>
+                        <h2 class="title"><a href="#">Mémoire de glace</a></h2>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </div>
+
+    <h4>Pratique autorisée par le RGAA, mais pas par les WCAG</h4>
+    <pre><code>&lt;article&gt;
+    &lt;img src=&quot;https://picsum.photos/200/200?random=1&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;&lt;a href=&quot;#&quot;&gt;L&#39;oiseau et le chat&lt;/a&gt;&lt;/h2&gt;
+        &lt;p class=&quot;category&quot;&gt;Spectacle&lt;/p&gt;
+        &lt;p class=&quot;date&quot;&gt;21 juillet 2020&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    <div class="demo">
+        <ul class="events-list --reverse-order">
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=1" alt="">
+                    <div class="wrapper --img-close">
+                        <h2 class="title"><a href="#">L'oiseau et le chat</a></h2>
+                        <p class="category">Spectacle</p>
+                        <p class="date">21 juillet 2020</p>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=2" alt="">
+                    <div class="wrapper --img-close">
+                        <h2 class="title"><a href="#">La voix du succès</a></h2>
+                        <p class="category">Cinema</p>
+                        <p class="date">24 juillet 2020</p>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=3" alt="">
+                    <div class="wrapper --img-close">
+                        <h2 class="title"><a href="#">Mémoire de glace</a></h2>
+                        <p class="category">Exposition</p>
+                        <p class="date">25 juillet 2020</p>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </div>
+    <h4>Bonne pratique</h4>
+    <pre><code>&lt;article&gt;
+    &lt;img src=&quot;https://picsum.photos/200/200?random=1&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;&lt;a href=&quot;#&quot;&gt;L&#39;oiseau et le chat&lt;/a&gt;&lt;/h2&gt;
+        &lt;p class=&quot;category&quot;&gt;Spectacle&lt;/p&gt;
+        &lt;p class=&quot;date&quot;&gt;21 juillet 2020&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    <div class="demo">
+        <ul class="events-list">
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=1" alt="">
+                    <div class="wrapper">
+                        <h2 class="title"><a href="#">L'oiseau et le chat</a></h2>
+                        <p class="category">Spectacle</p>
+                        <p class="date">21 juillet 2020</p>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=2" alt="">
+                    <div class="wrapper">
+                        <h2 class="title"><a href="#">La voix du succès</a></h2>
+                        <p class="category">Cinema</p>
+                        <p class="date">24 juillet 2020</p>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=3" alt="">
+                    <div class="wrapper">
+                        <h2 class="title"><a href="#">Mémoire de glace</a></h2>
+                        <p class="category">Exposition</p>
+                        <p class="date">25 juillet 2020</p>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </div>
+    <h4>Bonne pratique</h4>
+    <pre><code>&lt;article&gt;
+    &lt;img src=&quot;https://picsum.photos/200/200?random=1&quot; alt=&quot;&quot;&gt;
+    &lt;div class=&quot;wrapper&quot;&gt;
+        &lt;h2 class=&quot;title&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;
+                &lt;span class=&quot;category&quot;&gt;Spectacle&lt;/span&gt;
+                &lt;span class=&quot;date&quot;&gt;21 juillet 2020&lt;/span&gt;
+                L&#39;oiseau et le chat
+            &lt;/a&gt;
+        &lt;/h2&gt;
+    &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    <div class="demo">
+        <p>La lecture par tabulation permet d'avoir l'ensemble des informations pour chaque article.</p>
+        <ul class="events-list --title-order">
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=1" alt="">
+                    <div class="wrapper --img-close">
+                        <h2 class="title">
+                            <a href="#">
+                                <span class="category">Spectacle</span>
+                                <span class="date">21 juillet 2020</span>
+                                L'oiseau et le chat
+                            </a>
+                        </h2>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=2" alt="">
+                    <div class="wrapper --img-close">
+                        <h2 class="title">
+                            <a href="#">
+                                <span class="category">Cinema</span>
+                                <span class="date">24 juillet 2020</span>
+                                La voix du succès
+                            </a>
+                        </h2>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <img src="https://picsum.photos/200/200?random=3" alt="">
+                    <div class="wrapper --img-close">
+                        <h2 class="title">
+                            <a href="#">
+                                <span class="category">Exposition</span>
+                                <span class="date">25 juillet 2020</span>
+                                Mémoire de glace
+                            </a>
+                        </h2>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

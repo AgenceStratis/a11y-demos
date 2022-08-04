@@ -53,14 +53,15 @@
                         <h3>Listes</h3>
                         <ul>
                             <li>Item 1</li>
-                            <li>Item 2</li>
+                            <li>Item 2
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                </ul>
+                            </li>
                             <li>Item 3</li>
                         </ul>
-                        <ol>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ol>
                         <h4>Image</h4>
                         <img src="images/cloud-rain-solid.svg" alt="nuage et pluie" width="16">
                     </div>
@@ -93,19 +94,47 @@
                         </div>
                         <p role="heading" aria-level="3">Listes</p>
                         <div role="list">
-                            <p role="listitem">• Item 1</p>
-                            <p role="listitem">• Item 2</p>
-                            <p role="listitem">• Item 3</p>
-                        </div>
-                        <div role="list">
-                            <p role="listitem">1. Item 1</p>
-                            <p role="listitem">2. Item 2</p>
-                            <p role="listitem">3. Item 3</p>
+                            <div role="listitem">• Item 1</div>
+                            <div role="listitem">• Item 2
+                                <div role="list" style="margin-left: 20px">
+                                    <div role="listitem">• Item 1</div>
+                                    <div role="listitem">• Item 2</div>
+                                    <div role="listitem">• Item 3</div>
+                                </div>
+                            </div>
+                            <div role="listitem">• Item 3</div>
                         </div>
                         <p role="heading" aria-level="4">Image</p>
                         <span class="fas fa-cloud-rain" role="img" aria-label="nuage et pluie"></span>
                     </div>
                 </div>
+            </div>
+            <h3>Non reproductible avec ARIA</h3>
+            <div class="demo">
+                <h4>Listes ordonnées</h4>
+                <ol>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ol>
+
+                <h4>Liste de définitions</h4>
+                <dl>
+                    <dt>Firefox</dt>
+                    <dd>Un navigateur Web…</dd>
+                    <dd>Petit panda roux…</dd>
+                </dl>
+                <dl>
+                    <dt>Firefox</dt>
+                    <dt>Fx, Ff</dt>
+                    <dd>Un navigateur Web…</dd>
+                </dl>
+
+                <h4>Citations</h4>
+                <h5>Citation en ligne</h5>
+                <p>Le jeune homme s'écria <q>Mais que ce passe-t-il ?</q> en ouvrant la porte violemment.</p>
+                <h5>Citation en bloc</h5>
+                <blockquote><p>Avec des si, on mettrait Paris en bouteille.</p></blockquote>
             </div>
         </section>
     </main>

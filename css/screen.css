@@ -533,6 +533,7 @@ legend, .legend {
     position: relative;
     display: inline-block;
     vertical-align: middle;
+    text-decoration: underline dashed;
 }
 
 .tooltip-container button {

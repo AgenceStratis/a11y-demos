@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : contrôle et visibilité des contenus additionnels - Démonstrations en accessibilité -
+        Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : contrôle et visibilité des contenus additionnels</h1>
+</header>
+
+<div class="wrap">
+    <h2 id="controle"><a href="#controle">§</a> Contrôle des contenus additionnels</h2>
+    <pre aria-hidden="true"><code>&lt;p&gt;
+    La
+    &lt;span class=&quot;tooltip-container&quot; tabindex=&quot;0&quot;&gt;
+        DINUM
+        &lt;span class=&quot;sr-only&quot; id=&quot;tooltip&quot; role=&quot;tooltip&quot;&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;(&lt;/span&gt;
+            Direction Interminist&eacute;rielle du NUM&eacute;rique
+            &lt;span class=&quot;sr-only&quot;&gt;)&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/span&gt;
+    est en charge de la transformation num&eacute;rique de l&#39;&Eacute;tat au b&eacute;n&eacute;fice du citoyen comme de l&#39;agent, sous tous ses aspects
+&lt;/p&gt;</code></pre>
+    <div class="demo">
+        <p>
+            La
+            <span class="tooltip-container" tabindex="0">
+                DINUM
+                <span class="sr-only" id="tooltip" role="tooltip">
+                    <span class="sr-only">(</span>
+                    Direction Interministérielle du NUMérique
+                    <span class="sr-only">)</span>
+                </span>
+            </span>
+            est en charge de la transformation numérique de l'État au bénéfice du citoyen comme de l'agent, sous tous ses aspects
+        </p>
+    </div>
+</div>
+
+<div class="wrap">
+    <h2 id="visibilite"><a href="#visibilite">§</a> Visibilité des contenus additionnels</h2>
+
+    <h3>Mauvaise pratique</h3>
+    <pre><code>a:hover .visible-content-css__hidden-content {
+    margin-bottom: 0;
+}</code></pre>
+    <div class="demo">
+        <ul class="visible-content-css">
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=1" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>L'oiseau et le chat</h2>
+                            <p>21 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=2" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>La voix du succès</h2>
+                            <p>24 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=3" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>Mémoire de glace</h2>
+                            <p>25 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </div>
+
+    <h3>Bonne pratique</h3>
+    <pre><code>a:hover .visible-content-css__hidden-content,
+a:focus .visible-content-css__hidden-content {
+    margin-bottom: 0;
+}</code></pre>
+    <div class="demo">
+        <ul class="visible-content-css --good">
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=1" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>L'oiseau et le chat</h2>
+                            <p>21 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=2" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>La voix du succès</h2>
+                            <p>24 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+            <li>
+                <article>
+                    <a href="#">
+                        <img src="https://picsum.photos/200/200?random=3" alt="">
+                        <div class="visible-content-css__hidden-content">
+                            <h2>Mémoire de glace</h2>
+                            <p>25 juillet 2020</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/tooltip.js"></script>
+</body>
+</html>

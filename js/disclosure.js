@@ -43,17 +43,19 @@ class disclosure {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function ()  {
+document.addEventListener("DOMContentLoaded", function () {
     const menuLangsTrigger = document.getElementById("menu-langs__trigger");
     const menuLangsContent = document.getElementById("menu-langs__content");
-    const menuLangDisclosure = new disclosure(menuLangsTrigger, menuLangsContent, '', false, true);
-    menuLangDisclosure.initialize();
+    if (menuLangsTrigger && menuLangsContent) {
+        const menuLangDisclosure = new disclosure(menuLangsTrigger, menuLangsContent, '', false, true);
+        menuLangDisclosure.initialize();
+    }
 
     const menuLangsTrigger2 = document.getElementById("menu-langs2__trigger");
     const menuLangsContent2 = document.getElementById("menu-langs2__content");
     const menuLangsStatus2 = document.querySelector('[data-trigger-text]');
-    const menuLangsOpenText2 = menuLangsTrigger2.getAttribute('[data-trigger-open]');
-    const menuLangsCloseText2 = menuLangsTrigger2.getAttribute('[data-trigger-close]');
-    const menuLangDisclosure2 = new disclosure(menuLangsTrigger2, menuLangsContent2, menuLangsStatus2, false, false);
-    menuLangDisclosure2.initialize();
+    if (menuLangsTrigger2 && menuLangsContent2 && menuLangsStatus2) {
+        const menuLangDisclosure2 = new disclosure(menuLangsTrigger2, menuLangsContent2, menuLangsStatus2, false, false);
+        menuLangDisclosure2.initialize();
+    }
 });

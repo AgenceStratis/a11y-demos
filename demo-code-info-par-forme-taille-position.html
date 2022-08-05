@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : information par la forme, taille ou position uniquement - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/weather-icons-wind.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : information par la forme, taille ou position uniquement</h1>
+</header>
+
+<div class="wrap">
+    <h2 id="demo-information-by-shape"><a href="#demo-information-by-shape">§</a> Par la forme et la position</h2>
+    <pre aria-hidden="true"><code>&lt;div&gt;
+    &lt;button type=&quot;button&quot; id=&quot;menu-langs__trigger&quot; aria-expanded=&quot;false|true&quot; aria-controls=&quot;menu-langs__content&quot;&gt;
+        &lt;span class=&quot;fas fa-chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        Modifier la langue de la page
+    &lt;/button&gt;
+    &lt;ul id=&quot;menu-langs__content&quot; style=&quot;display: none|block&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;#fr&quot;&gt;Fran&ccedil;ais&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#en&quot; lang=&quot;en&quot;&gt;English&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    <div class="demo">
+        <div id="menu-langs" class="disclosure">
+            <button type="button" id="menu-langs__trigger" aria-expanded="false"
+                    aria-controls="menu-langs__content">
+                <span class="fas fa-chevron-down" aria-hidden="true"></span>
+                Modifier la langue de la page
+            </button>
+            <ul id="menu-langs__content" class="disclosure__content">
+                <li><a href="#fr">Français</a></li>
+                <li><a href="#en" lang="en">English</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 id="demo-information-by-size"><a href="#demo-information-by-size">§</a> Par la taille</h2>
+    <pre aria-hidden="true"><code>&lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; aria-label=&quot;Babel pertinence 1 sur 10&quot; class=&quot;relevance1&quot;&gt;Babel&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; aria-label=&quot;CSS pertinence 3 sur 10&quot; class=&quot;relevance3&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; aria-label=&quot;HTML pertinence 6 sur 10&quot; class=&quot;relevance6&quot;&gt;HTML&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; aria-label=&quot;Javascript pertinence 5 sur 10&quot; class=&quot;relevance5&quot;&gt;Javascript&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; aria-label=&quot;Node.js pertinence 8 sur 10&quot; class=&quot;relevance8&quot;&gt;Node.js&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot; aria-label=&quot;Webpack pertinence 2 sur 10&quot; class=&quot;relevance2&quot;&gt;Webpack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    <div class="demo">
+        <ul class="tagcloud">
+            <li><a href="" aria-label="Babel pertinence 1 sur 10" class="relevance1">Babel</a></li>
+            <li><a href="" aria-label="CSS pertinence 3 sur 10" class="relevance3">CSS</a></li>
+            <li><a href="" aria-label="HTML pertinence 6 sur 10" class="relevance6">HTML</a></li>
+            <li><a href="" aria-label="Javascript pertinence 5 sur 10" class="relevance5">Javascript</a></li>
+            <li><a href="" aria-label="Node.js pertinence 8 sur 10" class="relevance8">Node.js</a></li>
+            <li><a href="" aria-label="Webpack pertinence 2 sur 10" class="relevance2">Webpack</a></li>
+        </ul>
+    </div>
+
+    <h2 id="demo-information-by-position"><a href="#demo-information-by-position">§</a> Par la forme et la position</h2>
+    <pre aria-hidden="true"><code>&lt;p&gt;&lt;span id=&quot;weather&quot;&gt;
+    M&eacute;t&eacute;o sur Paris : peu nuageux, 21&deg;c, direction du vent :
+    &lt;i class=&quot;wi wi-direction-up-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+    &lt;span class=&quot;sr-only&quot;&gt;Nord Ouest&lt;/span&gt;
+&lt;/span&gt;&lt;/p&gt;</code></pre>
+    <div class="demo weather">
+        <p><span id="weather"></span></p>
+    </div>
+</div>
+<script src="js/disclosure.js"></script>
+<script src="js/ftp.js"></script>
+</body>
+</html>

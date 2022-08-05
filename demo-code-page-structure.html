@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : structure de page complète - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<div class="landmarks">
+    <header role="banner" class="header">
+        <p class="logo h1">Zone d'entête du document</p>
+        <h2 class="sr-only">Rechercher sur tout le site</h2>
+        <p role="search" class="search"><a href="#"><img src="images/magnifying-glass.svg" width="50" alt="Rechercher sur tout le site"></a></p>
+    </header>
+    <nav role="navigation" class="nav">
+        <h2 class="sr-only">Menu principal</h2>
+        <ul>
+            <li><a href="#">Page 1</a></li>
+            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 3</a></li>
+        </ul>
+    </nav>
+    <div class="main-wrapper">
+        <main role="main" class="main">
+            <h1>Zone de contenu principale</h1>
+            <p>Duis viverra nibh ac commodo elementum. Fusce sagittis nisl ligula, a laoreet purus volutpat eget. Nam et nisl mollis massa semper congue vitae vitae velit. Vestibulum at justo dui. Nulla facilisi. Proin lobortis ipsum ut elementum ultrices. Praesent mattis id lacus nec tincidunt. Phasellus in malesuada sapien. In semper dictum gravida. </p>
+            <nav class="nav">
+                <h2>Liste des sous-pages</h2>
+                <ul class="menu">
+                    <li><a href="#">Consectur ellis</a></li>
+                    <li><a href="#">Passam</a></li>
+                    <li><a href="#">Adipiscing elit</a></li>
+                </ul>
+            </nav>
+        </main>
+        <aside role="complementary" class="aside">
+            <h2>Zone de contenu complémentaire</h2>
+            <ul>
+                <li><a href="#">Lien externe 1</a></li>
+                <li><a href="#">Lien externe 2</a></li>
+                <li><a href="#">Lien externe 3</a></li>
+            </ul>
+        </aside>
+    </div>
+    <footer role="contentinfo" class="footer">
+        <img src="./images/parisfr.svg" alt="" width="100"/>
+        <h2 class="h5">Zone d'information relative au document ou au site (bas de page)</h2>
+        <p>Adresse de test <br/>00000 Lorem Ipsum CEDEX</p>
+    </footer>
+</div>
+</body>
+</html>

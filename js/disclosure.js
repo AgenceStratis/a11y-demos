@@ -1,5 +1,5 @@
 class disclosure {
-    constructor(trigger, content, status, focusFirstElement, useAria) {
+    constructor(trigger, content, focusFirstElement, useAria, status) {
         this.trigger = trigger;
         this.content = content;
         this.status = status;
@@ -14,7 +14,6 @@ class disclosure {
             const focusable = self.content.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
 
             self.trigger.addEventListener('click', (e) => {
-                console.log(self)
                 if (self.useAria) {
                     if (e.target.getAttribute('aria-expanded') === 'false') {
                         self.trigger.setAttribute('aria-expanded', 'true');
@@ -47,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuLangsTrigger = document.getElementById("menu-langs__trigger");
     const menuLangsContent = document.getElementById("menu-langs__content");
     if (menuLangsTrigger && menuLangsContent) {
-        const menuLangDisclosure = new disclosure(menuLangsTrigger, menuLangsContent, '', false, true);
+        const menuLangDisclosure = new disclosure(menuLangsTrigger, menuLangsContent, false, true, '');
         menuLangDisclosure.initialize();
     }
 
@@ -55,7 +54,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuLangsContent2 = document.getElementById("menu-langs2__content");
     const menuLangsStatus2 = document.querySelector('[data-trigger-text]');
     if (menuLangsTrigger2 && menuLangsContent2 && menuLangsStatus2) {
-        const menuLangDisclosure2 = new disclosure(menuLangsTrigger2, menuLangsContent2, menuLangsStatus2, false, false);
+        const menuLangDisclosure2 = new disclosure(menuLangsTrigger2, menuLangsContent2, false, false, menuLangsStatus2);
         menuLangDisclosure2.initialize();
+    }
+
+    const menuOrderTrigger = document.getElementById("menu-order__trigger");
+    const menuOrderContent = document.getElementById("menu-order__content");
+    if (menuOrderTrigger && menuOrderContent) {
+        const menuOrderDiscolsure = new disclosure(menuOrderTrigger, menuOrderContent, false, true, '');
+        menuOrderDiscolsure.initialize();
+    }
+
+    const menuOrderTrigger2 = document.getElementById("menu-order__trigger2");
+    const menuOrderContent2 = document.getElementById("menu-order__content2");
+    if (menuOrderTrigger2 && menuOrderContent2) {
+        const menuOrderDiscolsure2 = new disclosure(menuOrderTrigger2, menuOrderContent2, false, true, '');
+        menuOrderDiscolsure2.initialize();
+    }
+
+    const menuOrderTrigger3 = document.getElementById("menu-order__trigger3");
+    const menuOrderContent3 = document.getElementById("menu-order__content3");
+    if (menuOrderTrigger3 && menuOrderContent3) {
+        const menuOrderDiscolsure3 = new disclosure(menuOrderTrigger3, menuOrderContent3, false, true, '');
+        menuOrderDiscolsure3.initialize();
     }
 });

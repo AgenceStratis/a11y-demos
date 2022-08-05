@@ -287,3 +287,12 @@ progress::-webkit-progress-value {
     border: 1px solid transparent;
     background: red;
 }
+
+/* Form */
+.wrapper.--same-width label {
+    display: inline-block;
+    width: 200px;
+}
+.wrapper.--same-width.--right label {
+    text-align: right;
+}

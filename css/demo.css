@@ -296,3 +296,26 @@ progress::-webkit-progress-value {
 .wrapper.--same-width.--right label {
     text-align: right;
 }
+
+/* Animation */
+.animated svg {
+    height: 94px;
+    width: 62px;
+    animation: 1.5s ease 0s infinite beat;
+    fill: black;
+}
+.animated.--stop svg {
+    animation: none;
+}
+
+@keyframes beat {
+    0%, 35% {
+        transform: translateY(0)
+    }
+    10% {
+        transform: translateY(-20%)
+    }
+    25% {
+        transform: translateY(20%)
+    }
+}

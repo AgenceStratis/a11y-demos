@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : champs obligatoires - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : champs obligatoires</h1>
+</header>
+
+<div class="wrap">
+    <pre aria-hidden="true"><code>&lt;label for=&quot;edit-nom&quot;&gt;Nom &lt;em aria-hidden=&quot;true&quot;&gt;(obligatoire)&lt;/em&gt;&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;edit-nom&quot; autocomplete=&quot;given-name&quot; required&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="edit-nom">
+                Nom <em aria-hidden="true" class="required-mention">(obligatoire)</em>
+            </label>
+            <input type="text" id="edit-nom" autocomplete="given-name" required>
+        </div>
+    </div>
+</div>
+</body>
+</html>

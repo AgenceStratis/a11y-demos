@@ -57,7 +57,7 @@
     <h2 id="visibilite"><a href="#visibilite">§</a> Visibilité des contenus additionnels</h2>
 
     <h3>Mauvaise pratique</h3>
-    <pre><code>a:hover .visible-content-css__hidden-content {
+    <pre aria-hidden="true"><code>a:hover .visible-content-css__hidden-content {
     margin-bottom: 0;
 }</code></pre>
     <div class="demo">
@@ -99,7 +99,7 @@
     </div>
 
     <h3>Bonne pratique</h3>
-    <pre><code>a:hover .visible-content-css__hidden-content,
+    <pre aria-hidden="true"><code>a:hover .visible-content-css__hidden-content,
 a:focus .visible-content-css__hidden-content {
     margin-bottom: 0;
 }</code></pre>

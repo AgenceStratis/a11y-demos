@@ -50,7 +50,7 @@
 <div class="wrap">
     <h2>Rechargement d'une page à la réinitialisation d'un formulaire (changement de contexte)</h2>
     <h3>Mauvais pratique</h3>
-    <pre><code>&lt;button type=&quot;reset&quot; onclick=&quot;window.location.replace(location.pathname);&quot;&gt;Effacer&lt;/button&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;button type=&quot;reset&quot; onclick=&quot;window.location.replace(location.pathname);&quot;&gt;Effacer&lt;/button&gt;</code></pre>
     <div class="demo">
         <form action="#" onsubmit="return false;">
             <label for="search2">Mots-clés</label>
@@ -61,7 +61,7 @@
     </div>
 
     <h3>Bonne pratique</h3>
-    <pre><code>&lt;button type=&quot;reset&quot; aria-label=&quot;Effacer, recharger la page&quot; onclick=&quot;window.location.replace(location.pathname);&quot;&gt;Effacer&lt;/button&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;button type=&quot;reset&quot; aria-label=&quot;Effacer, recharger la page&quot; onclick=&quot;window.location.replace(location.pathname);&quot;&gt;Effacer&lt;/button&gt;</code></pre>
     <div class="demo">
         <form action="#" onsubmit="return false;">
             <label for="search">Mots-clés</label>
@@ -72,7 +72,7 @@
     </div>
 
     <h3>Bonne pratique (comportement par défaut)</h3>
-    <pre><code>&lt;button type=&quot;reset&quot;&gt;Effacer&lt;/button&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;button type=&quot;reset&quot;&gt;Effacer&lt;/button&gt;</code></pre>
     <div class="demo">
         <form action="#" onsubmit="return false;">
             <label for="search3">Mots-clés</label>

@@ -24,7 +24,7 @@
 
     <h3><code>role="status"</code></h3>
     <p>À tester sous Chrome, Firefox ne supporte pas la valeur <code>true</code> de l'attribut implicite <code>aria-atomic</code>.
-    <pre><code>&lt;p role=&quot;status&quot;&gt;R&eacute;sultats &lt;span id=&quot;live-region-status&quot;&gt;1 &agrave; 20&lt;/span&gt; sur 40&lt;/p&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;p role=&quot;status&quot;&gt;R&eacute;sultats &lt;span id=&quot;live-region-status&quot;&gt;1 &agrave; 20&lt;/span&gt; sur 40&lt;/p&gt;</code></pre>
     <div class="demo">
         <p role="status">Résultats <span id="live-region-status">1 à 20</span> sur 40</p>
         <button type="button" id="live-region-status-prev" disabled>Page précédente</button>
@@ -32,7 +32,7 @@
     </div>
 
     <h3><code>aria-live="polite" aria-atomic="true"</code></h3>
-    <pre><code>&lt;p aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;R&eacute;sultats &lt;span id=&quot;live-region-atomic-true&quot;&gt;1 &agrave; 20&lt;/span&gt; sur 40&lt;/p&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;p aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;R&eacute;sultats &lt;span id=&quot;live-region-atomic-true&quot;&gt;1 &agrave; 20&lt;/span&gt; sur 40&lt;/p&gt;</code></pre>
     <div class="demo">
         <p aria-live="polite" aria-atomic="true">Résultats <span id="live-region-atomic-true">1 à 20</span> sur 40
         </p>
@@ -45,7 +45,7 @@
     <h2 id="role-alert"><a href="#role-alert">§</a> <code>role="alert"</code> ou <code>aria-live="assertive" aria-atomic="true"</code></h2>
 
     <h3><code>role="alert"</code></h3>
-    <pre><code>&lt;form action=&quot;#&quot;&gt;
+    <pre aria-hidden="true"><code>&lt;form action=&quot;#&quot;&gt;
     &lt;div role=&quot;alert&quot;&gt;&lt;/div&gt;
     [...]
 &lt;/form&gt;</code></pre>
@@ -74,7 +74,7 @@
     </div>
 
     <h3><code>aria-live="assertive" aria-atomic="true"</code></h3>
-    <pre><code>&lt;form action=&quot;#&quot;&gt;
+    <pre aria-hidden="true"><code>&lt;form action=&quot;#&quot;&gt;
     &lt;div aria-live=&quot;assertive&quot; aria-atomic=&quot;true&quot;&gt;&lt;/div&gt;
     [...]
 &lt;/form&gt;</code></pre>
@@ -107,7 +107,7 @@
     <h2 id="role-log"><a href="#role-log">§</a> <code>role="log"</code> ou <code>aria-live="polite" aria-atomic="false"</code></h2>
 
     <h3><code>role="log"</code></h3>
-    <pre><code>&lt;div role=&quot;log&quot;&gt;&lt;/div&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;div role=&quot;log&quot;&gt;&lt;/div&gt;</code></pre>
     <div class="demo">
         <div id="live-region-log">
             <button type="button" id="zl-reload-log">Lancer l'exemple</button>
@@ -121,7 +121,7 @@
     </div>
 
     <h3><code>aria-live="polite"</code> (<code>aria-atomic="false"</code> explicite)</h3>
-    <pre><code>&lt;div aria-live=&quot;polite&quot;&gt;&lt;/div&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;div aria-live=&quot;polite&quot;&gt;&lt;/div&gt;</code></pre>
     <div class="demo">
         <div id="live-region">
             <button type="button" id="zl-reload">Lancer l'exemple</button>
@@ -138,7 +138,7 @@
 <div class="wrap">
     <h2 id="role-progressbar"><a href="#role-progressbar">§</a> <code>role="progressbar"</code></h2>
     <p>Pas d'équivalent aria</p>
-    <pre><code>&lt;div role=&quot;progressbar&quot; aria-valuetext=&quot;0%&quot; aria-valuenow=&quot;0&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot;&gt;&lt;/div&gt;
+    <pre aria-hidden="true"><code>&lt;div role=&quot;progressbar&quot; aria-valuetext=&quot;0%&quot; aria-valuenow=&quot;0&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;progressbar&quot;&gt;&lt;div id=&quot;progress&quot; class=&quot;progress&quot;&gt;&lt;span class=&quot;percent-wrapper&quot;&gt;&lt;span id=&quot;percent&quot;&gt;0&lt;/span&gt;%&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
     <div class="demo">
         <button type="button" id="progressbar-button" class="progressbar-button">Télécharger</button>

@@ -26,20 +26,20 @@
         <h2 id="lien-nom-accessible"><a href="#lien-nom-accessible">§</a> Nom accessible d'un lien</h2>
 
         <h3>Mauvaise pratique</h3>
-        <pre><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
+        <pre aria-hidden="true"><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
         <div class="demo">
             <a href="#" target="_blank" aria-label="Nouvelle fenêtre">Toutes les actualités</a>
         </div>
 
         <h3>Bonne pratique</h3>
-        <pre><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Toutes les actualit&eacute;s, nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
+        <pre aria-hidden="true"><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Toutes les actualit&eacute;s, nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
         <div class="demo">
             <a href="actualites.html" target="_blank" aria-label="Toutes les actualités, nouvelle fenêtre">Toutes les
                 actualités</a>
         </div>
 
         <h3>Mauvaise pratique</h3>
-        <pre><code>&lt;a href=&quot;#&quot;&gt;
+        <pre aria-hidden="true"><code>&lt;a href=&quot;#&quot;&gt;
     M&eacute;t&eacute;o : &lt;span class=&quot;fas fa-cloud-rain&quot;&gt;&lt;/span&gt;
 &lt;/a&gt;</code></pre>
         <div class="demo">
@@ -49,7 +49,7 @@
         </div>
 
         <h3>Bonne pratique</h3>
-        <pre><code>&lt;a href=&quot;#&quot; aria-label=&quot;M&eacute;t&eacute;o nuage et pluie&quot;&gt;
+        <pre aria-hidden="true"><code>&lt;a href=&quot;#&quot; aria-label=&quot;M&eacute;t&eacute;o nuage et pluie&quot;&gt;
     &lt;span class=&quot;text&quot;&gt;M&eacute;t&eacute;o :&lt;/span&gt;
     &lt;span class=&quot;fas fa-cloud-rain&quot; aria-hidden=&quot;true&quot; title=&quot;nuage et pluie&quot;&gt;&lt;/span&gt;
 &lt;/a&gt;</code></pre>
@@ -61,7 +61,7 @@
         </div>
 
         <h3>Meilleure pratique (accessibilité et SEO <span lang="en">friendly</span>)</h3>
-        <pre><code>&lt;a href=&quot;#&quot;&gt;
+        <pre aria-hidden="true"><code>&lt;a href=&quot;#&quot;&gt;
     &lt;span class=&quot;text&quot;&gt;M&eacute;t&eacute;o :&lt;/span&gt;
     &lt;span class=&quot;sr-only&quot;&gt;nuage et pluie&lt;/span&gt;
     &lt;span class=&quot;fas fa-cloud-rain&quot; aria-hidden=&quot;true&quot; title=&quot;nuage et pluie&quot;&gt;&lt;/span&gt;
@@ -107,7 +107,7 @@
 
 <div class="wrap">
     <h2 id="lien-composite"><a href="#lien-composite">§</a> Lien composite</h2>
-    <pre><code>&lt;a href=&quot;https://www.paris.fr/&quot;&gt;
+    <pre aria-hidden="true"><code>&lt;a href=&quot;https://www.paris.fr/&quot;&gt;
     &lt;img src=&quot;https://picsum.photos/200/200&quot; alt=&quot;&quot;&gt;
     &lt;h3&gt;Ouverture d'un espace lecture au patronage la&iuml;que de Recouvrance&lt;/h3&gt;
     &lt;p&gt;Mercredi 22 septembre, la Bulle de mots, nouvel espace de lecture, a &eacute;t&eacute; inaugur&eacute; au patronage la&iuml;que de Recouvrance en pr&eacute;sence de l&apos;&eacute;quipe, des enfants du centre de loisirs, des membres de la m&eacute;diath&egrave;que des Capucins et des &eacute;lus.&lt;/p&gt;
@@ -125,7 +125,7 @@
 
 <div class="wrap">
     <h2 id="lien-etendu-css">Lien non-composite mais étendu en CSS (même ergonomie que le lien composite)</h2>
-    <pre><code>&lt;style&gt;
+    <pre aria-hidden="true"><code>&lt;style&gt;
     article {
         position: relative;
     }
@@ -159,7 +159,7 @@
     <h2 id="lien-explicite-contexte"><a href="#lien-explicite-contexte">§</a> Lien non pertinent rendu explicite grâce au contexte (conforme mais non
         accessible)</h2>
     <h3>Grâce au titre précédent</h3>
-    <pre><code>&lt;h2&gt;Des liens explicites&lt;/h2&gt;
+    <pre aria-hidden="true"><code>&lt;h2&gt;Des liens explicites&lt;/h2&gt;
 &lt;p&gt;Pour qu'un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l'objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;#&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
     <div class="demo">
@@ -170,20 +170,20 @@
     </div>
 
     <h3>Grâce à la phrase</h3>
-    <pre><code>&lt;p&gt;Vous pouvez nous contacter en cliquant &lt;a href=&quot;#&quot;&gt;ici&lt;/a&gt; pour toute demande d&#39;information.&lt;/p&gt;</code></pre>
+    <pre aria-hidden="true"><code>&lt;p&gt;Vous pouvez nous contacter en cliquant &lt;a href=&quot;#&quot;&gt;ici&lt;/a&gt; pour toute demande d&#39;information.&lt;/p&gt;</code></pre>
     <div class="demo">
         <p>Vous pouvez nous contacter en cliquant <a href="#">ici</a> pour toute demande d'information.</p>
     </div>
 
     <h3>Grâce au paragraphe</h3>
     <h4>Conforme</h4>
-    <pre><code>&lt;p&gt;Vous pouvez nous contacter pour toute demande d&#39;information.
+    <pre aria-hidden="true"><code>&lt;p&gt;Vous pouvez nous contacter pour toute demande d&#39;information.
 &lt;br&gt;Cliquez &lt;a href=&quot;#&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;</code></pre>
     <div class="demo">
         <p>Vous pouvez nous contacter pour toute demande d'information. <br>Cliquez <a href="#">ici</a>.</p>
     </div>
     <h4>Non-conforme</h4>
-    <pre><code>&lt;p&gt;Vous pouvez nous contacter pour toute demande d&#39;information.&lt;/p&gt;
+    <pre aria-hidden="true"><code>&lt;p&gt;Vous pouvez nous contacter pour toute demande d&#39;information.&lt;/p&gt;
 &lt;p&gt;Cliquez &lt;a href=&quot;#&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;</code></pre>
     <div class="demo">
         <p>Vous pouvez nous contacter pour toute demande d'information.</p>
@@ -192,7 +192,7 @@
 
     <h3>Grâce à la liste</h3>
     <h4>Conforme</h4>
-    <pre><code>&lt;ul&gt;
+    <pre aria-hidden="true"><code>&lt;ul&gt;
     &lt;li&gt;Pour contacter le service communication, cliquez &lt;a href=&quot;#&quot;&gt;ici&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;Pour contacter le service &eacute;v&eacute;nementiel :
         &lt;ul&gt;
@@ -213,7 +213,7 @@
         </ul>
     </div>
     <h4>Non-conforme</h4>
-    <pre><code>&lt;p&gt;Pour contacter le service &eacute;v&eacute;nementiel :&lt;/p&gt;
+    <pre aria-hidden="true"><code>&lt;p&gt;Pour contacter le service &eacute;v&eacute;nementiel :&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Envoyer un &lt;a href=&quot;#&quot;&gt;courriel&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;Remplir le &lt;a href=&quot;#&quot;&gt;formulaire&lt;/a&gt;&lt;/li&gt;
@@ -230,7 +230,7 @@
 <div class="wrap">
     <h2 id="lien-contextualise"><a href="#lien-contextualise">§</a> Lien contextualisé</h2>
     <h3>Lien contextualisé avec l'attribut <code>aria-describedby</code></h3>
-    <pre><code>&lt;h4 id=&quot;liens-explicites&quot;&gt;Des liens explicites&lt;/h4&gt;
+    <pre aria-hidden="true"><code>&lt;h4 id=&quot;liens-explicites&quot;&gt;Des liens explicites&lt;/h4&gt;
 &lt;p&gt;Pour qu'un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l'objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;#&quot; aria-describedby=&quot;liens-explicites&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
     <div class="demo">
@@ -241,7 +241,7 @@
     </div>
 
     <h3>Lien contextualisé avec l'attribut <code>aria-label</code></h3>
-    <pre><code>&lt;h4&gt;Des liens explicites&lt;/h4&gt;
+    <pre aria-hidden="true"><code>&lt;h4&gt;Des liens explicites&lt;/h4&gt;
 &lt;p&gt;Pour qu'un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l'objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;#&quot; aria-label=&quot;En savoir plus sur les liens explicites&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
     <div class="demo">
@@ -253,7 +253,7 @@
 
     <h3>Lien contextualisé avec l'attribut
         <code>title</code></h3>
-    <pre><code>&lt;h4&gt;Des liens explicites&lt;/h4&gt;
+    <pre aria-hidden="true"><code>&lt;h4&gt;Des liens explicites&lt;/h4&gt;
 &lt;p&gt;Pour qu'un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l'objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;#&quot; title=&quot;En savoir plus sur les liens explicites&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
     <div class="demo">
@@ -264,7 +264,7 @@
     </div>
 
     <h3>Lien contextualisé élargie en CSS</h3>
-    <pre><code>&lt;h4&gt;&lt;a href=&quot;#&quot;&gt;Des liens explicites&lt;/a&gt;&lt;/h4&gt;
+    <pre aria-hidden="true"><code>&lt;h4&gt;&lt;a href=&quot;#&quot;&gt;Des liens explicites&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;Pour qu'un lien soit explicite, il est n&eacute;cessaire de fournir un intitul&eacute; de lien qui identifie l'objectif du lien, la fonction et la destination.&lt;/p&gt;
 &lt;a href=&quot;#&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;En savoir plus&lt;/a&gt;</code></pre>
     <div class="demo composite-link-wrapper">
@@ -278,7 +278,7 @@
 <div class="wrap">
     <h2 id="visibilite-liens"><a href="#visibilite-liens">§</a> Visibilité des liens</h2>
     <h3>Mauvaise pratique</h3>
-    <pre><code>&lt;blockquote&gt;
+    <pre aria-hidden="true"><code>&lt;blockquote&gt;
     &lt;p&gt;L'accessibilit&eacute; du Web signifie que les &lt;a href=&quot;#&quot;&gt;personnes en situation de handicap&lt;/a&gt; peuvent utiliser le Web. Plus pr&eacute;cis&eacute;ment, qu'elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu'elles peuvent contribuer sur le Web.&lt;/p&gt;
 &lt;/blockquote&gt;</code></pre>
     <div class="demo -visibilite-lien">
@@ -290,7 +290,7 @@
     </div>
     <p>Ratio de contraste insuffisant entre le lien en violet et le texte gris de 1.2:1.</p>
     <h3>Bonnes pratiques</h3>
-    <pre><code>&lt;blockquote&gt;
+    <pre aria-hidden="true"><code>&lt;blockquote&gt;
     &lt;p&gt;L'accessibilit&eacute; du Web signifie que les &lt;a href=&quot;#&quot;&gt;personnes en situation de handicap&lt;/a&gt; peuvent utiliser le Web. Plus pr&eacute;cis&eacute;ment, qu'elles peuvent percevoir, comprendre, naviguer et interagir avec le Web, et qu'elles peuvent contribuer sur le Web.&lt;/p&gt;
 &lt;/blockquote&gt;</code></pre>
     <div class="demo">

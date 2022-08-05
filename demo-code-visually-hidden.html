@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : contenu caché visuellement mais restitué par les technologies d'assistance - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : contenu caché visuellement mais restitué par les technologies d'assistance</h1>
+</header>
+
+<div class="wrap">
+    <h2 id="visually-hidden">Contenu caché</h2>
+    <h3>Mauvaise pratique</h3>
+    <pre aria-hidden="true"><code>&lt;style&gt;
+    .pager span {
+        font-size: 0;
+        visibility: hidden;
+    }
+&lt;/style&gt;
+&lt;p class=&quot;pager&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;prev&quot;&gt;&lt;span&gt;Pr&eacute;c&eacute;dent&lt;/span&gt;&lt;/a&gt;
+    &lt;a href=&quot;#&quot; class=&quot;next&quot;&gt;&lt;span&gt;Suivant&lt;/span&gt;&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+    <div class="demo">
+        <p class="pager-wrong">
+            <a href="#" class="prev"><span>Précédent</span></a>
+            <a href="#" class="next"><span>Suivant</span></a>
+        </p>
+    </div>
+    <h3>Bonne pratique</h3>
+    <pre aria-hidden="true"><code>&lt;style&gt;
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+&lt;/style&gt;
+&lt;nav role=&quot;navigation&quot; aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;prev&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;Pr&eacute;c&eacute;dent&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;pr&eacute;c&eacute;dent&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;next&quot;&gt;&lt;a href=&quot;#&quot; title=&quot;Suivant&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;suivant&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+    <div class="demo">
+        <nav role="navigation" aria-label="Pagination">
+            <ul class="pager-correct">
+                <li class="prev"><a href="#" title="Précédent"><span class="sr-only">précédent</span></a></li>
+                <li class="next"><a href="#" title="Suivant"><span class="sr-only">suivant</span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <h3>Bonne pratique</h3>
+    <pre aria-hidden="true"><code>&lt;style&gt;
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        margin-top: -1px;
+        margin-bottom: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+&lt;/style&gt;
+&lt;nav class=&quot;pager&quot; role=&quot;navigation&quot; aria-label=&quot;Pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;prev&quot;&gt;
+            &lt;a href=&quot;#&quot; title=&quot;Pr&eacute;c&eacute;dent&quot;&gt;
+                &lt;span class=&quot;fas fa-chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;sr-only&quot;&gt;pr&eacute;c&eacute;dent&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;next&quot;&gt;
+            &lt;a href=&quot;#&quot; title=&quot;Suivant&quot;&gt;
+                &lt;span class=&quot;fas fa-chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;sr-only&quot;&gt;suivant&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+    <div class="demo">
+        <nav role="navigation" aria-label="Pagination">
+            <ul class="pager-correct -icon">
+                <li class="prev">
+                    <a href="#" title="Précédent">
+                        <span class="fas fa-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">précédent</span>
+                    </a>
+                </li>
+                <li class="next">
+                    <a href="#" title="Suivant">
+                        <span class="fas fa-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">suivant</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+</body>
+</html>

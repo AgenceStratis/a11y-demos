@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : étiquette de champ - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : étiquette de champ</h1>
+</header>
+
+<div class="wrap">
+    <h2 id="for-id"><a href="#for-id">§</a> Balise <code>&lt;label&gt;</code> et relation avec
+        les attributs <code>for</code> et <code>id</code></h2>
+    <pre><code>&lt;label for=&quot;name&quot;&gt;Nom&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; autocomplete=&quot;family-name&quot;&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <label for="name">Nom</label>
+            <input type="text" name="name" id="name" autocomplete="family-name">
+        </div>
+    </div>
+
+    <h2 id="aria-labelledby"><a href="#aria-labelledby">§</a> Attribut aria-labelledby</h2>
+    <pre><code>&lt;p id=&quot;firstname&quot;&gt;Pr&eacute;nom&lt;/p&gt;
+&lt;input type=&quot;text&quot; name=&quot;firstname&quot; aria-labelledby=&quot;firstname&quot; autocomplete=&quot;given-name&quot;&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <p id="firstname">Prénom</p>
+            <input type="text" name="firstname" aria-labelledby="firstname" autocomplete="given-name">
+        </div>
+    </div>
+
+    <h2 id="aria-label"><a href="#aria-label">§</a> Attribut aria-label</h2>
+    <pre><code>&lt;p aria-hidden=&quot;true&quot;&gt;Code postal (75000)&lt;/p&gt;
+&lt;input type=&quot;text&quot; name=&quot;postal-code&quot; aria-label=&quot;Code postal (75000)&quot; autocomplete=&quot;postal-code&quot;&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <p aria-hidden="true">Code postal (75000)</p>
+            <input type="text" name="postal-code" aria-label="Code postal (75000)" autocomplete="tel">
+        </div>
+    </div>
+
+    <h2 id="title"><a href="#title">§</a> Attribut title</h2>
+    <pre><code>&lt;span class=&quot;fas fa-phone&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+&lt;input type=&quot;text&quot; name=&quot;tel&quot; title=&quot;T&eacute;l&eacute;phone (01 99 00 02 00)&quot; autocomplete=&quot;postal-code&quot;&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <span class="fas fa-phone" aria-hidden="true"></span>
+            <input type="text" name="tel" title="Téléphone (01 99 00 02 00)" autocomplete="postal-code">
+        </div>
+    </div>
+
+    <h2 id="button"><a href="#button">§</a> Bouton adjacent</h2>
+    <pre><code>&lt;input type=&quot;text&quot; name=&quot;search&quot; id=&quot;search&quot; title=&quot;Rechercher sur l&apos;ensemble du site&quot;&gt;
+&lt;button type=&quot;submit&quot;&gt;Rechercher sur l&apos;ensemble du site&lt;/button&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <input type="text" name="search" id="search" title="Rechercher sur l'ensemble du site">
+            <button type="submit">Rechercher sur l'ensemble du site</button>
+        </div>
+    </div>
+
+    <h2 id="placeholder"><a href="#placeholder">§</a> Placeholder</h2>
+    <h3>Mauvaise pratique</h3>
+    <pre><code>&lt;input type=&quot;text&quot; placeholder=&quot;Courriel&quot;&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <input type="text" placeholder="Courriel">
+        </div>
+    </div>
+
+    <h3>Bonne pratique</h3>
+    <pre><code>&lt;input type=&quot;text&quot; id=&quot;edit-courriel&quot; autocomplete=&quot;email&quot; placeholder=&quot;Courriel&quot; title=&quot;Courriel exemple de saisie prenomnom@domain.fr&quot;&gt;</code></pre>
+    <div class="demo">
+        <div class="field-wrap">
+            <input type="text" id="edit-courriel" autocomplete="email" placeholder="Courriel"
+                   title="Courriel exemple de saisie prenomnom@domain.fr">
+        </div>
+    </div>
+</div>
+</body>
+</html>

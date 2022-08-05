@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : erreur de saisie - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/parsley.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="js/parsley.min.js"></script>
+    <script src="js/parsley-fr.js"></script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : erreur de saisie</h1>
+</header>
+
+<div class="wrap">
+    <p>Utilisation du plugin <a href="https://parsleyjs.org/" rel="noopener noreferrer" target="_blank">Parsley.js</a>, qui va ajouter les attributs <code>aria-describedby</code> liant les champs à leur erreur. Le message est d'ailleurs personnalisable.</p>
+    <pre aria-hidden="true"><code>&lt;form action=&quot;#&quot; data-parsley-validate&gt;
+    &lt;div class=&quot;field-wrap&quot;&gt;
+        &lt;label for=&quot;edit-email&quot;&gt;Courriel (prenom.nom@domain.com)&lt;/label&gt;
+        &lt;input type=&quot;email&quot; id=&quot;edit-email&quot; autocomplete=&quot;email&quot; required&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;field-wrap&quot;&gt;
+        &lt;label for=&quot;edit-pwd&quot;&gt;Mot de passe&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;edit-pwd&quot; autocomplete=&quot;new-password&quot; aria-describedby=&quot;pwd-aide&quot; required pattern=&quot;(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[AZ])(?=.*[az]).*$&quot; data-parsley-required-message=&quot;Veuillez entrer un mot de passe valide, exemple: Aa1-aaaa&quot;&gt;
+        &lt;p id=&quot;pwd-aide&quot;&gt;Le mot de passe doit contenir au moins 8 caract&egrave;res, 1 majuscule, 1 minuscule, 1
+            chiffre et 1 caract&egrave;re sp&eacute;cial.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;field-wrap&quot;&gt;
+        &lt;label for=&quot;edit-pwd2&quot; id=&quot;edit-label-secu&quot;&gt;Num&eacute;ro de s&eacute;curit&eacute; sociale&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;edit-pwd2&quot; aria-labelledby=&quot;edit-label-secu pwd-aide2&quot; required pattern=&quot;[0-9]{13}&quot; data-parsley-required-message=&quot;Veuillez entrer un num&eacute;ro de s&eacute;curit&eacute; sociale valide, exemple : 1800180123456.&quot;&gt;
+        &lt;p id=&quot;pwd-aide2&quot;&gt;13 chiffres&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type=&quot;submit&quot;&gt;M&#39;inscrire&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+    <div class="demo">
+        <form action="#" data-parsley-validate>
+            <div class="field-wrap">
+                <label for="edit-email"><strong>Courriel</strong> <br>(prenom.nom@domain.com)</label>
+                <input type="email" id="edit-email" autocomplete="email" required>
+            </div>
+            <div class="field-wrap">
+                <label for="edit-pwd"><strong>Mot de passe</strong> <br>Le mot de passe doit contenir au moins 8 caractères, 1 majuscule, 1 minuscule, 1
+                    chiffre et 1 caractère spécial.</label>
+                <input type="text" id="edit-pwd" autocomplete="new-password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[AZ])(?=.*[az]).*$" data-parsley-required-message="Veuillez entrer un mot de passe valide, exemple: Aa1-aaaa">
+            </div>
+            <div class="field-wrap">
+                <label for="edit-pwd2" id="edit-label-secu"><strong>Numéro de sécurité sociale</strong> <br>13 chiffres</label>
+                <input type="text" id="edit-pwd2" required pattern="[0-9]{13}" data-parsley-required-message="Veuillez entrer un numéro de sécurité sociale valide, exemple : 1800180123456.">
+            </div>
+            <button type="submit">M'inscrire</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

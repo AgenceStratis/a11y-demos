@@ -68,25 +68,25 @@
 
     <h4>Pratique autorisée par le RGAA, mais pas par les WCAG</h4>
     <pre><code>&lt;style&gt;
-    .events-list.--reverse-order .wrapper {
+    .--reverse-order {
         display: flex;
         flex-direction: column-reverse;
     }
 &lt;/style&gt;
 &lt;article&gt;
     &lt;img src=&quot;https://picsum.photos/200/200?random=1&quot; alt=&quot;&quot;&gt;
-    &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div class=&quot;wrapper --reverse-order&quot;&gt;
         &lt;h2 class=&quot;title&quot;&gt;&lt;a href=&quot;#&quot;&gt;L&#39;oiseau et le chat&lt;/a&gt;&lt;/h2&gt;
         &lt;p class=&quot;date&quot;&gt;21 juillet 2020&lt;/p&gt;
         &lt;p class=&quot;category&quot;&gt;Spectacle&lt;/p&gt;
     &lt;/div&gt;
 &lt;/article&gt;</code></pre>
     <div class="demo">
-        <ul class="events-list --reverse-order">
+        <ul class="events-list">
             <li>
                 <article>
                     <img src="https://picsum.photos/200/200?random=1" alt="">
-                    <div class="wrapper --img-close">
+                    <div class="wrapper --img-close --reverse-order">
                         <h2 class="title"><a href="#">L'oiseau et le chat</a></h2>
                         <p class="date">21 juillet 2020</p>
                         <p class="category">Spectacle</p>
@@ -96,7 +96,7 @@
             <li>
                 <article>
                     <img src="https://picsum.photos/200/200?random=2" alt="">
-                    <div class="wrapper --img-close">
+                    <div class="wrapper --img-close --reverse-order">
                         <h2 class="title"><a href="#">La voix du succès</a></h2>
                         <p class="date">24 juillet 2020</p>
                         <p class="category">Cinema</p>
@@ -106,7 +106,7 @@
             <li>
                 <article>
                     <img src="https://picsum.photos/200/200?random=3" alt="">
-                    <div class="wrapper --img-close">
+                    <div class="wrapper --img-close --reverse-order">
                         <h2 class="title"><a href="#">Mémoire de glace</a></h2>
                         <p class="date">25 juillet 2020</p>
                         <p class="category">Exposition</p>

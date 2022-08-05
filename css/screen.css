@@ -409,7 +409,7 @@ legend, .legend {
     display: inline-block;
 }
 
-.events-list.--reverse-order .wrapper {
+.events-list .--reverse-order {
     display: flex;
     flex-direction: column-reverse;
 }

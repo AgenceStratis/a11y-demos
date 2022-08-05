@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples de codes : couleurs de texte et de fond des contenus - Démonstrations en accessibilité - Stratis</title>
+    <link rel="icon" type="image/gif" href="favicon.ico"/>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading"><a href="#heading">§</a> Exemples de codes : couleurs de texte et de fond des contenus</h1>
+</header>
+
+<div class="wrap">
+    <p>Désactiver les images de fond.</p>
+    <h2>Mauvaise pratique</h2>
+    <pre><code>&lt;style&gt;
+.pattern {
+    color: #ffffff;
+}
+&lt;/style&gt;
+&lt;div class=&quot;pattern&quot;&gt;
+    &lt;p&gt;Sp&eacute;cifier la couleur de fond d&#39;une image int&eacute;gr&eacute;e via CSS est important.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    <div class="demo">
+        <div class="pattern">
+            <p>Spécifier la couleur de fond d'une image intégrée via CSS est important.</p>
+        </div>
+    </div>
+    <h2>Bonne pratique</h2>
+    <pre><code>&lt;style&gt;
+.pattern {
+    color: #ffffff;
+    background-color: #78458e;
+}
+&lt;/style&gt;
+&lt;div class=&quot;pattern&quot;&gt;
+    &lt;p&gt;Sp&eacute;cifier la couleur de fond d&#39;une image int&eacute;gr&eacute;e via CSS est important.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    <div class="demo">
+        <div class="pattern --good">
+            <p>Spécifier la couleur de fond d'une image intégrée via CSS est important.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correction de l'exercice : les couleurs - Démonstrations en accessibilité - Stratis</title>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="css/github.css">
+    <link rel="stylesheet" href="css/screen.css">
+    <link rel="stylesheet" href="css/couleurs.css">
+    <link rel="stylesheet" href="css/couleurs-correction.css">
+    <!-- highlight -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<header role="banner">
+    <h1 id="heading">Correction de l'exercice : les couleurs</h1>
+</header>
+
+<div class="wrap">
+    <h2>Information donnée uniquement par la couleur dans un menu</h2>
+    <div class="demo">
+        <ul class="menu">
+            <li><a href="#">Actualités</a></li>
+            <li class="active"><a href="#" style="border: 1px solid black" title="Le ministère, rubrique active">Le
+                ministère</a></li>
+            <li><a href="#">Vos questions</a></li>
+            <li><a href="#">Contactez nous</a></li>
+        </ul>
+    </div>
+    <div class="pattern">
+        <p>Autres possibilités&nbsp;:</p>
+        <ul>
+            <li>Remplacer l'attribut <code>title</code> par un attribut <code>aria-label</code>.</li>
+            <li>Utiliser l'attribut <code>aria-current="page"</code> sur le lien.</li>
+        </ul>
+    </div>
+    <h3>À noter</h3>
+    <p>Ces solutions fournissent l'information à tous les utilisateurs concernés&nbsp;:</p>
+    <ul>
+        <li>La bordure, pour les utilisateurs mal-voyants qui ne voient pas correctement les couleurs.</li>
+        <li>Les attributs <code>title</code>, <code>aria-label</code> ou <code>aria-current</code>, pour les
+            utilisateurs non-voyants qui ne peuvent pas "voir" la page.
+        </li>
+    </ul>
+
+    <h2>Contraste de couleurs sur un élément textuel</h2>
+    <div class="demo">
+        <button class="button-small">Bouton 1</button>
+        <button class="button-big">Bouton 2</button>
+    </div>
+    <div class="pattern">
+        <p>Autres possibilités&nbsp;:</p>
+        <ul>
+            <li>Remplacer (éclaircir) les couleurs de fond.</li>
+            <li>Sur le bouton 1, augmenter la taille du texte à 2.4rem.</li>
+            <li>Sur le bouton 1, passer le texte en gras.</li>
+        </ul>
+    </div>
+    <h3>Rappel</h3>
+    <p>Texte non gras :</p>
+    <ul>
+        <li>&lt; 24px : ratio 4.5:1 entre la couleur de fond et le texte</li>
+        <li>&gt;= 24px : ratio 3:1 entre la couleur de fond et le texte</li>
+    </ul>
+    <p>Texte gras :</p>
+    <ul>
+        <li>&lt; 18.5px : ratio 4.5:1 entre la couleur de fond et le texte</li>
+        <li>&gt;= 18.5px : ratio 3:1 entre la couleur de fond et le texte</li>
+    </ul>
+    <p>Vérifier aussi les états survolés, focussés, actifs...</p>
+
+    <h2>Contraste de couleurs sur un élément non textuel</h2>
+    <div class="demo">
+        <button class="button-svg" aria-label="Rechercher">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="60px" height="60px">
+                <path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"/>
+            </svg>
+        </button>
+    </div>
+    <h3>Rappel</h3>
+    <p>Ratio 3:1 entre la couleur de fond et celle du composant, ou entre toutes les couleurs contiguës d'un graphique</p>
+    <p>Vérifier aussi les états survolés, focussés, actifs...</p>
+</div>
+
+</body>
+</html>

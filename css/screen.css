@@ -620,3 +620,8 @@ legend, .legend {
 code, tt {
     color: black;
 }
+
+/* pattern */
+.pattern a {
+    color: white;
+}

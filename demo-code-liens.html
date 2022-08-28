@@ -26,15 +26,15 @@
         <h2 id="lien-nom-accessible"><a href="#lien-nom-accessible">§</a> Nom accessible d'un lien</h2>
 
         <h3>Mauvaise pratique</h3>
-        <pre aria-hidden="true"><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
+        <pre aria-hidden="true"><code>&lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;Nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
         <div class="demo">
             <a href="#" target="_blank" aria-label="Nouvelle fenêtre">Toutes les actualités</a>
         </div>
 
         <h3>Bonne pratique</h3>
-        <pre aria-hidden="true"><code>&lt;a href=&quot;actualites.html&quot; target=&quot;_blank&quot; aria-label=&quot;Toutes les actualit&eacute;s, nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
+        <pre aria-hidden="true"><code>&lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;Toutes les actualit&eacute;s, nouvelle fen&ecirc;tre&quot;&gt;Toutes les actualit&eacute;s&lt;/a&gt;</code></pre>
         <div class="demo">
-            <a href="actualites.html" target="_blank" aria-label="Toutes les actualités, nouvelle fenêtre">Toutes les
+            <a href="#" target="_blank" aria-label="Toutes les actualités, nouvelle fenêtre">Toutes les
                 actualités</a>
         </div>
 
@@ -124,7 +124,7 @@
 </div>
 
 <div class="wrap">
-    <h2 id="lien-etendu-css">Lien non-composite mais étendu en CSS (même ergonomie que le lien composite)</h2>
+    <h2 id="lien-etendu-css">Lien non composite mais étendu en CSS (même ergonomie que le lien composite)</h2>
     <pre aria-hidden="true"><code>&lt;style&gt;
     article {
         position: relative;
@@ -156,7 +156,7 @@
 </div>
 
 <div class="wrap">
-    <h2 id="lien-explicite-contexte"><a href="#lien-explicite-contexte">§</a> Lien non pertinent rendu explicite grâce au contexte (conforme mais non
+    <h2 id="lien-explicite-contexte"><a href="#lien-explicite-contexte">§</a> Lien non pertinent rendu explicite grâce au contexte (conforme, mais non
         accessible)</h2>
     <h3>Grâce au titre précédent</h3>
     <pre aria-hidden="true"><code>&lt;h2&gt;Des liens explicites&lt;/h2&gt;
@@ -182,7 +182,7 @@
     <div class="demo">
         <p>Vous pouvez nous contacter pour toute demande d'information. <br>Cliquez <a href="#">ici</a>.</p>
     </div>
-    <h4>Non-conforme</h4>
+    <h4>Non conforme</h4>
     <pre aria-hidden="true"><code>&lt;p&gt;Vous pouvez nous contacter pour toute demande d&#39;information.&lt;/p&gt;
 &lt;p&gt;Cliquez &lt;a href=&quot;#&quot;&gt;ici&lt;/a&gt;.&lt;/p&gt;</code></pre>
     <div class="demo">
@@ -212,7 +212,7 @@
             </li>
         </ul>
     </div>
-    <h4>Non-conforme</h4>
+    <h4>Non conforme</h4>
     <pre aria-hidden="true"><code>&lt;p&gt;Pour contacter le service &eacute;v&eacute;nementiel :&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;Envoyer un &lt;a href=&quot;#&quot;&gt;courriel&lt;/a&gt;&lt;/li&gt;

@@ -9,8 +9,10 @@ class Tooltip {
     bindEvents() {
         this.element.addEventListener('mouseenter', this.open.bind(this));
         this.element.addEventListener('focus', this.open.bind(this));
+        this.element.addEventListener('focusin', this.open.bind(this));
         this.element.addEventListener('mouseleave', this.close.bind(this));
         this.element.addEventListener('blur', this.close.bind(this));
+        this.element.addEventListener('focusout', this.close.bind(this));
     }
 
     open() {

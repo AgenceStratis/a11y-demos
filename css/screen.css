@@ -494,11 +494,11 @@ legend, .legend {
     display: block;
 }
 
-#menu-langs.--open #menu-langs__trigger .fas {
+.disclosure.--open .disclosure__trigger .fas {
     transform: rotate(180deg);
 }
 
-#menu-langs__trigger .fas {
+.disclosure__trigger .fas {
     transition: all ease 0.3s;
 }
 

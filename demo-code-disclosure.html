@@ -24,13 +24,13 @@
 <div class="wrap">
     <h2>Avec ARIA</h2>
     <div class="demo">
-        <div id="menu-langs" class="disclosure">
-            <button type="button" id="menu-langs__trigger" aria-expanded="false"
-                    aria-controls="menu-langs__content">
+        <div class="disclosure">
+            <button type="button" class="disclosure__trigger" aria-expanded="false"
+                    aria-controls="menu__content">
                 <span class="fas fa-chevron-down" aria-hidden="true"></span>
                 Modifier la langue de la page
             </button>
-            <ul id="menu-langs__content" class="disclosure__content">
+            <ul id="menu__content" class="disclosure__content">
                 <li><a href="#fr">Français</a></li>
                 <li><a href="#en" lang="en">English</a></li>
             </ul>
@@ -39,13 +39,13 @@
 
     <h2>Sans ARIA</h2>
     <div class="demo">
-        <div id="menu-langs2" class="disclosure">
-            <button type="button" id="menu-langs2__trigger" data-trigger-open="Ouvrir le menu" data-trigger-close="Fermer le menu">
+        <div class="disclosure">
+            <button type="button" class="disclosure__trigger" data-trigger-open="Ouvrir le menu" data-trigger-close="Fermer le menu">
                 <span class="fas fa-chevron-down" aria-hidden="true"></span>
                 Modifier la langue de la page
-                <span class="sr-only" data-trigger-text>Ouvrir le menu</span>
+                <span class="sr-only status-text">Ouvrir le menu</span>
             </button>
-            <ul id="menu-langs2__content" class="disclosure__content">
+            <ul class="disclosure__content">
                 <li><a href="#fr">Français</a></li>
                 <li><a href="#en" lang="en">English</a></li>
             </ul>

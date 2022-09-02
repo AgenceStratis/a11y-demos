@@ -1,81 +1,69 @@
 class disclosure {
-    constructor(trigger, content, focusFirstElement, useAria, status) {
-        this.trigger = trigger;
-        this.content = content;
-        this.status = status;
-        this.focusFirstElement = focusFirstElement;
-        this.useAria = useAria;
+    constructor(domNode) {
+        this.rootEl = domNode;
+        this.buttonEl = this.rootEl.querySelector('.disclosure__trigger');
+        this.contentEl = this.rootEl.querySelector('.disclosure__content');
+        this.statusEl = this.rootEl.querySelector('.status-text') || null;
+        this.statusCloseText = this.buttonEl.getAttribute('data-trigger-close') || null;
+        this.statusOpenText = this.buttonEl.getAttribute('data-trigger-open') || null;
+        this.focusFirstElement = this.rootEl.hasAttribute('data-focus-first-element');
+        this.focusableElements = this.contentEl.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        this.open = this.rootEl.classList.contains('--open') === true;
+
+        // add event listeners
+        this.buttonEl.addEventListener('click', this.onButtonClick.bind(this));
     }
 
-    initialize = () => {
-        let self = this;
+    onButtonClick() {
+        this.toggle(!this.open);
+    }
 
-        if (self.content) {
-            const focusable = self.content.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    toggle(open) {
+        // update the internal state
+        this.open = open;
 
-            self.trigger.addEventListener('click', (e) => {
-                if (self.useAria) {
-                    if (e.target.getAttribute('aria-expanded') === 'false') {
-                        self.trigger.setAttribute('aria-expanded', 'true');
-                        self.trigger.parentNode.classList.add('--open');
-                        if (self.focusFirstElement) {
-                            focusable[0].focus();
-                        }
-                    } else {
-                        self.trigger.setAttribute('aria-expanded', 'false');
-                        self.trigger.parentNode.classList.remove('--open');
-                    }
-                } else {
-                    if (self.trigger.parentNode.classList.contains('--open')) {
-                        self.status.textContent = e.target.getAttribute('data-trigger-open');
-                        self.trigger.parentNode.classList.remove('--open');
-                    } else {
-                        self.status.textContent = e.target.getAttribute('data-trigger-close');
-                        self.trigger.parentNode.classList.add('--open');
-                        if (self.focusFirstElement) {
-                            focusable[0].focus();
-                        }
-                    }
-                }
-            }, false);
+        // handle DOM updates
+        // if ARIA is used
+        if (this.buttonEl.getAttribute('aria-expanded')) {
+            this.buttonEl.setAttribute('aria-expanded', `${open}`);
         }
+
+        if (open) {
+            this.contentEl.removeAttribute('hidden');
+            this.rootEl.classList.add('--open');
+            // if ARIA is not used
+            if (this.statusEl && this.statusOpenText) {
+                this.statusEl.textContent = this.statusCloseText;
+            }
+            // move the focus on the first focusable element
+            if (this.focusFirstElement) {
+                this.focusableElements[0].focus();
+            }
+        } else {
+            this.contentEl.setAttribute('hidden', '');
+            this.rootEl.classList.remove('--open');
+            //// if ARIA is not used
+            if (this.statusEl && this.statusOpenText) {
+                this.statusEl.textContent = this.statusOpenText;
+            }
+        }
+    }
+
+    // Add public open and close methods for convenience
+    open() {
+        this.toggle(true);
+        if (this.focusFirstElement) {
+            this.focusableElements[0].focus();
+        }
+    }
+
+    close() {
+        this.toggle(false);
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const menuLangsTrigger = document.getElementById("menu-langs__trigger");
-    const menuLangsContent = document.getElementById("menu-langs__content");
-    if (menuLangsTrigger && menuLangsContent) {
-        const menuLangDisclosure = new disclosure(menuLangsTrigger, menuLangsContent, false, true, '');
-        menuLangDisclosure.initialize();
-    }
-
-    const menuLangsTrigger2 = document.getElementById("menu-langs2__trigger");
-    const menuLangsContent2 = document.getElementById("menu-langs2__content");
-    const menuLangsStatus2 = document.querySelector('[data-trigger-text]');
-    if (menuLangsTrigger2 && menuLangsContent2 && menuLangsStatus2) {
-        const menuLangDisclosure2 = new disclosure(menuLangsTrigger2, menuLangsContent2, false, false, menuLangsStatus2);
-        menuLangDisclosure2.initialize();
-    }
-
-    const menuOrderTrigger = document.getElementById("menu-order__trigger");
-    const menuOrderContent = document.getElementById("menu-order__content");
-    if (menuOrderTrigger && menuOrderContent) {
-        const menuOrderDiscolsure = new disclosure(menuOrderTrigger, menuOrderContent, false, true, '');
-        menuOrderDiscolsure.initialize();
-    }
-
-    const menuOrderTrigger2 = document.getElementById("menu-order__trigger2");
-    const menuOrderContent2 = document.getElementById("menu-order__content2");
-    if (menuOrderTrigger2 && menuOrderContent2) {
-        const menuOrderDiscolsure2 = new disclosure(menuOrderTrigger2, menuOrderContent2, false, true, '');
-        menuOrderDiscolsure2.initialize();
-    }
-
-    const menuOrderTrigger3 = document.getElementById("menu-order__trigger3");
-    const menuOrderContent3 = document.getElementById("menu-order__content3");
-    if (menuOrderTrigger3 && menuOrderContent3) {
-        const menuOrderDiscolsure3 = new disclosure(menuOrderTrigger3, menuOrderContent3, false, true, '');
-        menuOrderDiscolsure3.initialize();
-    }
+// init accordions
+const disclosures = document.querySelectorAll('.disclosure');
+disclosures.forEach((disclosureEl) => {
+    new disclosure(disclosureEl);
 });

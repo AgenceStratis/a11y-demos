@@ -25,6 +25,116 @@
     </header>
     <main>
         <section class="wrap">
+            <h2 id="support">Support navigateurs</h2>
+            <table>
+                <caption>Support des zones Live sur Firefox (123), Chrome (122) et Safari (13)</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Attributs Live</th>
+                        <th scope="col">Firefox</th>
+                        <th scope="col">Chrome</th>
+                        <th scope="col">Safari</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><code lang="en">role="alert"</code></th>
+                        <td style="background-color:greenyellow">
+                            préfix avec "alerte" OK<br>
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:red">
+                            préfix avec "alerte" NOT OK<br>
+                            assertive NOT OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            préfix avec "alerte" OK<br>
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code lang="en">aria-live="assertive" aria-atomic="true"</code></th>
+                        <td style="background-color:red">
+                            préfix avec "alerte" NOT OK<br>
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:red">
+                            préfix avec "alerte" NOT OK<br>
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:red">
+                            préfix avec "alerte" NOT OK<br>
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code lang="en">role="log"</code></th>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code lang="en">aria-live="polite" aria-atomic="false"</code></th>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code lang="en">role="status"</code></th>
+                        <td style="background-color:red">
+                            assertive OK<br>
+                            atomic NOT OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><code lang="en">aria-live="polite" aria-atomic="true"</code></th>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                        <td style="background-color:greenyellow">
+                            assertive OK<br>
+                            atomic OK
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <div class="grid grid-cols-4 has-gutter">
                 <div>
                     <h2>Alerte</h2>
